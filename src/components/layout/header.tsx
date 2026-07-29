@@ -1,21 +1,11 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { LogOut, User } from "lucide-react";
 
-import { authClient } from "@/lib/auth/client";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { Separator } from "@/components/ui/separator";
 import { SidebarTrigger } from "@/components/ui/sidebar";
+import { UserMenu } from "@/components/layout/user-menu";
 import { useWsConnection } from "@/hooks/use-ticker";
 
 interface HeaderProps {
@@ -25,14 +15,7 @@ interface HeaderProps {
 }
 
 export function Header({ title, subtitle, children }: HeaderProps) {
-  const router = useRouter();
   const connected = useWsConnection();
-
-  async function handleSignOut() {
-    await authClient.signOut();
-    router.push("/login");
-    router.refresh();
-  }
 
   return (
     <header className="flex h-14 shrink-0 items-center gap-2 border-b border-border bg-card/60 px-4 backdrop-blur-md">
@@ -61,35 +44,12 @@ export function Header({ title, subtitle, children }: HeaderProps) {
           className="hidden sm:inline-flex"
         >
           <span
-            className={`mr-1.5 size-1.5 rounded-full ${connected ? "bg-primary-foreground animate-pulse" : "bg-muted-foreground"}`}
+            className={`mr-1.5 size-1.5 rounded-full ${connected ? "animate-pulse bg-primary-foreground" : "bg-muted-foreground"}`}
           />
           {connected ? "Live" : "Reconnecting"}
         </Badge>
 
-        <DropdownMenu>
-          <DropdownMenuTrigger
-            render={
-              <Button variant="ghost" size="icon-sm" className="rounded-full">
-                <Avatar className="size-7">
-                  <AvatarFallback className="bg-secondary text-xs">
-                    <User className="size-3.5" />
-                  </AvatarFallback>
-                </Avatar>
-              </Button>
-            }
-          />
-          <DropdownMenuContent align="end" className="w-48">
-            <DropdownMenuItem onClick={() => router.push("/settings")}>
-              <User className="h-4 w-4" />
-              Account settings
-            </DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem onClick={handleSignOut}>
-              <LogOut className="h-4 w-4" />
-              Sign out
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <UserMenu variant="header" />
       </div>
     </header>
   );

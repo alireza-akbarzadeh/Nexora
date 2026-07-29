@@ -11,6 +11,7 @@ import {
   Wallet,
 } from "lucide-react";
 
+import { UserMenu } from "@/components/layout/user-menu";
 import {
   Sidebar,
   SidebarContent,
@@ -27,7 +28,7 @@ import {
 } from "@/components/ui/sidebar";
 
 const mainNav = [
-  { href: "/", label: "Dashboard", icon: LayoutDashboard, match: (path: string) => path === "/" },
+  { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard, match: (path: string) => path === "/dashboard" },
   {
     href: "/trade/BTCUSDT",
     label: "Trade",
@@ -58,7 +59,7 @@ export function AppSidebar() {
           <SidebarMenuItem>
             <SidebarMenuButton
               size="lg"
-              render={<Link href="/" />}
+              render={<Link href="/dashboard" />}
               className="data-active:bg-sidebar-accent"
             >
               <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-primary text-sm font-bold text-primary-foreground">
@@ -127,18 +128,7 @@ export function AppSidebar() {
       </SidebarContent>
 
       <SidebarFooter>
-        <SidebarMenu>
-          <SidebarMenuItem>
-            <SidebarMenuButton
-              tooltip="Connect exchange"
-              render={<Link href="/settings" />}
-              className="text-muted-foreground"
-            >
-              <div className="size-2 rounded-full bg-primary shadow-[0_0_8px_var(--primary)]" />
-              <span className="text-xs">Connect Binance API</span>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-        </SidebarMenu>
+        <UserMenu variant="sidebar" />
       </SidebarFooter>
 
       <SidebarRail />
