@@ -161,7 +161,7 @@ export function UserMenu({ variant = "header", className }: UserMenuProps) {
           <DropdownMenuLabel className="text-[10px] uppercase tracking-wider">
             Account
           </DropdownMenuLabel>
-          <DropdownMenuItem onClick={() => router.push("/")}>
+          <DropdownMenuItem onClick={() => router.push("/dashboard")}>
             <LayoutDashboard className="size-4" />
             Dashboard
           </DropdownMenuItem>
