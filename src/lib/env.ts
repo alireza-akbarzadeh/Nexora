@@ -6,6 +6,7 @@ const envSchema = z.object({
     .string()
     .min(32, "BETTER_AUTH_SECRET must be at least 32 characters"),
   BETTER_AUTH_URL: z.string().url().optional(),
+  BETTER_AUTH_API_KEY: z.string().min(1).optional(),
   ENCRYPTION_KEY: z
     .string()
     .length(64, "ENCRYPTION_KEY must be 64 hex characters (32 bytes)"),
@@ -19,6 +20,7 @@ function loadEnv(): Env {
     DATABASE_URL: process.env.DATABASE_URL,
     BETTER_AUTH_SECRET: process.env.BETTER_AUTH_SECRET,
     BETTER_AUTH_URL: process.env.BETTER_AUTH_URL,
+    BETTER_AUTH_API_KEY: process.env.BETTER_AUTH_API_KEY,
     ENCRYPTION_KEY: process.env.ENCRYPTION_KEY,
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
   });
