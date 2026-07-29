@@ -3,8 +3,16 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 
+import { FormPasswordField } from "@/components/forms/form-password-field";
+import { FormTextField } from "@/components/forms/form-text-field";
 import { authClient } from "@/lib/auth/client";
+import {
+  registerSchema,
+  type RegisterFormValues,
+} from "@/lib/validations/auth";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -13,31 +21,28 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { FieldGroup } from "@/components/ui/field";
 
 export default function RegisterPage() {
   const router = useRouter();
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState(false);
+  const [serverError, setServerError] = useState<string | null>(null);
 
-  async function handleSubmit(event: React.FormEvent) {
-    event.preventDefault();
-    setLoading(true);
-    setError(null);
+  const form = useForm<RegisterFormValues>({
+    resolver: zodResolver(registerSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      password: "",
+    },
+  });
 
-    const result = await authClient.signUp.email({
-      name,
-      email,
-      password,
-    });
+  async function onSubmit(values: RegisterFormValues) {
+    setServerError(null);
+
+    const result = await authClient.signUp.email(values);
 
     if (result.error) {
-      setError(result.error.message ?? "Unable to create account");
-      setLoading(false);
+      setServerError(result.error.message ?? "Unable to create account");
       return;
     }
 
@@ -46,7 +51,7 @@ export default function RegisterPage() {
   }
 
   return (
-    <Card>
+    <Card className="border-border/80">
       <CardHeader>
         <CardTitle>Create your Nexora account</CardTitle>
         <CardDescription>
@@ -54,44 +59,42 @@ export default function RegisterPage() {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="space-y-2">
-            <Label htmlFor="name">Name</Label>
-            <Input
-              id="name"
-              value={name}
-              onChange={(event) => setName(event.target.value)}
-              required
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+          <FieldGroup>
+            <FormTextField
+              control={form.control}
+              name="name"
+              label="Name"
+              autoComplete="name"
+              placeholder="Your name"
             />
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
-            <Input
-              id="email"
+            <FormTextField
+              control={form.control}
+              name="email"
+              label="Email"
               type="email"
-              value={email}
-              onChange={(event) => setEmail(event.target.value)}
-              required
+              autoComplete="email"
+              placeholder="you@example.com"
             />
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="password">Password</Label>
-            <Input
-              id="password"
-              type="password"
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
-              minLength={8}
-              required
+            <FormPasswordField
+              control={form.control}
+              name="password"
+              label="Password"
+              autoComplete="new-password"
+              placeholder="At least 8 characters"
             />
-          </div>
+          </FieldGroup>
 
-          {error ? <p className="text-sm text-destructive">{error}</p> : null}
+          {serverError ? (
+            <p className="text-sm text-destructive">{serverError}</p>
+          ) : null}
 
-          <Button type="submit" className="w-full" disabled={loading}>
-            {loading ? "Creating account..." : "Create account"}
+          <Button
+            type="submit"
+            className="w-full"
+            disabled={form.formState.isSubmitting}
+          >
+            {form.formState.isSubmitting ? "Creating account..." : "Create account"}
           </Button>
         </form>
 

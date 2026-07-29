@@ -3,8 +3,16 @@
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 
+import { FormPasswordField } from "@/components/forms/form-password-field";
+import { FormTextField } from "@/components/forms/form-text-field";
 import { authClient } from "@/lib/auth/client";
+import {
+  loginSchema,
+  type LoginFormValues,
+} from "@/lib/validations/auth";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -13,32 +21,29 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { FieldGroup } from "@/components/ui/field";
 
 export default function LoginPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get("callbackUrl") ?? "/";
+  const [serverError, setServerError] = useState<string | null>(null);
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState(false);
+  const form = useForm<LoginFormValues>({
+    resolver: zodResolver(loginSchema),
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+  });
 
-  async function handleSubmit(event: React.FormEvent) {
-    event.preventDefault();
-    setLoading(true);
-    setError(null);
+  async function onSubmit(values: LoginFormValues) {
+    setServerError(null);
 
-    const result = await authClient.signIn.email({
-      email,
-      password,
-    });
+    const result = await authClient.signIn.email(values);
 
     if (result.error) {
-      setError(result.error.message ?? "Unable to sign in");
-      setLoading(false);
+      setServerError(result.error.message ?? "Unable to sign in");
       return;
     }
 
@@ -47,7 +52,7 @@ export default function LoginPage() {
   }
 
   return (
-    <Card>
+    <Card className="border-border/80">
       <CardHeader>
         <CardTitle>Sign in to Nexora</CardTitle>
         <CardDescription>
@@ -55,33 +60,35 @@ export default function LoginPage() {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
-            <Input
-              id="email"
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+          <FieldGroup>
+            <FormTextField
+              control={form.control}
+              name="email"
+              label="Email"
               type="email"
-              value={email}
-              onChange={(event) => setEmail(event.target.value)}
-              required
+              autoComplete="email"
+              placeholder="you@example.com"
             />
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="password">Password</Label>
-            <Input
-              id="password"
-              type="password"
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
-              required
+            <FormPasswordField
+              control={form.control}
+              name="password"
+              label="Password"
+              autoComplete="current-password"
+              placeholder="••••••••"
             />
-          </div>
+          </FieldGroup>
 
-          {error ? <p className="text-sm text-destructive">{error}</p> : null}
+          {serverError ? (
+            <p className="text-sm text-destructive">{serverError}</p>
+          ) : null}
 
-          <Button type="submit" className="w-full" disabled={loading}>
-            {loading ? "Signing in..." : "Sign in"}
+          <Button
+            type="submit"
+            className="w-full"
+            disabled={form.formState.isSubmitting}
+          >
+            {form.formState.isSubmitting ? "Signing in..." : "Sign in"}
           </Button>
         </form>
 

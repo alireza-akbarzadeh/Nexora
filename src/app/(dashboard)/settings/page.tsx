@@ -1,24 +1,42 @@
 "use client";
 
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { Controller, useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 
+import { FormPasswordField } from "@/components/forms/form-password-field";
+import { FormTextField } from "@/components/forms/form-text-field";
 import { Header } from "@/components/layout/header";
+import {
+  exchangeConnectionSchema,
+  type ExchangeConnectionFormValues,
+} from "@/lib/validations/exchange";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import {
+  Field,
+  FieldDescription,
+  FieldGroup,
+  FieldLabel,
+} from "@/components/ui/field";
 import { Switch } from "@/components/ui/switch";
 import type { ExchangeConnectionSummary } from "@/types/exchange";
 
 export default function SettingsPage() {
   const queryClient = useQueryClient();
-  const [exchange, setExchange] = useState<"binance" | "coinbase">("binance");
-  const [apiKey, setApiKey] = useState("");
-  const [apiSecret, setApiSecret] = useState("");
-  const [label, setLabel] = useState("");
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+
+  const form = useForm<ExchangeConnectionFormValues>({
+    resolver: zodResolver(exchangeConnectionSchema),
+    defaultValues: {
+      exchange: "binance",
+      label: "",
+      apiKey: "",
+      apiSecret: "",
+    },
+  });
 
   const connectionsQuery = useQuery({
     queryKey: ["exchange-connections"],
@@ -32,15 +50,13 @@ export default function SettingsPage() {
   });
 
   const connectMutation = useMutation({
-    mutationFn: async () => {
+    mutationFn: async (values: ExchangeConnectionFormValues) => {
       const response = await fetch("/api/exchange/connections", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          exchange,
-          apiKey,
-          apiSecret,
-          label: label || undefined,
+          ...values,
+          label: values.label || undefined,
         }),
       });
 
@@ -51,9 +67,12 @@ export default function SettingsPage() {
       return data;
     },
     onSuccess: () => {
-      setApiKey("");
-      setApiSecret("");
-      setLabel("");
+      form.reset({
+        exchange: "binance",
+        label: "",
+        apiKey: "",
+        apiSecret: "",
+      });
       setMessage("Exchange connected successfully.");
       setError(null);
       queryClient.invalidateQueries({ queryKey: ["exchange-connections"] });
@@ -102,67 +121,55 @@ export default function SettingsPage() {
           <CardContent>
             <form
               className="space-y-4"
-              onSubmit={(event) => {
-                event.preventDefault();
-                connectMutation.mutate();
-              }}
+              onSubmit={form.handleSubmit((values) => connectMutation.mutate(values))}
             >
-              <div className="space-y-2">
-                <Label htmlFor="exchange">Exchange</Label>
-                <select
-                  id="exchange"
-                  value={exchange}
-                  onChange={(event) =>
-                    setExchange(event.target.value as "binance" | "coinbase")
-                  }
-                  className="flex h-9 w-full rounded-md border border-input bg-background px-3 text-sm"
-                >
-                  <option value="binance">Binance</option>
-                  <option value="coinbase">Coinbase</option>
-                </select>
-              </div>
+              <FieldGroup>
+                <Controller
+                  name="exchange"
+                  control={form.control}
+                  render={({ field }) => (
+                    <Field>
+                      <FieldLabel htmlFor="exchange">Exchange</FieldLabel>
+                      <select
+                        id="exchange"
+                        {...field}
+                        className="flex h-9 w-full rounded-md border border-input bg-background px-3 text-sm"
+                      >
+                        <option value="binance">Binance</option>
+                        <option value="coinbase">Coinbase</option>
+                      </select>
+                    </Field>
+                  )}
+                />
 
-              <div className="space-y-2">
-                <Label htmlFor="label">Label</Label>
-                <Input
-                  id="label"
-                  value={label}
-                  onChange={(event) => setLabel(event.target.value)}
+                <FormTextField
+                  control={form.control}
+                  name="label"
+                  label="Label"
                   placeholder="Main account"
                 />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="apiKey">API Key</Label>
-                <Input
-                  id="apiKey"
-                  value={apiKey}
-                  onChange={(event) => setApiKey(event.target.value)}
+                <FormTextField
+                  control={form.control}
+                  name="apiKey"
+                  label="API Key"
                   placeholder="Your exchange API key"
                   autoComplete="off"
                 />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="apiSecret">API Secret</Label>
-                <Input
-                  id="apiSecret"
-                  type="password"
-                  value={apiSecret}
-                  onChange={(event) => setApiSecret(event.target.value)}
+                <FormPasswordField
+                  control={form.control}
+                  name="apiSecret"
+                  label="API Secret"
                   placeholder="Your exchange API secret"
                   autoComplete="off"
                 />
-              </div>
+              </FieldGroup>
 
-              <p className="text-xs text-muted-foreground">
+              <FieldDescription>
                 Keys are validated against the exchange, encrypted at rest, and
                 never returned to the browser.
-              </p>
+              </FieldDescription>
 
-              {message ? (
-                <p className="text-xs text-buy">{message}</p>
-              ) : null}
+              {message ? <p className="text-xs text-buy">{message}</p> : null}
               {error ? <p className="text-xs text-destructive">{error}</p> : null}
 
               <Button type="submit" disabled={connectMutation.isPending}>
