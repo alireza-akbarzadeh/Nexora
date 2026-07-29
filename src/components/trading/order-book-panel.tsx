@@ -33,7 +33,7 @@ export function OrderBookPanel({ orderBook }: OrderBookPanelProps) {
         <span className="text-right">Total</span>
       </div>
 
-      <div className="flex flex-1 flex-col-reverse overflow-y-auto px-1 py-2">
+      <div className="flex flex-1 flex-col-reverse overflow-y-auto px-1 py-2 scrollbar-thin">
         {orderBook.asks.slice(0, 12).reverse().map((level, index) => (
           <OrderBookRow
             key={`ask-${index}`}
@@ -49,7 +49,7 @@ export function OrderBookPanel({ orderBook }: OrderBookPanelProps) {
         Spread
       </div>
 
-      <div className="flex-1 overflow-y-auto px-1 py-2">
+      <div className="flex-1 overflow-y-auto px-1 py-2 scrollbar-thin">
         {orderBook.bids.slice(0, 12).map((level, index) => (
           <OrderBookRow
             key={`bid-${index}`}
