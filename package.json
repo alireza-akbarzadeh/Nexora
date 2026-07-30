@@ -12,7 +12,12 @@
     "db:pull": "drizzle-kit pull",
     "db:push": "drizzle-kit push",
     "db:check": "drizzle-kit check",
-    "db:studio": "drizzle-kit studio"
+    "db:studio": "drizzle-kit studio",
+    "graphify:open": "open graphify-out/graph.html",
+    "graphify:report": "open graphify-out/GRAPH_REPORT.md",
+    "graphify:update": "$HOME/.local/bin/graphify update .",
+    "graphify:query": "$HOME/.local/bin/graphify query",
+    "graphify:mcp": "$HOME/.local/bin/graphify-mcp graphify-out/graph.json"
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",
