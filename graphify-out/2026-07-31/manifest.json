@@ -40,8 +40,8 @@
     "semantic_hash": "ea7b0ff893018d77bb16440d57bc0df5"
   },
   "package.json": {
-    "mtime": 1785488483.9103749,
-    "ast_hash": "f36802b0891560131bea02b8657bd87a",
+    "mtime": 1785487994.0329118,
+    "ast_hash": "f3a6fe105e54cd209cc8fe5b559ae7f3",
     "semantic_hash": ""
   },
   "postcss.config.mjs": {
@@ -60,8 +60,8 @@
     "semantic_hash": ""
   },
   "src/app/(auth)/login/login-page.tsx": {
-    "mtime": 1785488547.9791486,
-    "ast_hash": "eacaa15acc76c4a1d539b200dee2c059",
+    "mtime": 1785488336.184414,
+    "ast_hash": "5a6c7e9b59d893cbaf8105c1bedbbc00",
     "semantic_hash": ""
   },
   "src/app/(auth)/login/page.tsx": {
@@ -70,8 +70,8 @@
     "semantic_hash": "a6fcb2327cbb2428a82d9cd0236f08fd"
   },
   "src/app/(auth)/register/page.tsx": {
-    "mtime": 1785488553.1531577,
-    "ast_hash": "8f5f7321c0162d8a25c37731ce6048e3",
+    "mtime": 1785488347.3699086,
+    "ast_hash": "b0a5e237d14142d844c6c6dd2339d05f",
     "semantic_hash": ""
   },
   "src/app/(dashboard)/dashboard/page.tsx": {
@@ -440,8 +440,8 @@
     "semantic_hash": ""
   },
   "src/lib/auth/index.ts": {
-    "mtime": 1785488535.0538695,
-    "ast_hash": "eb94dce72fe826f24255a0dd0ed06e9c",
+    "mtime": 1785487949.0626016,
+    "ast_hash": "c183a58ffb39b941125867a4083378bf",
     "semantic_hash": ""
   },
   "src/lib/db/index.ts": {
@@ -455,8 +455,8 @@
     "semantic_hash": ""
   },
   "src/lib/env.ts": {
-    "mtime": 1785488588.102541,
-    "ast_hash": "de13994938da478a410ea27ba341d440",
+    "mtime": 1785487947.8921933,
+    "ast_hash": "810153a6f511390e483087a10e0a8366",
     "semantic_hash": ""
   },
   "src/lib/exchange/client.ts": {
@@ -535,8 +535,8 @@
     "semantic_hash": "ee17fd1c97c735e9f3564e3f5251f125"
   },
   ".cursor/skills/better-auth/SKILL.md": {
-    "mtime": 1785488562.1979265,
-    "ast_hash": "3d1a9ebbdcaeaf8ed90268700ae9acd5",
+    "mtime": 1785488091.9624422,
+    "ast_hash": "f8c32ff0376c48c9e72874fba5dd3936",
     "semantic_hash": ""
   },
   ".cursor/skills/drizzle/SKILL.md": {
@@ -612,16 +612,6 @@
   "src/components/auth/auth-shell.tsx": {
     "mtime": 1785488304.7099686,
     "ast_hash": "7bbf9cd2b08cca9b7bf4a86e4e76ada4",
-    "semantic_hash": ""
-  },
-  "src/components/auth/social-auth.tsx": {
-    "mtime": 1785488617.5843122,
-    "ast_hash": "50830e07ab640fa564df5b280f041238",
-    "semantic_hash": ""
-  },
-  "src/lib/auth/social.ts": {
-    "mtime": 1785488495.3429925,
-    "ast_hash": "caabf57264e3676beb4fc183940a13f1",
     "semantic_hash": ""
   }
 }

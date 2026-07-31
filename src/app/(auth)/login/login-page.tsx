@@ -6,6 +6,14 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
+import {
+  AuthError,
+  AuthFooterLink,
+  AuthPanel,
+  AuthSubmit,
+} from "@/components/auth/auth-panel";
+import { AuthShell } from "@/components/auth/auth-shell";
+import { SocialAuthButtons } from "@/components/auth/social-auth";
 import { FormPasswordField } from "@/components/forms/form-password-field";
 import { FormTextField } from "@/components/forms/form-text-field";
 import { authClient } from "@/lib/auth/client";
@@ -13,14 +21,6 @@ import {
   loginSchema,
   type LoginFormValues,
 } from "@/lib/validations/auth";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { FieldGroup } from "@/components/ui/field";
 
 export default function LoginPage() {
@@ -47,20 +47,29 @@ export default function LoginPage() {
       return;
     }
 
+    if (
+      result.data &&
+      "twoFactorRedirect" in result.data &&
+      result.data.twoFactorRedirect
+    ) {
+      router.push("/two-factor");
+      return;
+    }
+
     router.push(callbackUrl);
     router.refresh();
   }
 
   return (
-    <Card className="border-border/80">
-      <CardHeader>
-        <CardTitle>Sign in to Nexora</CardTitle>
-        <CardDescription>
-          Access your trading dashboard and connected exchanges.
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+    <AuthShell
+      eyebrow="Welcome back"
+      title="Sign in to Nexora"
+      subtitle="Access your dashboard, watchlists, and connected exchanges."
+    >
+      <AuthPanel>
+        <SocialAuthButtons callbackURL={callbackUrl} className="mb-5" />
+
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
           <FieldGroup>
             <FormTextField
               control={form.control}
@@ -68,7 +77,7 @@ export default function LoginPage() {
               label="Email"
               type="email"
               autoComplete="email"
-              placeholder="you@example.com"
+              placeholder="trader@nexora.app"
             />
             <FormPasswordField
               control={form.control}
@@ -79,26 +88,33 @@ export default function LoginPage() {
             />
           </FieldGroup>
 
-          {serverError ? (
-            <p className="text-sm text-destructive">{serverError}</p>
-          ) : null}
+          <div className="flex justify-end">
+            <Link
+              href="/forgot-password"
+              className="text-sm text-muted-foreground transition-colors hover:text-primary"
+            >
+              Forgot password?
+            </Link>
+          </div>
 
-          <Button
-            type="submit"
-            className="w-full"
-            disabled={form.formState.isSubmitting}
+          <AuthError message={serverError} />
+
+          <AuthSubmit
+            pending={form.formState.isSubmitting}
+            pendingLabel="Signing in…"
           >
-            {form.formState.isSubmitting ? "Signing in..." : "Sign in"}
-          </Button>
+            Sign in with email
+          </AuthSubmit>
         </form>
 
-        <p className="mt-4 text-center text-sm text-muted-foreground">
-          Don&apos;t have an account?{" "}
-          <Link href="/register" className="text-primary hover:underline">
-            Create one
-          </Link>
-        </p>
-      </CardContent>
-    </Card>
+        <div className="mt-6">
+          <AuthFooterLink
+            prompt="New to Nexora?"
+            href="/register"
+            label="Create an account"
+          />
+        </div>
+      </AuthPanel>
+    </AuthShell>
   );
 }

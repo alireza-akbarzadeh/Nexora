@@ -8,6 +8,8 @@ import { useState } from "react";
 import { FormPasswordField } from "@/components/forms/form-password-field";
 import { FormTextField } from "@/components/forms/form-text-field";
 import { Header } from "@/components/layout/header";
+import { AccountSettings } from "@/components/settings/account-settings";
+import { SecuritySettings } from "@/components/settings/security-settings";
 import {
   exchangeConnectionSchema,
   type ExchangeConnectionFormValues,
@@ -110,10 +112,13 @@ export default function SettingsPage() {
     <>
       <Header
         title="Settings"
-        subtitle="Manage encrypted exchange API connections"
+        subtitle="Account security and encrypted exchange connections"
       />
 
       <main className="grid flex-1 gap-6 p-6 xl:grid-cols-2">
+        <AccountSettings />
+        <SecuritySettings />
+
         <Card>
           <CardHeader>
             <CardTitle>Connect Exchange</CardTitle>
@@ -121,7 +126,9 @@ export default function SettingsPage() {
           <CardContent>
             <form
               className="space-y-4"
-              onSubmit={form.handleSubmit((values) => connectMutation.mutate(values))}
+              onSubmit={form.handleSubmit((values) =>
+                connectMutation.mutate(values),
+              )}
             >
               <FieldGroup>
                 <Controller
@@ -189,7 +196,7 @@ export default function SettingsPage() {
                 No exchange connections yet.
               </p>
             ) : (
-              connectionsQuery.data?.connections.map((connection) => (
+              connectionsQuery.data?.connections.map((connection: ExchangeConnectionSummary) => (
                 <div
                   key={connection.id}
                   className="flex items-center justify-between rounded-lg border border-border p-4"

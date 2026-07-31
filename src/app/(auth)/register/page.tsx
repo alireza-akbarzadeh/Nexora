@@ -1,11 +1,18 @@
 "use client";
 
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
+import {
+  AuthError,
+  AuthFooterLink,
+  AuthPanel,
+  AuthSubmit,
+} from "@/components/auth/auth-panel";
+import { AuthShell } from "@/components/auth/auth-shell";
+import { SocialAuthButtons } from "@/components/auth/social-auth";
 import { FormPasswordField } from "@/components/forms/form-password-field";
 import { FormTextField } from "@/components/forms/form-text-field";
 import { authClient } from "@/lib/auth/client";
@@ -13,14 +20,6 @@ import {
   registerSchema,
   type RegisterFormValues,
 } from "@/lib/validations/auth";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { FieldGroup } from "@/components/ui/field";
 
 export default function RegisterPage() {
@@ -33,40 +32,45 @@ export default function RegisterPage() {
       name: "",
       email: "",
       password: "",
+      confirmPassword: "",
     },
   });
 
   async function onSubmit(values: RegisterFormValues) {
     setServerError(null);
 
-    const result = await authClient.signUp.email(values);
+    const result = await authClient.signUp.email({
+      name: values.name,
+      email: values.email,
+      password: values.password,
+    });
 
     if (result.error) {
       setServerError(result.error.message ?? "Unable to create account");
       return;
     }
 
-    router.push("/");
+    router.push("/dashboard");
     router.refresh();
   }
 
   return (
-    <Card className="border-border/80">
-      <CardHeader>
-        <CardTitle>Create your Nexora account</CardTitle>
-        <CardDescription>
-          Start trading with real exchange connectivity and live market data.
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+    <AuthShell
+      eyebrow="Get started"
+      title="Create your trading account"
+      subtitle="One workspace for live markets, order flow, and exchange keys."
+    >
+      <AuthPanel>
+        <SocialAuthButtons callbackURL="/dashboard" className="mb-5" />
+
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
           <FieldGroup>
             <FormTextField
               control={form.control}
               name="name"
               label="Name"
               autoComplete="name"
-              placeholder="Your name"
+              placeholder="Alex Trader"
             />
             <FormTextField
               control={form.control}
@@ -74,7 +78,7 @@ export default function RegisterPage() {
               label="Email"
               type="email"
               autoComplete="email"
-              placeholder="you@example.com"
+              placeholder="trader@nexora.app"
             />
             <FormPasswordField
               control={form.control}
@@ -83,28 +87,33 @@ export default function RegisterPage() {
               autoComplete="new-password"
               placeholder="At least 8 characters"
             />
+            <FormPasswordField
+              control={form.control}
+              name="confirmPassword"
+              label="Confirm password"
+              autoComplete="new-password"
+              placeholder="Re-enter your password"
+            />
           </FieldGroup>
 
-          {serverError ? (
-            <p className="text-sm text-destructive">{serverError}</p>
-          ) : null}
+          <AuthError message={serverError} />
 
-          <Button
-            type="submit"
-            className="w-full"
-            disabled={form.formState.isSubmitting}
+          <AuthSubmit
+            pending={form.formState.isSubmitting}
+            pendingLabel="Creating account…"
           >
-            {form.formState.isSubmitting ? "Creating account..." : "Create account"}
-          </Button>
+            Start trading with email
+          </AuthSubmit>
         </form>
 
-        <p className="mt-4 text-center text-sm text-muted-foreground">
-          Already have an account?{" "}
-          <Link href="/login" className="text-primary hover:underline">
-            Sign in
-          </Link>
-        </p>
-      </CardContent>
-    </Card>
+        <div className="mt-6">
+          <AuthFooterLink
+            prompt="Already have an account?"
+            href="/login"
+            label="Sign in"
+          />
+        </div>
+      </AuthPanel>
+    </AuthShell>
   );
 }

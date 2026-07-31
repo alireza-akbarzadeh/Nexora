@@ -110,10 +110,16 @@
   select:-webkit-autofill:hover,
   select:-webkit-autofill:focus,
   select:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 1000px var(--input) inset !important;
-    box-shadow: 0 0 0 1000px var(--input) inset !important;
+    /* Chrome autofill ignores radius unless forced; match Input rounded-lg */
+    border-radius: var(--radius-lg) !important;
     -webkit-text-fill-color: var(--foreground) !important;
     caret-color: var(--foreground);
+    background-color: transparent !important;
+    background-image: none !important;
+    -webkit-box-shadow: 0 0 0 1000px
+      color-mix(in oklch, var(--input) 80%, transparent) inset !important;
+    box-shadow: 0 0 0 1000px
+      color-mix(in oklch, var(--input) 80%, transparent) inset !important;
     transition: background-color 9999s ease-out 0s;
   }
 }

@@ -2,13 +2,28 @@ import { NextRequest, NextResponse } from "next/server";
 
 import { auth } from "@/lib/auth";
 
-const publicRoutes = ["/", "/login", "/register"];
+const exactPublicRoutes = new Set([
+  "/",
+  "/login",
+  "/register",
+  "/forgot-password",
+  "/reset-password",
+  "/two-factor",
+]);
+
+function isPublicPath(pathname: string) {
+  if (exactPublicRoutes.has(pathname)) return true;
+  return [...exactPublicRoutes].some(
+    (route) => route !== "/" && pathname.startsWith(`${route}/`),
+  );
+}
 
 export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   if (
     pathname.startsWith("/api/auth") ||
+    pathname.startsWith("/api/dev") ||
     pathname.startsWith("/_next") ||
     pathname.startsWith("/favicon")
   ) {
@@ -19,15 +34,21 @@ export async function proxy(request: NextRequest) {
     headers: request.headers,
   });
 
-  const isPublicRoute = publicRoutes.some((route) => pathname.startsWith(route));
+  const publicRoute = isPublicPath(pathname);
 
-  if (!session && !isPublicRoute) {
+  if (!session && !publicRoute) {
     const loginUrl = new URL("/login", request.url);
     loginUrl.searchParams.set("callbackUrl", pathname);
     return NextResponse.redirect(loginUrl);
   }
 
-  if (session && isPublicRoute && pathname !== "/") {
+  if (
+    session &&
+    publicRoute &&
+    pathname !== "/" &&
+    pathname !== "/two-factor" &&
+    pathname !== "/reset-password"
+  ) {
     return NextResponse.redirect(new URL("/dashboard", request.url));
   }
 

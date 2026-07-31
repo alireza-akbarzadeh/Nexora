@@ -55,7 +55,7 @@ export function FormPasswordField<T extends FieldValues>({
               type="button"
               variant="ghost"
               size="icon-sm"
-              className="absolute top-1/2 right-1 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+              className="absolute top-1/2 right-1 z-10 -translate-y-1/2 text-muted-foreground hover:text-foreground"
               onClick={() => setVisible((current) => !current)}
               aria-label={visible ? "Hide password" : "Show password"}
             >
