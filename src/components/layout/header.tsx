@@ -5,7 +5,6 @@ import {SidebarTrigger} from "@/components/ui/sidebar";
 import {NotificationBell} from "@/components/notify/notification-bell";
 import {UserMenu} from "@/components/layout/user-menu";
 import {ThemeToggle} from "@/components/theme-toggle";
-import {useWsConnection} from "@/hooks/use-ticker";
 import {cn} from "@/lib/utils";
 import React from "react";
 
@@ -17,8 +16,6 @@ interface HeaderProps {
 }
 
 export function Header({title, subtitle, children, className}: HeaderProps) {
-    const connected = useWsConnection();
-
     return (
         <header
             className={cn(
@@ -30,7 +27,6 @@ export function Header({title, subtitle, children, className}: HeaderProps) {
         >
             <SidebarTrigger className="-ml-1"/>
             <Separator orientation="vertical" className="mr-1 h-4"/>
-
             <div className="flex min-w-0 flex-1 items-center gap-3">
                 {title ? (
                     <div className="min-w-0">
@@ -46,7 +42,6 @@ export function Header({title, subtitle, children, className}: HeaderProps) {
                 ) : null}
                 {children}
             </div>
-
             <div className="flex items-center gap-1.5 sm:gap-2">
                 <UserMenu/>
                 <ThemeToggle/>

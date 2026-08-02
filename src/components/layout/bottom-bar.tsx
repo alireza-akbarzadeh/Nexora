@@ -29,19 +29,19 @@ export function BottomBar({
                               links = DEFAULT_LINKS,
                               className,
                           }: BottomBarProps) {
-    // Duplicate the list so the marquee loops seamlessly (scrolls exactly
-    // one copy's width, then resets with no visible seam).
+
     const marqueeItems = [...tickers, ...tickers];
 
     return (
         <footer
             className={cn(
-                "sticky bottom-0 z-30 flex h-14 shrink-0 items-center gap-2 border-t",
-                "border-b border-border bg-card/60 px-4 backdrop-blur-md",
-                "supports-backdrop-filter:bg-card/40",
+                "sticky bottom-0 z-30 flex h-14 shrink-0 items-center gap-2 border-t border-b-12 border-bg-sidebar",
+                " border-border bg-card/60 backdrop-blur-md",
+                "supports-backdrop-filter:bg-card/40 px-4",
                 className,
             )}
         >
+
             {/* Connection status */}
             <div className="flex shrink-0 items-center gap-1.5">
                 {connected ? (
@@ -59,12 +59,12 @@ export function BottomBar({
             {/* Scrolling ticker marquee */}
             <div className="group relative min-w-0 flex-1 overflow-hidden">
                 <div
-                    className="pointer-events-none absolute inset-y-0 left-0 z-10 w-8 bg-gradient-to-r from-card to-transparent"/>
+                    className="pointer-events-none absolute inset-y-0 left-0 z-10 w-8 bg-linear-to-r from-card to-transparent"/>
                 <div
-                    className="pointer-events-none absolute inset-y-0 right-0 z-10 w-8 bg-gradient-to-l from-card to-transparent"/>
+                    className="pointer-events-none absolute inset-y-0 right-0 z-10 w-8 bg-linear-to-l from-card to-transparent"/>
 
                 <div
-                    className="animate-marquee flex w-max items-center gap-6 group-hover:[animation-play-state:paused]">
+                    className="animate-marquee flex w-max items-center gap-6 group-hover:paused">
                     {marqueeItems.map((t, i) => (
                         <TickerEntry key={`${t.symbol}-${i}`} item={t}/>
                     ))}
