@@ -25,6 +25,7 @@ function normalizeTicker(symbol: string, ticker: CcxtTicker): Ticker {
     high: ticker.high ?? 0,
     low: ticker.low ?? 0,
     volume: ticker.baseVolume ?? 0,
+    quoteVolume: ticker.quoteVolume ?? 0,
     change: ticker.change ?? 0,
     percentage: ticker.percentage ?? 0,
     timestamp: ticker.timestamp ?? Date.now(),
@@ -84,6 +85,26 @@ export async function fetchPublicTicker(
   const exchange = createPublicExchange(exchangeId);
   const ticker = await exchange.fetchTicker(symbol);
   return normalizeTicker(symbol, ticker);
+}
+
+export async function fetchPublicTickers(
+  exchangeId: ExchangeId = "binance",
+  limit = 100,
+): Promise<Ticker[]> {
+  const exchange = createPublicExchange(exchangeId);
+  await exchange.loadMarkets();
+  const tickers = await exchange.fetchTickers();
+
+  return Object.entries(tickers)
+    .filter(([symbol]) => {
+      const market = exchange.markets[symbol];
+      return Boolean(
+        market?.active && market.quote === "USDT" && market.spot !== false,
+      );
+    })
+    .map(([symbol, ticker]) => normalizeTicker(symbol, ticker))
+    .sort((a, b) => b.quoteVolume - a.quoteVolume)
+    .slice(0, limit);
 }
 
 export async function fetchPublicOHLCV(
@@ -192,6 +213,36 @@ export async function placeUserOrder(
     filled: order.filled ?? 0,
     remaining: order.remaining ?? 0,
     status: order.status ?? "open",
+    timestamp: order.timestamp ?? Date.now(),
+  };
+}
+
+export async function cancelUserOrder(
+  userId: string,
+  input: {
+    orderId: string;
+    symbol: string;
+    exchangeId?: ExchangeId;
+  },
+): Promise<ExchangeOrder> {
+  const exchangeId = input.exchangeId ?? "binance";
+  const exchange = await getUserExchange(userId, exchangeId);
+  if (!exchange) {
+    throw new Error("No active exchange connection found");
+  }
+
+  const order = await exchange.cancelOrder(input.orderId, input.symbol);
+
+  return {
+    id: String(order.id ?? input.orderId),
+    symbol: String(order.symbol ?? input.symbol),
+    type: order.type ?? "limit",
+    side: (order.side as "buy" | "sell") ?? "buy",
+    price: order.price ?? 0,
+    amount: order.amount ?? 0,
+    filled: order.filled ?? 0,
+    remaining: order.remaining ?? 0,
+    status: order.status ?? "canceled",
     timestamp: order.timestamp ?? Date.now(),
   };
 }

@@ -10,6 +10,7 @@ import {
   Radio,
   Wallet,
 } from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
 
 import { MarketOverview } from "@/components/trading/market-overview";
 import { Badge } from "@/components/ui/badge";
@@ -24,34 +25,84 @@ import {
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { useWsConnection } from "@/hooks/use-ticker";
-import { cn } from "@/lib/utils";
-
-const quickStartSteps = [
-  {
-    id: 1,
-    title: "Create your Nexora account",
-    description: "Sign up and verify your email to get started.",
-    done: true,
-    href: "/register",
-  },
-  {
-    id: 2,
-    title: "Connect Binance API keys",
-    description: "Add read/trade keys securely in Settings.",
-    done: false,
-    href: "/settings",
-  },
-  {
-    id: 3,
-    title: "Open the trading terminal",
-    description: "Trade BTC, ETH, and more with live market data.",
-    done: false,
-    href: "/trade/BTCUSDT",
-  },
-];
+import { cn, formatPrice } from "@/lib/utils";
+import type { Balance, ExchangeConnectionSummary } from "@/types/exchange";
 
 export function DashboardOverview() {
   const connected = useWsConnection();
+
+  const connectionsQuery = useQuery({
+    queryKey: ["exchange-connections"],
+    queryFn: async () => {
+      const response = await fetch("/api/exchange/connections");
+      if (!response.ok) throw new Error("Failed to load connections");
+      return response.json() as Promise<{
+        connections: ExchangeConnectionSummary[];
+      }>;
+    },
+  });
+
+  const connections = connectionsQuery.data?.connections ?? [];
+  const hasActiveBinance = connections.some(
+    (connection) => connection.exchange === "binance" && connection.isActive,
+  );
+  const activeConnections = connections.filter((connection) => connection.isActive);
+
+  const balanceQuery = useQuery({
+    queryKey: ["exchange-balance", "binance"],
+    queryFn: async () => {
+      const response = await fetch("/api/exchange/balance?exchange=binance");
+      if (!response.ok) throw new Error("Failed to fetch balances");
+      return response.json() as Promise<{ balances: Balance[] }>;
+    },
+    enabled: hasActiveBinance,
+  });
+
+  const usdtBalance = balanceQuery.data?.balances.find(
+    (balance) => balance.currency === "USDT",
+  );
+
+  const portfolioValue = hasActiveBinance
+    ? usdtBalance
+      ? `${formatPrice(usdtBalance.free, 2)} USDT`
+      : balanceQuery.isLoading
+        ? "…"
+        : "0.00 USDT"
+    : "—";
+
+  const apiKeysValue =
+    activeConnections.length > 0
+      ? activeConnections
+          .map((connection) => connection.exchange)
+          .map((name) => name.charAt(0).toUpperCase() + name.slice(1))
+          .join(", ")
+      : connectionsQuery.isLoading
+        ? "…"
+        : "Not connected";
+
+  const quickStartSteps = [
+    {
+      id: 1,
+      title: "Create your Nexora account",
+      description: "Sign up and verify your email to get started.",
+      done: true,
+      href: "/dashboard",
+    },
+    {
+      id: 2,
+      title: "Connect Binance API keys",
+      description: "Add read/trade keys securely in Settings.",
+      done: hasActiveBinance,
+      href: "/settings",
+    },
+    {
+      id: 3,
+      title: "Open the trading terminal",
+      description: "Trade BTC, ETH, and more with live market data.",
+      done: false,
+      href: "/trade/BTCUSDT",
+    },
+  ];
 
   return (
     <div className="flex flex-1 flex-col gap-6 p-4 md:p-6">
@@ -71,17 +122,26 @@ export function DashboardOverview() {
         />
         <StatCard
           title="Portfolio"
-          value="—"
-          description="Connect exchange to view balances"
+          value={portfolioValue}
+          description={
+            hasActiveBinance
+              ? "USDT free balance"
+              : "Connect exchange to view balances"
+          }
           icon={Wallet}
           href="/portfolio"
         />
         <StatCard
           title="API Keys"
-          value="Not connected"
-          description="Secure encrypted storage"
+          value={apiKeysValue}
+          description={
+            activeConnections.length > 0
+              ? "Active encrypted connection"
+              : "Secure encrypted storage"
+          }
           icon={KeyRound}
           href="/settings"
+          accent={activeConnections.length > 0 ? "text-profit" : undefined}
         />
       </section>
 
@@ -173,9 +233,9 @@ export function DashboardOverview() {
               className="mt-4"
               size="sm"
               variant="outline"
-              render={<Link href="/settings" />}
+              render={<Link href={hasActiveBinance ? "/portfolio" : "/settings"} />}
             >
-              Go to Settings
+              {hasActiveBinance ? "View Portfolio" : "Go to Settings"}
             </Button>
           </div>
         </CardContent>

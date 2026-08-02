@@ -15,8 +15,9 @@ Crypto trading app: **Next.js 16** (App Router) + **React 19** + **TypeScript**,
 | Auth | `src/lib/auth`, `src/proxy.ts`, `src/lib/api/auth-guard.ts` |
 | DB | `src/lib/db` |
 | Exchange | `src/lib/exchange`, `src/app/api/exchange`, `src/app/api/market` |
-| UI | `src/components/{ui,trading,landing,layout,dashboard,forms}` |
+| UI | `src/components/{ui,trading,landing,layout,dashboard,forms,notify}` |
 | Client state | `src/stores` (Zustand) |
+| Notify | `src/lib/notify` — `notify()` / `notify.order()` toasts + sounds |
 | Env | `src/lib/env.ts` (Zod) |
 
 ## Conventions
@@ -25,4 +26,5 @@ Crypto trading app: **Next.js 16** (App Router) + **React 19** + **TypeScript**,
 - Server secrets only through `getEnv()` — never read `process.env` ad hoc in feature code
 - API handlers: thin — validate with Zod, auth with `requireSession`, logic in `src/lib/**`
 - Prefer existing UI primitives under `src/components/ui` over new one-offs
+- Client feedback: use `notify` from `@/lib/notify` (see `.cursor/skills/notify`) — not ad-hoc toasts
 - After substantive code edits, run `graphify update .` (see graphify rule)

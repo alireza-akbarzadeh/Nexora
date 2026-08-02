@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMemo, useState } from "react";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -15,16 +15,25 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { useTicker } from "@/hooks/use-ticker";
+import { notify } from "@/lib/notify";
+import { cn, formatPrice } from "@/lib/utils";
 import { useTradingStore } from "@/stores/trading-store";
-import { cn } from "@/lib/utils";
+import type { Balance } from "@/types/exchange";
 
 interface OrderFormProps {
   symbol: string;
 }
 
+const SIZE_PERCENTS = [25, 50, 75, 100] as const;
+
 export function OrderForm({ symbol }: OrderFormProps) {
+  const queryClient = useQueryClient();
   const [confirmOpen, setConfirmOpen] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const { ticker } = useTicker(symbol);
+
+  const [baseAsset = "", quoteAsset = "USDT"] = symbol.split("/");
 
   const {
     orderSide,
@@ -53,6 +62,35 @@ export function OrderForm({ symbol }: OrderFormProps) {
     (connection) => connection.exchange === "binance" && connection.isActive,
   );
 
+  const balanceQuery = useQuery({
+    queryKey: ["exchange-balance", "binance"],
+    queryFn: async () => {
+      const response = await fetch("/api/exchange/balance?exchange=binance");
+      if (!response.ok) throw new Error("Failed to fetch balances");
+      return response.json() as Promise<{ balances: Balance[] }>;
+    },
+    enabled: hasConnection,
+  });
+
+  const availableBalance = useMemo(() => {
+    const balances = balanceQuery.data?.balances ?? [];
+    const currency = orderSide === "buy" ? quoteAsset : baseAsset;
+    return balances.find((balance) => balance.currency === currency)?.free ?? 0;
+  }, [balanceQuery.data?.balances, orderSide, quoteAsset, baseAsset]);
+
+  const referencePrice = useMemo(() => {
+    if (orderType === "limit" && Number(orderPrice) > 0) {
+      return Number(orderPrice);
+    }
+    return ticker?.last ?? ticker?.ask ?? ticker?.bid ?? 0;
+  }, [orderType, orderPrice, ticker]);
+
+  const estimatedTotal = useMemo(() => {
+    const amount = Number(orderAmount);
+    if (!amount || amount <= 0 || !referencePrice) return null;
+    return amount * referencePrice;
+  }, [orderAmount, referencePrice]);
+
   const placeOrderMutation = useMutation({
     mutationFn: async () => {
       const response = await fetch("/api/exchange/orders", {
@@ -75,18 +113,49 @@ export function OrderForm({ symbol }: OrderFormProps) {
       return data;
     },
     onSuccess: () => {
+      const placedAmount = Number(orderAmount);
+      const placedPrice =
+        orderType === "limit" ? Number(orderPrice) : undefined;
       setConfirmOpen(false);
       resetOrderForm();
       setError(null);
+      void queryClient.invalidateQueries({ queryKey: ["exchange-orders"] });
+      void queryClient.invalidateQueries({ queryKey: ["exchange-balance"] });
+      notify.order({
+        side: orderSide,
+        symbol,
+        amount: placedAmount,
+        type: orderType,
+        price: placedPrice,
+      });
     },
     onError: (mutationError) => {
-      setError(
+      const message =
         mutationError instanceof Error
           ? mutationError.message
-          : "Failed to place order",
-      );
+          : "Failed to place order";
+      setError(message);
+      notify.error("Order failed", { description: message });
     },
   });
+
+  function applySizePercent(percent: number) {
+    if (availableBalance <= 0) return;
+
+    if (orderSide === "buy") {
+      const price = referencePrice;
+      if (!price || price <= 0) {
+        setError("Wait for a live price before using size helpers.");
+        return;
+      }
+      const quoteToSpend = availableBalance * (percent / 100);
+      const amount = quoteToSpend / price;
+      setOrderAmount(trimAmount(amount));
+      return;
+    }
+
+    setOrderAmount(trimAmount(availableBalance * (percent / 100)));
+  }
 
   function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
@@ -144,6 +213,16 @@ export function OrderForm({ symbol }: OrderFormProps) {
           </Button>
         </div>
 
+        {hasConnection ? (
+          <p className="text-xs text-muted-foreground">
+            Available:{" "}
+            <span className="font-tabular text-foreground">
+              {formatPrice(availableBalance, orderSide === "buy" ? 2 : 6)}{" "}
+              {orderSide === "buy" ? quoteAsset : baseAsset}
+            </span>
+          </p>
+        ) : null}
+
         {orderType === "limit" ? (
           <div className="space-y-2">
             <Label htmlFor="price">Price (USDT)</Label>
@@ -159,7 +238,7 @@ export function OrderForm({ symbol }: OrderFormProps) {
         ) : null}
 
         <div className="space-y-2">
-          <Label htmlFor="amount">Amount</Label>
+          <Label htmlFor="amount">Amount ({baseAsset})</Label>
           <Input
             id="amount"
             type="number"
@@ -168,7 +247,33 @@ export function OrderForm({ symbol }: OrderFormProps) {
             onChange={(event) => setOrderAmount(event.target.value)}
             placeholder="0.00"
           />
+          {hasConnection ? (
+            <div className="grid grid-cols-4 gap-1.5">
+              {SIZE_PERCENTS.map((percent) => (
+                <Button
+                  key={percent}
+                  type="button"
+                  size="sm"
+                  variant="outline"
+                  className="h-7 text-[11px]"
+                  onClick={() => applySizePercent(percent)}
+                >
+                  {percent === 100 ? "Max" : `${percent}%`}
+                </Button>
+              ))}
+            </div>
+          ) : null}
         </div>
+
+        {estimatedTotal !== null ? (
+          <p className="text-xs text-muted-foreground">
+            Est. total:{" "}
+            <span className="font-tabular text-foreground">
+              {formatPrice(estimatedTotal, 2)} {quoteAsset}
+            </span>
+            {orderType === "market" ? " (approx)" : null}
+          </p>
+        ) : null}
 
         {!hasConnection ? (
           <p className="text-xs text-muted-foreground">
@@ -187,7 +292,7 @@ export function OrderForm({ symbol }: OrderFormProps) {
               : "bg-sell text-white hover:bg-sell/90",
           )}
         >
-          {orderSide === "buy" ? "Buy" : "Sell"} {symbol.split("/")[0]}
+          {orderSide === "buy" ? "Buy" : "Sell"} {baseAsset}
         </Button>
       </form>
 
@@ -213,11 +318,19 @@ export function OrderForm({ symbol }: OrderFormProps) {
               {orderType.toUpperCase()}
             </p>
             <p>
-              <span className="text-muted-foreground">Amount:</span> {orderAmount}
+              <span className="text-muted-foreground">Amount:</span> {orderAmount}{" "}
+              {baseAsset}
             </p>
             {orderType === "limit" ? (
               <p>
-                <span className="text-muted-foreground">Price:</span> {orderPrice}
+                <span className="text-muted-foreground">Price:</span> {orderPrice}{" "}
+                {quoteAsset}
+              </p>
+            ) : null}
+            {estimatedTotal !== null ? (
+              <p>
+                <span className="text-muted-foreground">Est. total:</span>{" "}
+                {formatPrice(estimatedTotal, 2)} {quoteAsset}
               </p>
             ) : null}
           </div>
@@ -238,4 +351,9 @@ export function OrderForm({ symbol }: OrderFormProps) {
       </Dialog>
     </>
   );
+}
+
+function trimAmount(value: number): string {
+  if (!Number.isFinite(value) || value <= 0) return "";
+  return value.toFixed(8).replace(/\.?0+$/, "");
 }

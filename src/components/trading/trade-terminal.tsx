@@ -3,6 +3,7 @@
 import { useQuery } from "@tanstack/react-query";
 
 import { Header } from "@/components/layout/header";
+import { OpenOrdersPanel } from "@/components/trading/open-orders-panel";
 import { OrderBookPanel } from "@/components/trading/order-book-panel";
 import { OrderForm } from "@/components/trading/order-form";
 import { TickerBar } from "@/components/trading/ticker-bar";
@@ -73,10 +74,10 @@ export function TradeTerminal({ symbolSlug }: TradeTerminalProps) {
 
         <Card className="overflow-hidden">
           <CardHeader className="border-b border-border py-3">
-            <CardTitle className="text-sm">Recent Activity</CardTitle>
+            <CardTitle className="text-sm">Open Orders</CardTitle>
           </CardHeader>
-          <CardContent className="flex h-[220px] items-center justify-center p-6 text-sm text-muted-foreground">
-            Trade history and fills will appear here in a future release.
+          <CardContent className="h-[220px] p-0">
+            <OpenOrdersPanel symbol={symbol} />
           </CardContent>
         </Card>
       </main>

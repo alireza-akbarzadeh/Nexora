@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useState } from "react";
 
 import { NetworkStatusToast } from "@/components/network-status-toast";
+import { NotifyProvider } from "@/components/notify/notify-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
 export function Providers({ children }: { children: React.ReactNode }) {
@@ -22,8 +23,10 @@ export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider delay={0}>
-        {children}
-        <NetworkStatusToast />
+        <NotifyProvider>
+          {children}
+          <NetworkStatusToast />
+        </NotifyProvider>
       </TooltipProvider>
     </QueryClientProvider>
   );

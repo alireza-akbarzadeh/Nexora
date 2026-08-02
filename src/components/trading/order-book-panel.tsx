@@ -3,12 +3,21 @@
 import type { OrderBook } from "@/types/exchange";
 import { formatPrice } from "@/lib/utils";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useTradingStore } from "@/stores/trading-store";
 
 interface OrderBookPanelProps {
   orderBook: OrderBook | null;
 }
 
 export function OrderBookPanel({ orderBook }: OrderBookPanelProps) {
+  const setOrderPrice = useTradingStore((state) => state.setOrderPrice);
+  const setOrderType = useTradingStore((state) => state.setOrderType);
+
+  function handlePriceClick(price: number) {
+    setOrderType("limit");
+    setOrderPrice(String(price));
+  }
+
   if (!orderBook) {
     return (
       <div className="flex h-full flex-col gap-2 p-3">
@@ -25,6 +34,11 @@ export function OrderBookPanel({ orderBook }: OrderBookPanelProps) {
     1,
   );
 
+  const bestAsk = orderBook.asks[0]?.price;
+  const bestBid = orderBook.bids[0]?.price;
+  const spread =
+    bestAsk != null && bestBid != null ? bestAsk - bestBid : null;
+
   return (
     <div className="flex h-full flex-col text-xs">
       <div className="grid grid-cols-3 border-b border-border px-3 py-2 text-muted-foreground">
@@ -34,19 +48,30 @@ export function OrderBookPanel({ orderBook }: OrderBookPanelProps) {
       </div>
 
       <div className="flex flex-1 flex-col-reverse overflow-y-auto px-1 py-2 scrollbar-thin">
-        {orderBook.asks.slice(0, 12).reverse().map((level, index) => (
-          <OrderBookRow
-            key={`ask-${index}`}
-            price={level.price}
-            amount={level.amount}
-            maxTotal={maxTotal}
-            side="sell"
-          />
-        ))}
+        {orderBook.asks
+          .slice(0, 12)
+          .reverse()
+          .map((level, index) => (
+            <OrderBookRow
+              key={`ask-${index}`}
+              price={level.price}
+              amount={level.amount}
+              maxTotal={maxTotal}
+              side="sell"
+              onPriceClick={handlePriceClick}
+            />
+          ))}
       </div>
 
       <div className="border-y border-border px-3 py-2 text-center font-tabular text-sm font-semibold">
-        Spread
+        {spread != null ? (
+          <span className="text-muted-foreground">
+            Spread{" "}
+            <span className="text-foreground">{formatPrice(spread, 2)}</span>
+          </span>
+        ) : (
+          "Spread"
+        )}
       </div>
 
       <div className="flex-1 overflow-y-auto px-1 py-2 scrollbar-thin">
@@ -57,6 +82,7 @@ export function OrderBookPanel({ orderBook }: OrderBookPanelProps) {
             amount={level.amount}
             maxTotal={maxTotal}
             side="buy"
+            onPriceClick={handlePriceClick}
           />
         ))}
       </div>
@@ -69,17 +95,23 @@ function OrderBookRow({
   amount,
   maxTotal,
   side,
+  onPriceClick,
 }: {
   price: number;
   amount: number;
   maxTotal: number;
   side: "buy" | "sell";
+  onPriceClick: (price: number) => void;
 }) {
   const width = `${(amount / maxTotal) * 100}%`;
   const total = price * amount;
 
   return (
-    <div className="relative grid grid-cols-3 px-2 py-0.5 font-tabular">
+    <button
+      type="button"
+      className="relative grid w-full grid-cols-3 px-2 py-0.5 font-tabular transition-colors hover:bg-muted/40"
+      onClick={() => onPriceClick(price)}
+    >
       <div
         className="absolute inset-y-0 right-0 opacity-20"
         style={{
@@ -94,6 +126,6 @@ function OrderBookRow({
       <span className="relative text-right text-muted-foreground">
         {formatPrice(total, 2)}
       </span>
-    </div>
+    </button>
   );
 }

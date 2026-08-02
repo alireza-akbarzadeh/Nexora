@@ -12,6 +12,7 @@ interface BinanceTickerMessage {
   h: string;
   l: string;
   v: string;
+  q: string;
   p: string;
   P: string;
   E: number;
@@ -177,6 +178,7 @@ class SignalingManager {
       high: Number(payload.h),
       low: Number(payload.l),
       volume: Number(payload.v),
+      quoteVolume: Number(payload.q ?? 0),
       change: Number(payload.p),
       percentage: Number(payload.P),
       timestamp: payload.E,

@@ -49,6 +49,8 @@ function Button({
   loadingText,
   children,
   disabled,
+  nativeButton,
+  render,
   ...props
 }: ButtonPrimitive.Props &
   VariantProps<typeof buttonVariants> & {
@@ -56,6 +58,8 @@ function Button({
     loadingText?: string
   }) {
   const label = loadingText ?? (typeof children === "string" ? children : "Loading")
+  // Base UI defaults nativeButton=true; composition via `render` (e.g. Link) needs false.
+  const resolvedNativeButton = nativeButton ?? (render != null ? false : undefined)
 
   return (
     <ButtonPrimitive
@@ -63,6 +67,8 @@ function Button({
       data-loading={loading ? "" : undefined}
       aria-busy={loading || undefined}
       disabled={disabled || loading}
+      nativeButton={resolvedNativeButton}
+      render={render}
       className={cn(
         buttonVariants({ variant, size, className }),
         loading && "pointer-events-none opacity-90",

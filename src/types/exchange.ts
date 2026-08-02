@@ -8,6 +8,7 @@ export interface Ticker {
   high: number;
   low: number;
   volume: number;
+  quoteVolume: number;
   change: number;
   percentage: number;
   timestamp: number;

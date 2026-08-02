@@ -3,7 +3,11 @@ import { z } from "zod";
 
 import { jsonError, requireSession } from "@/lib/api/auth-guard";
 import { isSupportedExchange } from "@/lib/exchange/client";
-import { fetchUserOrders, placeUserOrder } from "@/lib/exchange/service";
+import {
+  cancelUserOrder,
+  fetchUserOrders,
+  placeUserOrder,
+} from "@/lib/exchange/service";
 
 const orderSchema = z.object({
   symbol: z.string().min(1),
@@ -11,6 +15,12 @@ const orderSchema = z.object({
   type: z.enum(["market", "limit"]),
   amount: z.number().positive(),
   price: z.number().positive().optional(),
+  exchange: z.enum(["binance", "coinbase"]).default("binance"),
+});
+
+const cancelSchema = z.object({
+  orderId: z.string().min(1),
+  symbol: z.string().min(1),
   exchange: z.enum(["binance", "coinbase"]).default("binance"),
 });
 
@@ -64,6 +74,37 @@ export async function POST(request: Request) {
     return NextResponse.json({ order: created }, { status: 201 });
   } catch (error) {
     const message = error instanceof Error ? error.message : "Failed to place order";
+    return jsonError(message, 500);
+  }
+}
+
+export async function DELETE(request: Request) {
+  const { session, response } = await requireSession();
+  if (!session) return response!;
+
+  const body = await request.json();
+  const parsed = cancelSchema.safeParse(body);
+
+  if (!parsed.success) {
+    return jsonError(parsed.error.issues[0]?.message ?? "Invalid cancel payload");
+  }
+
+  const { orderId, symbol, exchange } = parsed.data;
+
+  if (!isSupportedExchange(exchange)) {
+    return jsonError("Unsupported exchange", 400);
+  }
+
+  try {
+    const cancelled = await cancelUserOrder(session.user.id, {
+      orderId,
+      symbol,
+      exchangeId: exchange,
+    });
+    return NextResponse.json({ order: cancelled });
+  } catch (error) {
+    const message =
+      error instanceof Error ? error.message : "Failed to cancel order";
     return jsonError(message, 500);
   }
 }

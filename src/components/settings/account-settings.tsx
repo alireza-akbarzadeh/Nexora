@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 import { FormTextField } from "@/components/forms/form-text-field";
 import { authClient } from "@/lib/auth/client";
+import { notify } from "@/lib/notify";
 import {
   updateProfileSchema,
   type UpdateProfileFormValues,
@@ -44,6 +45,7 @@ export function AccountSettings() {
     }
 
     setMessage("Profile updated.");
+    notify.success("Profile updated");
     await refetch();
   }
 

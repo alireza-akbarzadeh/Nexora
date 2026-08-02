@@ -9,7 +9,9 @@ import { FormPasswordField } from "@/components/forms/form-password-field";
 import { FormTextField } from "@/components/forms/form-text-field";
 import { Header } from "@/components/layout/header";
 import { AccountSettings } from "@/components/settings/account-settings";
+import { NotificationSettings } from "@/components/settings/notification-settings";
 import { SecuritySettings } from "@/components/settings/security-settings";
+import { notify } from "@/lib/notify";
 import {
   exchangeConnectionSchema,
   type ExchangeConnectionFormValues,
@@ -77,15 +79,19 @@ export default function SettingsPage() {
       });
       setMessage("Exchange connected successfully.");
       setError(null);
+      notify.success("Exchange connected", {
+        description: "API keys verified and stored encrypted",
+      });
       queryClient.invalidateQueries({ queryKey: ["exchange-connections"] });
     },
     onError: (mutationError) => {
       setMessage(null);
-      setError(
+      const message =
         mutationError instanceof Error
           ? mutationError.message
-          : "Failed to connect exchange",
-      );
+          : "Failed to connect exchange";
+      setError(message);
+      notify.error("Connection failed", { description: message });
     },
   });
 
@@ -118,6 +124,7 @@ export default function SettingsPage() {
       <main className="grid flex-1 gap-6 p-6 xl:grid-cols-2">
         <AccountSettings />
         <SecuritySettings />
+        <NotificationSettings />
 
         <Card>
           <CardHeader>
