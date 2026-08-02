@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
+  ArrowLeftRight,
   BarChart3,
   LayoutDashboard,
   LineChart,
@@ -29,6 +30,12 @@ import {
 
 const mainNav = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard, match: (path: string) => path === "/dashboard" },
+  {
+    href: "/buy",
+    label: "Buy & Sell",
+    icon: ArrowLeftRight,
+    match: (path: string) => path.startsWith("/buy"),
+  },
   {
     href: "/trade/BTCUSDT",
     label: "Trade",

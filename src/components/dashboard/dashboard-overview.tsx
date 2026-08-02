@@ -97,10 +97,10 @@ export function DashboardOverview() {
     },
     {
       id: 3,
-      title: "Open the trading terminal",
-      description: "Trade BTC, ETH, and more with live market data.",
+      title: "Buy crypto instantly",
+      description: "Simple Buy & Sell convert, or open the full terminal.",
       done: false,
-      href: "/trade/BTCUSDT",
+      href: "/buy",
     },
   ];
 
@@ -198,15 +198,15 @@ export function DashboardOverview() {
             ))}
           </CardContent>
           <CardFooter className="flex flex-col gap-2 border-t border-border/60 bg-muted/20">
-            <Button className="w-full" render={<Link href="/trade/BTCUSDT" />}>
-              Open Trading Terminal
+            <Button className="w-full" render={<Link href="/buy" />}>
+              Buy & Sell Crypto
             </Button>
             <Button
               variant="outline"
               className="w-full"
-              render={<Link href="/settings" />}
+              render={<Link href="/trade/BTCUSDT" />}
             >
-              Connect Exchange
+              Open Trading Terminal
             </Button>
           </CardFooter>
         </Card>

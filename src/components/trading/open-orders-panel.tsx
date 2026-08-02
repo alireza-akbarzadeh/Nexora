@@ -78,15 +78,16 @@ export function OpenOrdersPanel({ symbol }: OpenOrdersPanelProps) {
 
   if (orders.length === 0) {
     return (
-      <div className="flex h-full items-center justify-center p-6 text-sm text-muted-foreground">
-        No open orders for {symbol}
+      <div className="flex h-full flex-col items-center justify-center gap-1 p-6 text-center">
+        <p className="text-sm text-muted-foreground">No open orders</p>
+        <p className="text-[11px] text-muted-foreground/70">{symbol}</p>
       </div>
     );
   }
 
   return (
     <div className="h-full overflow-y-auto scrollbar-thin">
-      <div className="grid grid-cols-[1fr_auto_auto_auto_auto] gap-2 border-b border-border px-3 py-2 text-[11px] text-muted-foreground">
+      <div className="grid grid-cols-[1fr_auto_auto_auto_auto] gap-2 border-b border-border px-3 py-2 text-[10px] font-medium uppercase tracking-[0.12em] text-muted-foreground">
         <span>Side</span>
         <span className="text-right">Type</span>
         <span className="text-right">Amount</span>

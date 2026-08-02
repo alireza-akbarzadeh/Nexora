@@ -1,11 +1,20 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo } from "react";
 
+import { getCoinBySlug } from "@/lib/coins/catalog";
 import { ASSETS } from "@/lib/landing/constants";
 import type { Asset } from "@/lib/landing/types";
 
 import { Sparkline } from "./shared/sparkline";
+
+function assetHref(asset: Asset) {
+  const coin =
+    getCoinBySlug(asset.name.toLowerCase()) ??
+    getCoinBySlug(asset.sym.toLowerCase());
+  return coin ? `/price/${coin.slug}` : "/#markets";
+}
 
 function AssetCard({ asset }: { asset: Asset }) {
   const spark = useMemo(() => {
@@ -17,7 +26,10 @@ function AssetCard({ asset }: { asset: Asset }) {
   }, [asset.ch]);
 
   return (
-    <div className="card-elevated min-w-[240px] shrink-0 rounded-2xl p-4 transition-transform hover:-translate-y-1">
+    <Link
+      href={assetHref(asset)}
+      className="card-elevated block min-w-[240px] shrink-0 rounded-2xl p-4 transition-transform hover:-translate-y-1"
+    >
       <div className="flex items-center gap-3">
         <div
           className="flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold"
@@ -44,7 +56,7 @@ function AssetCard({ asset }: { asset: Asset }) {
       <div className="mt-3">
         <Sparkline points={spark} up={asset.ch > 0} />
       </div>
-    </div>
+    </Link>
   );
 }
 

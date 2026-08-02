@@ -11,11 +11,27 @@ const exactPublicRoutes = new Set([
   "/two-factor",
 ]);
 
+/** Public paths that stay accessible while authenticated (no dashboard bounce). */
+const publicBrowsePrefixes = ["/price"] as const;
+
 function isPublicPath(pathname: string) {
   if (exactPublicRoutes.has(pathname)) return true;
+  if (publicBrowsePrefixes.some((prefix) => pathname.startsWith(prefix))) {
+    return true;
+  }
   return [...exactPublicRoutes].some(
     (route) => route !== "/" && pathname.startsWith(`${route}/`),
   );
+}
+
+function shouldBounceAuthedFromPublic(pathname: string) {
+  if (pathname === "/" || pathname === "/two-factor" || pathname === "/reset-password") {
+    return false;
+  }
+  if (publicBrowsePrefixes.some((prefix) => pathname.startsWith(prefix))) {
+    return false;
+  }
+  return true;
 }
 
 export async function proxy(request: NextRequest) {
@@ -43,13 +59,7 @@ export async function proxy(request: NextRequest) {
     return NextResponse.redirect(loginUrl);
   }
 
-  if (
-    session &&
-    publicRoute &&
-    pathname !== "/" &&
-    pathname !== "/two-factor" &&
-    pathname !== "/reset-password"
-  ) {
+  if (session && publicRoute && shouldBounceAuthedFromPublic(pathname)) {
     return NextResponse.redirect(new URL("/dashboard", request.url));
   }
 

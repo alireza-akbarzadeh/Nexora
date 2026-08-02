@@ -41,13 +41,13 @@ export function OrderBookPanel({ orderBook }: OrderBookPanelProps) {
 
   return (
     <div className="flex h-full flex-col text-xs">
-      <div className="grid grid-cols-3 border-b border-border px-3 py-2 text-muted-foreground">
+      <div className="grid grid-cols-3 gap-1 border-b border-border/80 px-3 py-2 text-[10px] font-medium uppercase tracking-[0.12em] text-muted-foreground">
         <span>Price</span>
         <span className="text-right">Amount</span>
         <span className="text-right">Total</span>
       </div>
 
-      <div className="flex flex-1 flex-col-reverse overflow-y-auto px-1 py-2 scrollbar-thin">
+      <div className="flex flex-1 flex-col-reverse overflow-y-auto px-1 py-1.5 scrollbar-thin">
         {orderBook.asks
           .slice(0, 12)
           .reverse()
@@ -63,18 +63,18 @@ export function OrderBookPanel({ orderBook }: OrderBookPanelProps) {
           ))}
       </div>
 
-      <div className="border-y border-border px-3 py-2 text-center font-tabular text-sm font-semibold">
+      <div className="border-y border-border bg-muted/40 px-3 py-2 text-center font-tabular text-sm font-semibold">
         {spread != null ? (
           <span className="text-muted-foreground">
             Spread{" "}
             <span className="text-foreground">{formatPrice(spread, 2)}</span>
           </span>
         ) : (
-          "Spread"
+          <span className="text-muted-foreground">Spread</span>
         )}
       </div>
 
-      <div className="flex-1 overflow-y-auto px-1 py-2 scrollbar-thin">
+      <div className="flex-1 overflow-y-auto px-1 py-1.5 scrollbar-thin">
         {orderBook.bids.slice(0, 12).map((level, index) => (
           <OrderBookRow
             key={`bid-${index}`}
@@ -109,20 +109,26 @@ function OrderBookRow({
   return (
     <button
       type="button"
-      className="relative grid w-full grid-cols-3 px-2 py-0.5 font-tabular transition-colors hover:bg-muted/40"
+      className="relative grid w-full grid-cols-3 gap-1 rounded-sm px-2 py-1 font-tabular transition-colors hover:bg-accent/60"
       onClick={() => onPriceClick(price)}
     >
       <div
-        className="absolute inset-y-0 right-0 opacity-20"
+        className="pointer-events-none absolute inset-y-0.5 right-0 rounded-sm opacity-25"
         style={{
           width,
-          backgroundColor: side === "buy" ? "var(--buy)" : "var(--sell)",
+          backgroundColor: side === "buy" ? "var(--profit)" : "var(--sell)",
         }}
       />
-      <span className={side === "buy" ? "text-buy" : "text-sell"}>
+      <span
+        className={
+          side === "buy" ? "relative text-profit" : "relative text-sell"
+        }
+      >
         {formatPrice(price, 2)}
       </span>
-      <span className="relative text-right">{formatPrice(amount, 4)}</span>
+      <span className="relative text-right text-foreground/90">
+        {formatPrice(amount, 4)}
+      </span>
       <span className="relative text-right text-muted-foreground">
         {formatPrice(total, 2)}
       </span>

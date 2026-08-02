@@ -181,41 +181,57 @@ export function OrderForm({ symbol }: OrderFormProps) {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="flex h-full flex-col gap-4 p-4">
+      <form onSubmit={handleSubmit} className="flex h-full flex-col gap-3 p-3">
         <Tabs
           value={orderSide}
           onValueChange={(value) => setOrderSide(value as "buy" | "sell")}
         >
-          <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="buy" className="data-active:text-buy">
+          <TabsList className="grid h-9 w-full grid-cols-2 bg-muted">
+            <TabsTrigger
+              value="buy"
+              className="data-active:bg-profit/15 data-active:text-profit"
+            >
               Buy
             </TabsTrigger>
-            <TabsTrigger value="sell" className="data-active:text-sell">
+            <TabsTrigger
+              value="sell"
+              className="data-active:bg-sell/15 data-active:text-sell"
+            >
               Sell
             </TabsTrigger>
           </TabsList>
         </Tabs>
 
-        <div className="grid grid-cols-2 gap-2">
-          <Button
+        <div className="grid grid-cols-2 gap-1 rounded-md bg-muted p-0.5">
+          <button
             type="button"
-            variant={orderType === "limit" ? "secondary" : "ghost"}
             onClick={() => setOrderType("limit")}
+            className={cn(
+              "rounded px-2 py-1.5 text-xs font-medium transition-colors",
+              orderType === "limit"
+                ? "bg-card text-foreground shadow-sm"
+                : "text-muted-foreground hover:text-foreground",
+            )}
           >
             Limit
-          </Button>
-          <Button
+          </button>
+          <button
             type="button"
-            variant={orderType === "market" ? "secondary" : "ghost"}
             onClick={() => setOrderType("market")}
+            className={cn(
+              "rounded px-2 py-1.5 text-xs font-medium transition-colors",
+              orderType === "market"
+                ? "bg-card text-foreground shadow-sm"
+                : "text-muted-foreground hover:text-foreground",
+            )}
           >
             Market
-          </Button>
+          </button>
         </div>
 
         {hasConnection ? (
-          <p className="text-xs text-muted-foreground">
-            Available:{" "}
+          <p className="text-[11px] text-muted-foreground">
+            Available{" "}
             <span className="font-tabular text-foreground">
               {formatPrice(availableBalance, orderSide === "buy" ? 2 : 6)}{" "}
               {orderSide === "buy" ? quoteAsset : baseAsset}
@@ -224,8 +240,10 @@ export function OrderForm({ symbol }: OrderFormProps) {
         ) : null}
 
         {orderType === "limit" ? (
-          <div className="space-y-2">
-            <Label htmlFor="price">Price (USDT)</Label>
+          <div className="space-y-1.5">
+            <Label htmlFor="price" className="text-[11px] text-muted-foreground">
+              Price ({quoteAsset})
+            </Label>
             <Input
               id="price"
               type="number"
@@ -233,12 +251,15 @@ export function OrderForm({ symbol }: OrderFormProps) {
               value={orderPrice}
               onChange={(event) => setOrderPrice(event.target.value)}
               placeholder="0.00"
+              className="font-tabular"
             />
           </div>
         ) : null}
 
-        <div className="space-y-2">
-          <Label htmlFor="amount">Amount ({baseAsset})</Label>
+        <div className="space-y-1.5">
+          <Label htmlFor="amount" className="text-[11px] text-muted-foreground">
+            Amount ({baseAsset})
+          </Label>
           <Input
             id="amount"
             type="number"
@@ -246,16 +267,17 @@ export function OrderForm({ symbol }: OrderFormProps) {
             value={orderAmount}
             onChange={(event) => setOrderAmount(event.target.value)}
             placeholder="0.00"
+            className="font-tabular"
           />
           {hasConnection ? (
-            <div className="grid grid-cols-4 gap-1.5">
+            <div className="grid grid-cols-4 gap-1">
               {SIZE_PERCENTS.map((percent) => (
                 <Button
                   key={percent}
                   type="button"
                   size="sm"
                   variant="outline"
-                  className="h-7 text-[11px]"
+                  className="h-7 border-border/80 text-[11px] text-muted-foreground hover:text-foreground"
                   onClick={() => applySizePercent(percent)}
                 >
                   {percent === 100 ? "Max" : `${percent}%`}
@@ -266,17 +288,17 @@ export function OrderForm({ symbol }: OrderFormProps) {
         </div>
 
         {estimatedTotal !== null ? (
-          <p className="text-xs text-muted-foreground">
-            Est. total:{" "}
+          <p className="text-[11px] text-muted-foreground">
+            Est. total{" "}
             <span className="font-tabular text-foreground">
               {formatPrice(estimatedTotal, 2)} {quoteAsset}
             </span>
-            {orderType === "market" ? " (approx)" : null}
+            {orderType === "market" ? " · approx" : null}
           </p>
         ) : null}
 
         {!hasConnection ? (
-          <p className="text-xs text-muted-foreground">
+          <p className="rounded-md border border-border/80 bg-muted/50 px-2.5 py-2 text-[11px] leading-relaxed text-muted-foreground">
             Connect Binance API keys in Settings to enable live trading.
           </p>
         ) : null}
@@ -286,9 +308,9 @@ export function OrderForm({ symbol }: OrderFormProps) {
         <Button
           type="submit"
           className={cn(
-            "mt-auto w-full",
+            "mt-auto h-10 w-full font-semibold",
             orderSide === "buy"
-              ? "bg-buy text-primary-foreground hover:bg-buy/90"
+              ? "bg-profit text-primary-foreground hover:bg-profit/90"
               : "bg-sell text-white hover:bg-sell/90",
           )}
         >

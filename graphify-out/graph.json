@@ -968,8 +968,8 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "package_dependencies_react",
-      "community": 17,
-      "community_name": "dashboard-shell.tsx",
+      "community": 5,
+      "community_name": "sidebar.tsx",
       "norm_label": "react"
     },
     {
@@ -979,8 +979,8 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "react",
-      "community": 17,
-      "community_name": "dashboard-shell.tsx",
+      "community": 5,
+      "community_name": "sidebar.tsx",
       "norm_label": "react"
     },
     {
@@ -1573,9 +1573,31 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "src_app_auth_two_factor_page_twofactorpage",
-      "community": 11,
-      "community_name": "cn",
+      "community": 2,
+      "community_name": "field.tsx",
       "norm_label": "twofactorpage()"
+    },
+    {
+      "label": "buy/page.tsx",
+      "file_type": "code",
+      "source_file": "src/app/(dashboard)/buy/page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_app_dashboard_buy_page",
+      "community": 10,
+      "community_name": "order-form.tsx",
+      "norm_label": "buy/page.tsx"
+    },
+    {
+      "label": "BuyPage()",
+      "file_type": "code",
+      "source_file": "src/app/(dashboard)/buy/page.tsx",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "src_app_dashboard_buy_page_buypage",
+      "community": 10,
+      "community_name": "order-form.tsx",
+      "norm_label": "buypage()"
     },
     {
       "label": "dashboard/page.tsx",
@@ -1584,8 +1606,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_app_dashboard_dashboard_page",
-      "community": 18,
-      "community_name": "utils.ts",
+      "community": 38,
+      "community_name": "settings/page.tsx",
       "norm_label": "dashboard/page.tsx"
     },
     {
@@ -1595,8 +1617,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "src_app_dashboard_dashboard_page_dashboardpage",
-      "community": 18,
-      "community_name": "utils.ts",
+      "community": 38,
+      "community_name": "settings/page.tsx",
       "norm_label": "dashboardpage()"
     },
     {
@@ -1628,8 +1650,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_app_dashboard_markets_page",
-      "community": 18,
-      "community_name": "utils.ts",
+      "community": 38,
+      "community_name": "settings/page.tsx",
       "norm_label": "markets/page.tsx"
     },
     {
@@ -1639,8 +1661,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "src_app_dashboard_markets_page_marketspage",
-      "community": 18,
-      "community_name": "utils.ts",
+      "community": 38,
+      "community_name": "settings/page.tsx",
       "norm_label": "marketspage()"
     },
     {
@@ -1650,7 +1672,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_app_dashboard_portfolio_page",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "portfolio/page.tsx"
     },
@@ -1661,7 +1683,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "src_app_dashboard_portfolio_page_portfoliopage",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "portfoliopage()"
     },
@@ -1672,7 +1694,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_app_dashboard_settings_page",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "settings/page.tsx"
     },
@@ -1683,7 +1705,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "src_app_dashboard_settings_page_settingspage",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "settingspage()"
     },
@@ -1694,8 +1716,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_app_dashboard_trade_symbol_page",
-      "community": 18,
-      "community_name": "utils.ts",
+      "community": 10,
+      "community_name": "order-form.tsx",
       "norm_label": "[symbol]/page.tsx"
     },
     {
@@ -1705,8 +1727,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_app_dashboard_trade_symbol_page_tradepageprops",
-      "community": 18,
-      "community_name": "utils.ts",
+      "community": 10,
+      "community_name": "order-form.tsx",
       "norm_label": "tradepageprops"
     },
     {
@@ -1716,8 +1738,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_app_dashboard_trade_symbol_page_tradepage",
-      "community": 18,
-      "community_name": "utils.ts",
+      "community": 10,
+      "community_name": "order-form.tsx",
       "norm_label": "tradepage()"
     },
     {
@@ -1776,14 +1798,69 @@
       "norm_label": "homepage()"
     },
     {
+      "label": "[slug]/page.tsx",
+      "file_type": "code",
+      "source_file": "src/app/(marketing)/price/[slug]/page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_app_marketing_price_slug_page",
+      "community": 7,
+      "community_name": "utils.ts",
+      "norm_label": "[slug]/page.tsx"
+    },
+    {
+      "label": "PageProps",
+      "file_type": "code",
+      "source_file": "src/app/(marketing)/price/[slug]/page.tsx",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "src_app_marketing_price_slug_page_pageprops",
+      "community": 7,
+      "community_name": "utils.ts",
+      "norm_label": "pageprops"
+    },
+    {
+      "label": "generateStaticParams()",
+      "file_type": "code",
+      "source_file": "src/app/(marketing)/price/[slug]/page.tsx",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "src_app_marketing_price_slug_page_generatestaticparams",
+      "community": 7,
+      "community_name": "utils.ts",
+      "norm_label": "generatestaticparams()"
+    },
+    {
+      "label": "generateMetadata()",
+      "file_type": "code",
+      "source_file": "src/app/(marketing)/price/[slug]/page.tsx",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "src_app_marketing_price_slug_page_generatemetadata",
+      "community": 7,
+      "community_name": "utils.ts",
+      "norm_label": "generatemetadata()"
+    },
+    {
+      "label": "PriceSlugPage()",
+      "file_type": "code",
+      "source_file": "src/app/(marketing)/price/[slug]/page.tsx",
+      "source_location": "L28",
+      "_origin": "ast",
+      "id": "src_app_marketing_price_slug_page_priceslugpage",
+      "community": 7,
+      "community_name": "utils.ts",
+      "norm_label": "priceslugpage()"
+    },
+    {
       "label": "[...all]/route.ts",
       "file_type": "code",
       "source_file": "src/app/api/auth/[...all]/route.ts",
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_app_api_auth_all_route",
-      "community": 1,
-      "community_name": "auth/index.ts",
+      "community": 0,
+      "community_name": "service.ts",
       "norm_label": "[...all]/route.ts"
     },
     {
@@ -1793,8 +1870,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_app_api_auth_all_route_get_post",
-      "community": 1,
-      "community_name": "auth/index.ts",
+      "community": 0,
+      "community_name": "service.ts",
       "norm_label": "{ get, post }"
     },
     {
@@ -1804,8 +1881,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_app_api_dev_last_auth_email_route",
-      "community": 1,
-      "community_name": "auth/index.ts",
+      "community": 0,
+      "community_name": "service.ts",
       "norm_label": "last-auth-email/route.ts"
     },
     {
@@ -1815,8 +1892,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_app_api_dev_last_auth_email_route_get",
-      "community": 1,
-      "community_name": "auth/index.ts",
+      "community": 0,
+      "community_name": "service.ts",
       "norm_label": "get()"
     },
     {
@@ -2123,7 +2200,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_auth_auth_live_markets",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "auth-live-markets.tsx"
     },
@@ -2134,7 +2211,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "src_components_auth_auth_live_markets_markets",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "markets"
     },
@@ -2145,7 +2222,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "src_components_auth_auth_live_markets_formatmarketprice",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "formatmarketprice()"
     },
@@ -2156,7 +2233,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "src_components_auth_auth_live_markets_authlivemarkets",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "authlivemarkets()"
     },
@@ -2288,7 +2365,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_auth_otp_input",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "otp-input.tsx"
     },
@@ -2299,7 +2376,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_components_auth_otp_input_otpinputprops",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "otpinputprops"
     },
@@ -2310,7 +2387,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_components_auth_otp_input_otpinput",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "otpinput()"
     },
@@ -2409,7 +2486,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_auth_two_factor_verify",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "two-factor-verify.tsx"
     },
@@ -2420,7 +2497,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "src_components_auth_two_factor_verify_twofactorverifyprops",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "twofactorverifyprops"
     },
@@ -2431,7 +2508,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "src_components_auth_two_factor_verify_twofactorverify",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "twofactorverify()"
     },
@@ -2442,7 +2519,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_dashboard_dashboard_overview",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "dashboard-overview.tsx"
     },
@@ -2453,8 +2530,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "src_components_dashboard_dashboard_overview_dashboardoverview",
-      "community": 18,
-      "community_name": "utils.ts",
+      "community": 38,
+      "community_name": "settings/page.tsx",
       "norm_label": "dashboardoverview()"
     },
     {
@@ -2464,7 +2541,7 @@
       "source_location": "L247",
       "_origin": "ast",
       "id": "src_components_dashboard_dashboard_overview_statcard",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "statcard()"
     },
@@ -2546,10 +2623,21 @@
       "norm_label": "assets.tsx"
     },
     {
+      "label": "assetHref()",
+      "file_type": "code",
+      "source_file": "src/components/landing/assets.tsx",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "src_components_landing_assets_assethref",
+      "community": 20,
+      "community_name": "assets.tsx",
+      "norm_label": "assethref()"
+    },
+    {
       "label": "AssetCard()",
       "file_type": "code",
       "source_file": "src/components/landing/assets.tsx",
-      "source_location": "L10",
+      "source_location": "L19",
       "_origin": "ast",
       "id": "src_components_landing_assets_assetcard",
       "community": 20,
@@ -2560,7 +2648,7 @@
       "label": "AssetsSection()",
       "file_type": "code",
       "source_file": "src/components/landing/assets.tsx",
-      "source_location": "L51",
+      "source_location": "L63",
       "_origin": "ast",
       "id": "src_components_landing_assets_assetssection",
       "community": 20,
@@ -2574,8 +2662,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_landing_faq",
-      "community": 33,
-      "community_name": "faq.tsx",
+      "community": 13,
+      "community_name": "landing-page.tsx",
       "norm_label": "faq.tsx"
     },
     {
@@ -2585,8 +2673,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_components_landing_faq_faqsection",
-      "community": 33,
-      "community_name": "faq.tsx",
+      "community": 13,
+      "community_name": "landing-page.tsx",
       "norm_label": "faqsection()"
     },
     {
@@ -3003,8 +3091,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_landing_testimonials",
-      "community": 13,
-      "community_name": "landing-page.tsx",
+      "community": 18,
+      "community_name": "testimonials.tsx",
       "norm_label": "testimonials.tsx"
     },
     {
@@ -3014,8 +3102,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_components_landing_testimonials_testimonialssection",
-      "community": 13,
-      "community_name": "landing-page.tsx",
+      "community": 18,
+      "community_name": "testimonials.tsx",
       "norm_label": "testimonialssection()"
     },
     {
@@ -3088,7 +3176,7 @@
       "label": "mainNav",
       "file_type": "code",
       "source_file": "src/components/layout/app-sidebar.tsx",
-      "source_location": "L30",
+      "source_location": "L31",
       "_origin": "ast",
       "id": "src_components_layout_app_sidebar_mainnav",
       "community": 5,
@@ -3099,7 +3187,7 @@
       "label": "AppSidebar()",
       "file_type": "code",
       "source_file": "src/components/layout/app-sidebar.tsx",
-      "source_location": "L52",
+      "source_location": "L59",
       "_origin": "ast",
       "id": "src_components_layout_app_sidebar_appsidebar",
       "community": 17,
@@ -3135,8 +3223,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_layout_header",
-      "community": 18,
-      "community_name": "utils.ts",
+      "community": 38,
+      "community_name": "settings/page.tsx",
       "norm_label": "header.tsx"
     },
     {
@@ -3146,8 +3234,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "src_components_layout_header_headerprops",
-      "community": 18,
-      "community_name": "utils.ts",
+      "community": 38,
+      "community_name": "settings/page.tsx",
       "norm_label": "headerprops"
     },
     {
@@ -3157,8 +3245,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "src_components_layout_header_header",
-      "community": 18,
-      "community_name": "utils.ts",
+      "community": 38,
+      "community_name": "settings/page.tsx",
       "norm_label": "header()"
     },
     {
@@ -3212,7 +3300,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_markets_markets_overview",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "markets-overview.tsx"
     },
@@ -3223,7 +3311,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "src_components_markets_markets_overview_sortkey",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "sortkey"
     },
@@ -3234,7 +3322,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "src_components_markets_markets_overview_sortdir",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "sortdir"
     },
@@ -3245,7 +3333,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "src_components_markets_markets_overview_category",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "category"
     },
@@ -3256,7 +3344,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "src_components_markets_markets_overview_zone",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "zone"
     },
@@ -3267,7 +3355,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "src_components_markets_markets_overview_new_bases",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "new_bases"
     },
@@ -3278,7 +3366,7 @@
       "source_location": "L56",
       "_origin": "ast",
       "id": "src_components_markets_markets_overview_zone_bases",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "zone_bases"
     },
@@ -3289,7 +3377,7 @@
       "source_location": "L87",
       "_origin": "ast",
       "id": "src_components_markets_markets_overview_zones",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "zones"
     },
@@ -3300,7 +3388,7 @@
       "source_location": "L95",
       "_origin": "ast",
       "id": "src_components_markets_markets_overview_baseof",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "baseof()"
     },
@@ -3311,7 +3399,7 @@
       "source_location": "L99",
       "_origin": "ast",
       "id": "src_components_markets_markets_overview_tradehref",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "tradehref()"
     },
@@ -3322,7 +3410,7 @@
       "source_location": "L103",
       "_origin": "ast",
       "id": "src_components_markets_markets_overview_assetavatar",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "assetavatar()"
     },
@@ -3333,7 +3421,7 @@
       "source_location": "L111",
       "_origin": "ast",
       "id": "src_components_markets_markets_overview_changebadge",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "changebadge()"
     },
@@ -3344,7 +3432,7 @@
       "source_location": "L130",
       "_origin": "ast",
       "id": "src_components_markets_markets_overview_highlightcard",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "highlightcard()"
     },
@@ -3355,7 +3443,7 @@
       "source_location": "L180",
       "_origin": "ast",
       "id": "src_components_markets_markets_overview_sortablehead",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "sortablehead()"
     },
@@ -3366,7 +3454,7 @@
       "source_location": "L217",
       "_origin": "ast",
       "id": "src_components_markets_markets_overview_marketsoverview",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "marketsoverview()"
     },
@@ -3459,6 +3547,182 @@
       "norm_label": "notifytoaster()"
     },
     {
+      "label": "buy-widget.tsx",
+      "file_type": "code",
+      "source_file": "src/components/price/buy-widget.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_components_price_buy_widget",
+      "community": 7,
+      "community_name": "utils.ts",
+      "norm_label": "buy-widget.tsx"
+    },
+    {
+      "label": "BuyWidgetProps",
+      "file_type": "code",
+      "source_file": "src/components/price/buy-widget.tsx",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "src_components_price_buy_widget_buywidgetprops",
+      "community": 7,
+      "community_name": "utils.ts",
+      "norm_label": "buywidgetprops"
+    },
+    {
+      "label": "BuyWidget()",
+      "file_type": "code",
+      "source_file": "src/components/price/buy-widget.tsx",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "src_components_price_buy_widget_buywidget",
+      "community": 7,
+      "community_name": "utils.ts",
+      "norm_label": "buywidget()"
+    },
+    {
+      "label": "CoinDot()",
+      "file_type": "code",
+      "source_file": "src/components/price/buy-widget.tsx",
+      "source_location": "L132",
+      "_origin": "ast",
+      "id": "src_components_price_buy_widget_coindot",
+      "community": 7,
+      "community_name": "utils.ts",
+      "norm_label": "coindot()"
+    },
+    {
+      "label": "Field()",
+      "file_type": "code",
+      "source_file": "src/components/price/buy-widget.tsx",
+      "source_location": "L143",
+      "_origin": "ast",
+      "id": "src_components_price_buy_widget_field",
+      "community": 7,
+      "community_name": "utils.ts",
+      "norm_label": "field()"
+    },
+    {
+      "label": "coin-price-page.tsx",
+      "file_type": "code",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_components_price_coin_price_page",
+      "community": 7,
+      "community_name": "utils.ts",
+      "norm_label": "coin-price-page.tsx"
+    },
+    {
+      "label": "RANGE_OPTIONS",
+      "file_type": "code",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L29",
+      "_origin": "ast",
+      "id": "src_components_price_coin_price_page_range_options",
+      "community": 7,
+      "community_name": "utils.ts",
+      "norm_label": "range_options"
+    },
+    {
+      "label": "RangeId",
+      "file_type": "code",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L38",
+      "_origin": "ast",
+      "id": "src_components_price_coin_price_page_rangeid",
+      "community": 7,
+      "community_name": "utils.ts",
+      "norm_label": "rangeid"
+    },
+    {
+      "label": "TABS",
+      "file_type": "code",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L40",
+      "_origin": "ast",
+      "id": "src_components_price_coin_price_page_tabs",
+      "community": 7,
+      "community_name": "utils.ts",
+      "norm_label": "tabs"
+    },
+    {
+      "label": "TabId",
+      "file_type": "code",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L41",
+      "_origin": "ast",
+      "id": "src_components_price_coin_price_page_tabid",
+      "community": 7,
+      "community_name": "utils.ts",
+      "norm_label": "tabid"
+    },
+    {
+      "label": "CoinPricePageProps",
+      "file_type": "code",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L43",
+      "_origin": "ast",
+      "id": "src_components_price_coin_price_page_coinpricepageprops",
+      "community": 7,
+      "community_name": "utils.ts",
+      "norm_label": "coinpricepageprops"
+    },
+    {
+      "label": "CoinPricePage()",
+      "file_type": "code",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L47",
+      "_origin": "ast",
+      "id": "src_components_price_coin_price_page_coinpricepage",
+      "community": 7,
+      "community_name": "utils.ts",
+      "norm_label": "coinpricepage()"
+    },
+    {
+      "label": "Stat()",
+      "file_type": "code",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L419",
+      "_origin": "ast",
+      "id": "src_components_price_coin_price_page_stat",
+      "community": 7,
+      "community_name": "utils.ts",
+      "norm_label": "stat()"
+    },
+    {
+      "label": "price-area-chart.tsx",
+      "file_type": "code",
+      "source_file": "src/components/price/price-area-chart.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_components_price_price_area_chart",
+      "community": 7,
+      "community_name": "utils.ts",
+      "norm_label": "price-area-chart.tsx"
+    },
+    {
+      "label": "PriceAreaChartProps",
+      "file_type": "code",
+      "source_file": "src/components/price/price-area-chart.tsx",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "src_components_price_price_area_chart_priceareachartprops",
+      "community": 7,
+      "community_name": "utils.ts",
+      "norm_label": "priceareachartprops"
+    },
+    {
+      "label": "PriceAreaChart()",
+      "file_type": "code",
+      "source_file": "src/components/price/price-area-chart.tsx",
+      "source_location": "L25",
+      "_origin": "ast",
+      "id": "src_components_price_price_area_chart_priceareachart",
+      "community": 7,
+      "community_name": "utils.ts",
+      "norm_label": "priceareachart()"
+    },
+    {
       "label": "providers.tsx",
       "file_type": "code",
       "source_file": "src/components/providers.tsx",
@@ -3487,7 +3751,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_settings_account_settings",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "account-settings.tsx"
     },
@@ -3498,7 +3762,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "src_components_settings_account_settings_accountsettings",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "accountsettings()"
     },
@@ -3509,7 +3773,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_settings_notification_settings",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "notification-settings.tsx"
     },
@@ -3520,7 +3784,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "src_components_settings_notification_settings_notificationsettings",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "notificationsettings()"
     },
@@ -3580,13 +3844,79 @@
       "norm_label": "securitysettings()"
     },
     {
+      "label": "buy-sell-page.tsx",
+      "file_type": "code",
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_components_trading_buy_sell_page",
+      "community": 10,
+      "community_name": "order-form.tsx",
+      "norm_label": "buy-sell-page.tsx"
+    },
+    {
+      "label": "ASSETS",
+      "file_type": "code",
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "src_components_trading_buy_sell_page_assets",
+      "community": 10,
+      "community_name": "order-form.tsx",
+      "norm_label": "assets"
+    },
+    {
+      "label": "Side",
+      "file_type": "code",
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L37",
+      "_origin": "ast",
+      "id": "src_components_trading_buy_sell_page_side",
+      "community": 10,
+      "community_name": "order-form.tsx",
+      "norm_label": "side"
+    },
+    {
+      "label": "BuySellPage()",
+      "file_type": "code",
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L39",
+      "_origin": "ast",
+      "id": "src_components_trading_buy_sell_page_buysellpage",
+      "community": 10,
+      "community_name": "order-form.tsx",
+      "norm_label": "buysellpage()"
+    },
+    {
+      "label": "AmountField()",
+      "file_type": "code",
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L476",
+      "_origin": "ast",
+      "id": "src_components_trading_buy_sell_page_amountfield",
+      "community": 10,
+      "community_name": "order-form.tsx",
+      "norm_label": "amountfield()"
+    },
+    {
+      "label": "trimAmount()",
+      "file_type": "code",
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L531",
+      "_origin": "ast",
+      "id": "src_components_trading_buy_sell_page_trimamount",
+      "community": 10,
+      "community_name": "order-form.tsx",
+      "norm_label": "trimamount()"
+    },
+    {
       "label": "market-overview.tsx",
       "file_type": "code",
       "source_file": "src/components/trading/market-overview.tsx",
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_trading_market_overview",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "market-overview.tsx"
     },
@@ -3597,7 +3927,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "src_components_trading_market_overview_featuredsymbols",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "featuredsymbols"
     },
@@ -3608,7 +3938,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "src_components_trading_market_overview_marketoverview",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "marketoverview()"
     },
@@ -3619,7 +3949,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "src_components_trading_market_overview_marketcard",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "marketcard()"
     },
@@ -3630,7 +3960,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_trading_open_orders_panel",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "open-orders-panel.tsx"
     },
@@ -3641,7 +3971,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "src_components_trading_open_orders_panel_openorderspanelprops",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "openorderspanelprops"
     },
@@ -3652,7 +3982,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_components_trading_open_orders_panel_openorderspanel",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "openorderspanel()"
     },
@@ -3663,7 +3993,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_trading_order_book_panel",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "order-book-panel.tsx"
     },
@@ -3685,8 +4015,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_components_trading_order_book_panel_orderbookpanel",
-      "community": 18,
-      "community_name": "utils.ts",
+      "community": 10,
+      "community_name": "order-form.tsx",
       "norm_label": "orderbookpanel()"
     },
     {
@@ -3696,7 +4026,7 @@
       "source_location": "L93",
       "_origin": "ast",
       "id": "src_components_trading_order_book_panel_orderbookrow",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "orderbookrow()"
     },
@@ -3740,15 +4070,15 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "src_components_trading_order_form_orderform",
-      "community": 18,
-      "community_name": "utils.ts",
+      "community": 10,
+      "community_name": "order-form.tsx",
       "norm_label": "orderform()"
     },
     {
       "label": "trimAmount()",
       "file_type": "code",
       "source_file": "src/components/trading/order-form.tsx",
-      "source_location": "L356",
+      "source_location": "L378",
       "_origin": "ast",
       "id": "src_components_trading_order_form_trimamount",
       "community": 10,
@@ -3762,7 +4092,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_trading_ticker_bar",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "ticker-bar.tsx"
     },
@@ -3770,21 +4100,21 @@
       "label": "TickerBarProps",
       "file_type": "code",
       "source_file": "src/components/trading/ticker-bar.tsx",
-      "source_location": "L7",
+      "source_location": "L6",
       "_origin": "ast",
       "id": "src_components_trading_ticker_bar_tickerbarprops",
-      "community": 25,
-      "community_name": "SignalingManager",
+      "community": 7,
+      "community_name": "utils.ts",
       "norm_label": "tickerbarprops"
     },
     {
       "label": "TickerBar()",
       "file_type": "code",
       "source_file": "src/components/trading/ticker-bar.tsx",
-      "source_location": "L12",
+      "source_location": "L11",
       "_origin": "ast",
       "id": "src_components_trading_ticker_bar_tickerbar",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "tickerbar()"
     },
@@ -3792,10 +4122,10 @@
       "label": "Stat()",
       "file_type": "code",
       "source_file": "src/components/trading/ticker-bar.tsx",
-      "source_location": "L45",
+      "source_location": "L70",
       "_origin": "ast",
       "id": "src_components_trading_ticker_bar_stat",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "stat()"
     },
@@ -3806,31 +4136,64 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_trading_trade_terminal",
-      "community": 18,
-      "community_name": "utils.ts",
+      "community": 10,
+      "community_name": "order-form.tsx",
       "norm_label": "trade-terminal.tsx"
+    },
+    {
+      "label": "TIMEFRAMES",
+      "file_type": "code",
+      "source_file": "src/components/trading/trade-terminal.tsx",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "src_components_trading_trade_terminal_timeframes",
+      "community": 10,
+      "community_name": "order-form.tsx",
+      "norm_label": "timeframes"
+    },
+    {
+      "label": "Timeframe",
+      "file_type": "code",
+      "source_file": "src/components/trading/trade-terminal.tsx",
+      "source_location": "L18",
+      "_origin": "ast",
+      "id": "src_components_trading_trade_terminal_timeframe",
+      "community": 10,
+      "community_name": "order-form.tsx",
+      "norm_label": "timeframe"
     },
     {
       "label": "TradeTerminalProps",
       "file_type": "code",
       "source_file": "src/components/trading/trade-terminal.tsx",
-      "source_location": "L17",
+      "source_location": "L20",
       "_origin": "ast",
       "id": "src_components_trading_trade_terminal_tradeterminalprops",
-      "community": 18,
-      "community_name": "utils.ts",
+      "community": 10,
+      "community_name": "order-form.tsx",
       "norm_label": "tradeterminalprops"
     },
     {
       "label": "TradeTerminal()",
       "file_type": "code",
       "source_file": "src/components/trading/trade-terminal.tsx",
-      "source_location": "L21",
+      "source_location": "L24",
       "_origin": "ast",
       "id": "src_components_trading_trade_terminal_tradeterminal",
-      "community": 18,
-      "community_name": "utils.ts",
+      "community": 10,
+      "community_name": "order-form.tsx",
       "norm_label": "tradeterminal()"
+    },
+    {
+      "label": "PanelHeader()",
+      "file_type": "code",
+      "source_file": "src/components/trading/trade-terminal.tsx",
+      "source_location": "L118",
+      "_origin": "ast",
+      "id": "src_components_trading_trade_terminal_panelheader",
+      "community": 10,
+      "community_name": "order-form.tsx",
+      "norm_label": "panelheader()"
     },
     {
       "label": "trading-chart.tsx",
@@ -3839,7 +4202,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_trading_trading_chart",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "trading-chart.tsx"
     },
@@ -3850,7 +4213,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "src_components_trading_trading_chart_tradingchartprops",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "tradingchartprops"
     },
@@ -3858,10 +4221,10 @@
       "label": "TradingChart()",
       "file_type": "code",
       "source_file": "src/components/trading/trading-chart.tsx",
-      "source_location": "L22",
+      "source_location": "L24",
       "_origin": "ast",
       "id": "src_components_trading_trading_chart_tradingchart",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "tradingchart()"
     },
@@ -3872,8 +4235,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_ui_avatar",
-      "community": 8,
-      "community_name": "user-menu.tsx",
+      "community": 11,
+      "community_name": "cn",
       "norm_label": "avatar.tsx"
     },
     {
@@ -3883,8 +4246,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_components_ui_avatar_avatar",
-      "community": 8,
-      "community_name": "user-menu.tsx",
+      "community": 11,
+      "community_name": "cn",
       "norm_label": "avatar()"
     },
     {
@@ -3894,8 +4257,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "src_components_ui_avatar_avatarimage",
-      "community": 8,
-      "community_name": "user-menu.tsx",
+      "community": 11,
+      "community_name": "cn",
       "norm_label": "avatarimage()"
     },
     {
@@ -3905,8 +4268,8 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "src_components_ui_avatar_avatarfallback",
-      "community": 8,
-      "community_name": "user-menu.tsx",
+      "community": 11,
+      "community_name": "cn",
       "norm_label": "avatarfallback()"
     },
     {
@@ -3916,8 +4279,8 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "src_components_ui_avatar_avatarbadge",
-      "community": 8,
-      "community_name": "user-menu.tsx",
+      "community": 11,
+      "community_name": "cn",
       "norm_label": "avatarbadge()"
     },
     {
@@ -3927,8 +4290,8 @@
       "source_location": "L73",
       "_origin": "ast",
       "id": "src_components_ui_avatar_avatargroup",
-      "community": 8,
-      "community_name": "user-menu.tsx",
+      "community": 11,
+      "community_name": "cn",
       "norm_label": "avatargroup()"
     },
     {
@@ -3938,8 +4301,8 @@
       "source_location": "L86",
       "_origin": "ast",
       "id": "src_components_ui_avatar_avatargroupcount",
-      "community": 8,
-      "community_name": "user-menu.tsx",
+      "community": 11,
+      "community_name": "cn",
       "norm_label": "avatargroupcount()"
     },
     {
@@ -3949,7 +4312,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_ui_badge",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "badge.tsx"
     },
@@ -3960,7 +4323,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_components_ui_badge_badgevariants",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "badgevariants"
     },
@@ -3971,7 +4334,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "src_components_ui_badge_badge",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "badge()"
     },
@@ -4070,7 +4433,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_ui_button",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "button.tsx"
     },
@@ -4081,7 +4444,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_components_ui_button_buttonvariants",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "buttonvariants"
     },
@@ -4092,7 +4455,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "src_components_ui_button_button",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "button()"
     },
@@ -4103,7 +4466,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_ui_card",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "card.tsx"
     },
@@ -4114,7 +4477,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_components_ui_card_card",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "card()"
     },
@@ -4125,7 +4488,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "src_components_ui_card_cardheader",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "cardheader()"
     },
@@ -4136,7 +4499,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "src_components_ui_card_cardtitle",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "cardtitle()"
     },
@@ -4147,7 +4510,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "src_components_ui_card_carddescription",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "carddescription()"
     },
@@ -4158,7 +4521,7 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "src_components_ui_card_cardaction",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "cardaction()"
     },
@@ -4169,7 +4532,7 @@
       "source_location": "L72",
       "_origin": "ast",
       "id": "src_components_ui_card_cardcontent",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "cardcontent()"
     },
@@ -4180,7 +4543,7 @@
       "source_location": "L82",
       "_origin": "ast",
       "id": "src_components_ui_card_cardfooter",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "cardfooter()"
     },
@@ -4499,8 +4862,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_components_ui_field_fieldset",
-      "community": 11,
-      "community_name": "cn",
+      "community": 2,
+      "community_name": "field.tsx",
       "norm_label": "fieldset()"
     },
     {
@@ -4510,8 +4873,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "src_components_ui_field_fieldlegend",
-      "community": 11,
-      "community_name": "cn",
+      "community": 2,
+      "community_name": "field.tsx",
       "norm_label": "fieldlegend()"
     },
     {
@@ -4554,8 +4917,8 @@
       "source_location": "L88",
       "_origin": "ast",
       "id": "src_components_ui_field_fieldcontent",
-      "community": 11,
-      "community_name": "cn",
+      "community": 2,
+      "community_name": "field.tsx",
       "norm_label": "fieldcontent()"
     },
     {
@@ -4576,8 +4939,8 @@
       "source_location": "L118",
       "_origin": "ast",
       "id": "src_components_ui_field_fieldtitle",
-      "community": 11,
-      "community_name": "cn",
+      "community": 2,
+      "community_name": "field.tsx",
       "norm_label": "fieldtitle()"
     },
     {
@@ -4587,8 +4950,8 @@
       "source_location": "L131",
       "_origin": "ast",
       "id": "src_components_ui_field_fielddescription",
-      "community": 7,
-      "community_name": "settings/page.tsx",
+      "community": 2,
+      "community_name": "field.tsx",
       "norm_label": "fielddescription()"
     },
     {
@@ -4598,8 +4961,8 @@
       "source_location": "L146",
       "_origin": "ast",
       "id": "src_components_ui_field_fieldseparator",
-      "community": 11,
-      "community_name": "cn",
+      "community": 2,
+      "community_name": "field.tsx",
       "norm_label": "fieldseparator()"
     },
     {
@@ -4774,8 +5137,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_ui_separator",
-      "community": 5,
-      "community_name": "sidebar.tsx",
+      "community": 11,
+      "community_name": "cn",
       "norm_label": "separator.tsx"
     },
     {
@@ -4785,8 +5148,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_components_ui_separator_separator",
-      "community": 5,
-      "community_name": "sidebar.tsx",
+      "community": 11,
+      "community_name": "cn",
       "norm_label": "separator()"
     },
     {
@@ -4961,8 +5324,8 @@
       "source_location": "L56",
       "_origin": "ast",
       "id": "src_components_ui_sidebar_sidebarprovider",
-      "community": 17,
-      "community_name": "dashboard-shell.tsx",
+      "community": 5,
+      "community_name": "sidebar.tsx",
       "norm_label": "sidebarprovider()"
     },
     {
@@ -5181,8 +5544,8 @@
       "source_location": "L600",
       "_origin": "ast",
       "id": "src_components_ui_sidebar_sidebarmenuskeleton",
-      "community": 17,
-      "community_name": "dashboard-shell.tsx",
+      "community": 5,
+      "community_name": "sidebar.tsx",
       "norm_label": "sidebarmenuskeleton()"
     },
     {
@@ -5225,7 +5588,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_ui_skeleton",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "skeleton.tsx"
     },
@@ -5236,7 +5599,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_components_ui_skeleton_skeleton",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "skeleton()"
     },
@@ -5247,7 +5610,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_ui_spinner",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "spinner.tsx"
     },
@@ -5258,7 +5621,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_components_ui_spinner_sizemap",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "sizemap"
     },
@@ -5269,7 +5632,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_components_ui_spinner_spinnerprops",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "spinnerprops"
     },
@@ -5280,7 +5643,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "src_components_ui_spinner_spinner",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "spinner()"
     },
@@ -5302,7 +5665,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_ui_switch",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "switch.tsx"
     },
@@ -5313,7 +5676,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_components_ui_switch_switch",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "switch()"
     },
@@ -5324,7 +5687,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_ui_table",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "table.tsx"
     },
@@ -5335,7 +5698,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_components_ui_table_table",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "table()"
     },
@@ -5346,7 +5709,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "src_components_ui_table_tableheader",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "tableheader()"
     },
@@ -5357,7 +5720,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "src_components_ui_table_tablebody",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "tablebody()"
     },
@@ -5368,7 +5731,7 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "src_components_ui_table_tablefooter",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "tablefooter()"
     },
@@ -5379,7 +5742,7 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "src_components_ui_table_tablerow",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "tablerow()"
     },
@@ -5390,7 +5753,7 @@
       "source_location": "L68",
       "_origin": "ast",
       "id": "src_components_ui_table_tablehead",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "tablehead()"
     },
@@ -5401,7 +5764,7 @@
       "source_location": "L81",
       "_origin": "ast",
       "id": "src_components_ui_table_tablecell",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "tablecell()"
     },
@@ -5412,7 +5775,7 @@
       "source_location": "L94",
       "_origin": "ast",
       "id": "src_components_ui_table_tablecaption",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "tablecaption()"
     },
@@ -5500,8 +5863,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_components_ui_tooltip_tooltipprovider",
-      "community": 5,
-      "community_name": "sidebar.tsx",
+      "community": 19,
+      "community_name": "notify/index.ts",
       "norm_label": "tooltipprovider()"
     },
     {
@@ -5544,8 +5907,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_hooks_use_mobile",
-      "community": 17,
-      "community_name": "dashboard-shell.tsx",
+      "community": 5,
+      "community_name": "sidebar.tsx",
       "norm_label": "use-mobile.ts"
     },
     {
@@ -5555,8 +5918,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_hooks_use_mobile_useismobile",
-      "community": 17,
-      "community_name": "dashboard-shell.tsx",
+      "community": 5,
+      "community_name": "sidebar.tsx",
       "norm_label": "useismobile()"
     },
     {
@@ -5599,8 +5962,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_hooks_use_order_book",
-      "community": 18,
-      "community_name": "utils.ts",
+      "community": 10,
+      "community_name": "order-form.tsx",
       "norm_label": "use-order-book.ts"
     },
     {
@@ -5610,8 +5973,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_hooks_use_order_book_useorderbook",
-      "community": 18,
-      "community_name": "utils.ts",
+      "community": 10,
+      "community_name": "order-form.tsx",
       "norm_label": "useorderbook()"
     },
     {
@@ -5621,8 +5984,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_hooks_use_ticker",
-      "community": 18,
-      "community_name": "utils.ts",
+      "community": 10,
+      "community_name": "order-form.tsx",
       "norm_label": "use-ticker.ts"
     },
     {
@@ -5632,8 +5995,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_hooks_use_ticker_useticker",
-      "community": 18,
-      "community_name": "utils.ts",
+      "community": 10,
+      "community_name": "order-form.tsx",
       "norm_label": "useticker()"
     },
     {
@@ -5643,8 +6006,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "src_hooks_use_ticker_usewsconnection",
-      "community": 18,
-      "community_name": "utils.ts",
+      "community": 38,
+      "community_name": "settings/page.tsx",
       "norm_label": "usewsconnection()"
     },
     {
@@ -5709,8 +6072,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_lib_auth_index",
-      "community": 1,
-      "community_name": "auth/index.ts",
+      "community": 0,
+      "community_name": "service.ts",
       "norm_label": "auth/index.ts"
     },
     {
@@ -5720,8 +6083,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "src_lib_auth_index_env",
-      "community": 1,
-      "community_name": "auth/index.ts",
+      "community": 0,
+      "community_name": "service.ts",
       "norm_label": "env"
     },
     {
@@ -5731,8 +6094,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "src_lib_auth_index_googleenabled",
-      "community": 1,
-      "community_name": "auth/index.ts",
+      "community": 0,
+      "community_name": "service.ts",
       "norm_label": "googleenabled"
     },
     {
@@ -5742,8 +6105,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "src_lib_auth_index_appleenabled",
-      "community": 1,
-      "community_name": "auth/index.ts",
+      "community": 0,
+      "community_name": "service.ts",
       "norm_label": "appleenabled"
     },
     {
@@ -5753,8 +6116,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "src_lib_auth_index_normalizebaseurl",
-      "community": 1,
-      "community_name": "auth/index.ts",
+      "community": 0,
+      "community_name": "service.ts",
       "norm_label": "normalizebaseurl()"
     },
     {
@@ -5764,8 +6127,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "src_lib_auth_index_auth",
-      "community": 1,
-      "community_name": "auth/index.ts",
+      "community": 0,
+      "community_name": "service.ts",
       "norm_label": "auth"
     },
     {
@@ -5775,8 +6138,8 @@
       "source_location": "L116",
       "_origin": "ast",
       "id": "src_lib_auth_index_session",
-      "community": 1,
-      "community_name": "auth/index.ts",
+      "community": 0,
+      "community_name": "service.ts",
       "norm_label": "session"
     },
     {
@@ -5786,8 +6149,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_lib_auth_social",
-      "community": 1,
-      "community_name": "auth/index.ts",
+      "community": 0,
+      "community_name": "service.ts",
       "norm_label": "social.ts"
     },
     {
@@ -5797,8 +6160,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_lib_auth_social_generateappleclientsecret",
-      "community": 1,
-      "community_name": "auth/index.ts",
+      "community": 0,
+      "community_name": "service.ts",
       "norm_label": "generateappleclientsecret()"
     },
     {
@@ -5808,8 +6171,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "src_lib_auth_social_isgoogleauthconfigured",
-      "community": 1,
-      "community_name": "auth/index.ts",
+      "community": 0,
+      "community_name": "service.ts",
       "norm_label": "isgoogleauthconfigured()"
     },
     {
@@ -5819,9 +6182,86 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "src_lib_auth_social_isappleauthconfigured",
-      "community": 1,
-      "community_name": "auth/index.ts",
+      "community": 0,
+      "community_name": "service.ts",
       "norm_label": "isappleauthconfigured()"
+    },
+    {
+      "label": "catalog.ts",
+      "file_type": "code",
+      "source_file": "src/lib/coins/catalog.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_lib_coins_catalog",
+      "community": 7,
+      "community_name": "utils.ts",
+      "norm_label": "catalog.ts"
+    },
+    {
+      "label": "CoinInfo",
+      "file_type": "code",
+      "source_file": "src/lib/coins/catalog.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_lib_coins_catalog_coininfo",
+      "community": 7,
+      "community_name": "utils.ts",
+      "norm_label": "coininfo"
+    },
+    {
+      "label": "COINS",
+      "file_type": "code",
+      "source_file": "src/lib/coins/catalog.ts",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "src_lib_coins_catalog_coins",
+      "community": 7,
+      "community_name": "utils.ts",
+      "norm_label": "coins"
+    },
+    {
+      "label": "bySlug",
+      "file_type": "code",
+      "source_file": "src/lib/coins/catalog.ts",
+      "source_location": "L153",
+      "_origin": "ast",
+      "id": "src_lib_coins_catalog_byslug",
+      "community": 7,
+      "community_name": "utils.ts",
+      "norm_label": "byslug"
+    },
+    {
+      "label": "getAllCoins()",
+      "file_type": "code",
+      "source_file": "src/lib/coins/catalog.ts",
+      "source_location": "L163",
+      "_origin": "ast",
+      "id": "src_lib_coins_catalog_getallcoins",
+      "community": 7,
+      "community_name": "utils.ts",
+      "norm_label": "getallcoins()"
+    },
+    {
+      "label": "getCoinBySlug()",
+      "file_type": "code",
+      "source_file": "src/lib/coins/catalog.ts",
+      "source_location": "L167",
+      "_origin": "ast",
+      "id": "src_lib_coins_catalog_getcoinbyslug",
+      "community": 7,
+      "community_name": "utils.ts",
+      "norm_label": "getcoinbyslug()"
+    },
+    {
+      "label": "coinPricePath()",
+      "file_type": "code",
+      "source_file": "src/lib/coins/catalog.ts",
+      "source_location": "L171",
+      "_origin": "ast",
+      "id": "src_lib_coins_catalog_coinpricepath",
+      "community": 7,
+      "community_name": "utils.ts",
+      "norm_label": "coinpricepath()"
     },
     {
       "label": "db/index.ts",
@@ -5951,8 +6391,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_lib_email_send",
-      "community": 1,
-      "community_name": "auth/index.ts",
+      "community": 0,
+      "community_name": "service.ts",
       "norm_label": "send.ts"
     },
     {
@@ -5962,8 +6402,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_lib_email_send_authemailpayload",
-      "community": 1,
-      "community_name": "auth/index.ts",
+      "community": 0,
+      "community_name": "service.ts",
       "norm_label": "authemailpayload"
     },
     {
@@ -5973,8 +6413,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "src_lib_email_send_getlastconsoleauthemail",
-      "community": 1,
-      "community_name": "auth/index.ts",
+      "community": 0,
+      "community_name": "service.ts",
       "norm_label": "getlastconsoleauthemail()"
     },
     {
@@ -5984,8 +6424,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "src_lib_email_send_sendauthemail",
-      "community": 1,
-      "community_name": "auth/index.ts",
+      "community": 0,
+      "community_name": "service.ts",
       "norm_label": "sendauthemail()"
     },
     {
@@ -5995,8 +6435,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_lib_env",
-      "community": 1,
-      "community_name": "auth/index.ts",
+      "community": 0,
+      "community_name": "service.ts",
       "norm_label": "env.ts"
     },
     {
@@ -6006,8 +6446,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_lib_env_envschema",
-      "community": 1,
-      "community_name": "auth/index.ts",
+      "community": 0,
+      "community_name": "service.ts",
       "norm_label": "envschema"
     },
     {
@@ -6017,8 +6457,8 @@
       "source_location": "L76",
       "_origin": "ast",
       "id": "src_lib_env_env",
-      "community": 1,
-      "community_name": "auth/index.ts",
+      "community": 0,
+      "community_name": "service.ts",
       "norm_label": "env"
     },
     {
@@ -6028,8 +6468,8 @@
       "source_location": "L78",
       "_origin": "ast",
       "id": "src_lib_env_emptytoundefined",
-      "community": 1,
-      "community_name": "auth/index.ts",
+      "community": 0,
+      "community_name": "service.ts",
       "norm_label": "emptytoundefined()"
     },
     {
@@ -6039,8 +6479,8 @@
       "source_location": "L83",
       "_origin": "ast",
       "id": "src_lib_env_loadenv",
-      "community": 1,
-      "community_name": "auth/index.ts",
+      "community": 0,
+      "community_name": "service.ts",
       "norm_label": "loadenv()"
     },
     {
@@ -6050,8 +6490,8 @@
       "source_location": "L117",
       "_origin": "ast",
       "id": "src_lib_env_getenv",
-      "community": 1,
-      "community_name": "auth/index.ts",
+      "community": 0,
+      "community_name": "service.ts",
       "norm_label": "getenv()"
     },
     {
@@ -6402,8 +6842,8 @@
       "source_location": "L109",
       "_origin": "ast",
       "id": "src_lib_landing_constants_testimonials",
-      "community": 13,
-      "community_name": "landing-page.tsx",
+      "community": 18,
+      "community_name": "testimonials.tsx",
       "norm_label": "testimonials"
     },
     {
@@ -6435,8 +6875,8 @@
       "source_location": "L181",
       "_origin": "ast",
       "id": "src_lib_landing_constants_faqs",
-      "community": 33,
-      "community_name": "faq.tsx",
+      "community": 13,
+      "community_name": "landing-page.tsx",
       "norm_label": "faqs"
     },
     {
@@ -6688,7 +7128,7 @@
       "source_location": "L85",
       "_origin": "ast",
       "id": "src_lib_notify_index_notify",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "notify"
     },
@@ -6875,7 +7315,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_lib_utils",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "utils.ts"
     },
@@ -6897,7 +7337,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_lib_utils_formatprice",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "formatprice()"
     },
@@ -6908,7 +7348,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_lib_utils_formatpercent",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "formatpercent()"
     },
@@ -6919,7 +7359,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "src_lib_utils_formatcompactusd",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "formatcompactusd()"
     },
@@ -6930,7 +7370,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "src_lib_utils_formatmarketprice",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "formatmarketprice()"
     },
@@ -6952,8 +7392,8 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "src_lib_utils_frombinancesymbol",
-      "community": 18,
-      "community_name": "utils.ts",
+      "community": 10,
+      "community_name": "order-form.tsx",
       "norm_label": "frombinancesymbol()"
     },
     {
@@ -7183,7 +7623,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_lib_validations_exchange",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "validations/exchange.ts"
     },
@@ -7194,7 +7634,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_lib_validations_exchange_exchangeconnectionschema",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "exchangeconnectionschema"
     },
@@ -7205,7 +7645,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_lib_validations_exchange_exchangeconnectionformvalues",
-      "community": 7,
+      "community": 38,
       "community_name": "settings/page.tsx",
       "norm_label": "exchangeconnectionformvalues"
     },
@@ -7216,8 +7656,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_lib_websocket_signaling_manager",
-      "community": 18,
-      "community_name": "utils.ts",
+      "community": 25,
+      "community_name": "SignalingManager",
       "norm_label": "signaling-manager.ts"
     },
     {
@@ -7227,8 +7667,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "src_lib_websocket_signaling_manager_streamcallback",
-      "community": 18,
-      "community_name": "utils.ts",
+      "community": 25,
+      "community_name": "SignalingManager",
       "norm_label": "streamcallback"
     },
     {
@@ -7238,8 +7678,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_lib_websocket_signaling_manager_binancetickermessage",
-      "community": 18,
-      "community_name": "utils.ts",
+      "community": 25,
+      "community_name": "SignalingManager",
       "norm_label": "binancetickermessage"
     },
     {
@@ -7249,8 +7689,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "src_lib_websocket_signaling_manager_binancedepthmessage",
-      "community": 18,
-      "community_name": "utils.ts",
+      "community": 25,
+      "community_name": "SignalingManager",
       "norm_label": "binancedepthmessage"
     },
     {
@@ -7436,8 +7876,8 @@
       "source_location": "L313",
       "_origin": "ast",
       "id": "src_lib_websocket_signaling_manager_window",
-      "community": 18,
-      "community_name": "utils.ts",
+      "community": 25,
+      "community_name": "SignalingManager",
       "norm_label": "window"
     },
     {
@@ -7447,8 +7887,8 @@
       "source_location": "L318",
       "_origin": "ast",
       "id": "src_lib_websocket_signaling_manager_getsignalingmanager",
-      "community": 18,
-      "community_name": "utils.ts",
+      "community": 10,
+      "community_name": "order-form.tsx",
       "norm_label": "getsignalingmanager()"
     },
     {
@@ -7459,7 +7899,7 @@
       "_origin": "ast",
       "id": "src_proxy",
       "community": 1,
-      "community_name": "auth/index.ts",
+      "community_name": "proxy.ts",
       "norm_label": "proxy.ts"
     },
     {
@@ -7470,40 +7910,62 @@
       "_origin": "ast",
       "id": "src_proxy_exactpublicroutes",
       "community": 1,
-      "community_name": "auth/index.ts",
+      "community_name": "proxy.ts",
       "norm_label": "exactpublicroutes"
+    },
+    {
+      "label": "publicBrowsePrefixes",
+      "file_type": "code",
+      "source_file": "src/proxy.ts",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "src_proxy_publicbrowseprefixes",
+      "community": 1,
+      "community_name": "proxy.ts",
+      "norm_label": "publicbrowseprefixes"
     },
     {
       "label": "isPublicPath()",
       "file_type": "code",
       "source_file": "src/proxy.ts",
-      "source_location": "L14",
+      "source_location": "L17",
       "_origin": "ast",
       "id": "src_proxy_ispublicpath",
       "community": 1,
-      "community_name": "auth/index.ts",
+      "community_name": "proxy.ts",
       "norm_label": "ispublicpath()"
+    },
+    {
+      "label": "shouldBounceAuthedFromPublic()",
+      "file_type": "code",
+      "source_file": "src/proxy.ts",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "src_proxy_shouldbounceauthedfrompublic",
+      "community": 1,
+      "community_name": "proxy.ts",
+      "norm_label": "shouldbounceauthedfrompublic()"
     },
     {
       "label": "proxy()",
       "file_type": "code",
       "source_file": "src/proxy.ts",
-      "source_location": "L21",
+      "source_location": "L37",
       "_origin": "ast",
       "id": "src_proxy_proxy",
       "community": 1,
-      "community_name": "auth/index.ts",
+      "community_name": "proxy.ts",
       "norm_label": "proxy()"
     },
     {
       "label": "config",
       "file_type": "code",
       "source_file": "src/proxy.ts",
-      "source_location": "L59",
+      "source_location": "L69",
       "_origin": "ast",
       "id": "src_proxy_config",
       "community": 1,
-      "community_name": "auth/index.ts",
+      "community_name": "proxy.ts",
       "norm_label": "config"
     },
     {
@@ -7546,8 +8008,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_stores_trading_store",
-      "community": 18,
-      "community_name": "utils.ts",
+      "community": 10,
+      "community_name": "order-form.tsx",
       "norm_label": "trading-store.ts"
     },
     {
@@ -7557,8 +8019,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_stores_trading_store_orderside",
-      "community": 18,
-      "community_name": "utils.ts",
+      "community": 10,
+      "community_name": "order-form.tsx",
       "norm_label": "orderside"
     },
     {
@@ -7568,8 +8030,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "src_stores_trading_store_ordertype",
-      "community": 18,
-      "community_name": "utils.ts",
+      "community": 10,
+      "community_name": "order-form.tsx",
       "norm_label": "ordertype"
     },
     {
@@ -7579,8 +8041,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_stores_trading_store_tradingstate",
-      "community": 18,
-      "community_name": "utils.ts",
+      "community": 10,
+      "community_name": "order-form.tsx",
       "norm_label": "tradingstate"
     },
     {
@@ -7590,8 +8052,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "src_stores_trading_store_usetradingstore",
-      "community": 18,
-      "community_name": "utils.ts",
+      "community": 10,
+      "community_name": "order-form.tsx",
       "norm_label": "usetradingstore"
     },
     {
@@ -7601,7 +8063,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_types_exchange",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "types/exchange.ts"
     },
@@ -7634,8 +8096,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "src_types_exchange_balance",
-      "community": 18,
-      "community_name": "utils.ts",
+      "community": 10,
+      "community_name": "order-form.tsx",
       "norm_label": "balance"
     },
     {
@@ -7645,8 +8107,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "src_types_exchange_orderbooklevel",
-      "community": 18,
-      "community_name": "utils.ts",
+      "community": 25,
+      "community_name": "SignalingManager",
       "norm_label": "orderbooklevel"
     },
     {
@@ -7667,7 +8129,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "src_types_exchange_ohlcv",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "ohlcv"
     },
@@ -7678,7 +8140,7 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "src_types_exchange_exchangeorder",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "exchangeorder"
     },
@@ -7690,7 +8152,7 @@
       "_origin": "ast",
       "id": "src_types_exchange_exchangeconnectionsummary",
       "community": 7,
-      "community_name": "settings/page.tsx",
+      "community_name": "utils.ts",
       "norm_label": "exchangeconnectionsummary"
     },
     {
@@ -7700,7 +8162,7 @@
       "source_location": "L66",
       "_origin": "ast",
       "id": "src_types_exchange_marketinfo",
-      "community": 18,
+      "community": 7,
       "community_name": "utils.ts",
       "norm_label": "marketinfo"
     },
@@ -11138,6 +11600,41 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "src/app/(dashboard)/buy/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_dashboard_buy_page",
+      "target": "src_app_dashboard_buy_page_buypage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(dashboard)/buy/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_dashboard_buy_page",
+      "target": "src_components_trading_buy_sell_page",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(dashboard)/buy/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_dashboard_buy_page",
+      "target": "src_components_trading_buy_sell_page_buysellpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "src/app/(dashboard)/dashboard/page.tsx",
       "source_location": "L4",
       "weight": 1.0,
@@ -12120,6 +12617,146 @@
       "source": "src_app_marketing_page",
       "target": "src_components_landing_landing_page_landingpage",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(marketing)/price/[slug]/page.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_marketing_price_slug_page",
+      "target": "src_app_marketing_price_slug_page_generatemetadata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(marketing)/price/[slug]/page.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_marketing_price_slug_page",
+      "target": "src_app_marketing_price_slug_page_generatestaticparams",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(marketing)/price/[slug]/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_marketing_price_slug_page",
+      "target": "src_app_marketing_price_slug_page_pageprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(marketing)/price/[slug]/page.tsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_marketing_price_slug_page",
+      "target": "src_app_marketing_price_slug_page_priceslugpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(marketing)/price/[slug]/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_marketing_price_slug_page",
+      "target": "src_components_price_coin_price_page",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(marketing)/price/[slug]/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_marketing_price_slug_page",
+      "target": "src_components_price_coin_price_page_coinpricepage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(marketing)/price/[slug]/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_marketing_price_slug_page",
+      "target": "src_lib_coins_catalog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(marketing)/price/[slug]/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_marketing_price_slug_page",
+      "target": "src_lib_coins_catalog_getallcoins",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(marketing)/price/[slug]/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_marketing_price_slug_page",
+      "target": "src_lib_coins_catalog_getcoinbyslug",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/(marketing)/price/[slug]/page.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_marketing_price_slug_page_generatestaticparams",
+      "target": "src_lib_coins_catalog_getallcoins"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/(marketing)/price/[slug]/page.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_marketing_price_slug_page_generatemetadata",
+      "target": "src_lib_coins_catalog_getcoinbyslug"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/(marketing)/price/[slug]/page.tsx",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_marketing_price_slug_page_priceslugpage",
+      "target": "src_lib_coins_catalog_getcoinbyslug"
     },
     {
       "relation": "contains",
@@ -15148,7 +15785,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/landing/assets.tsx",
-      "source_location": "L10",
+      "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_landing_assets",
@@ -15159,7 +15796,18 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/landing/assets.tsx",
-      "source_location": "L51",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_landing_assets",
+      "target": "src_components_landing_assets_assethref",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/landing/assets.tsx",
+      "source_location": "L63",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_landing_assets",
@@ -15171,7 +15819,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/landing/assets.tsx",
-      "source_location": "L8",
+      "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_landing_assets",
@@ -15183,7 +15831,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/landing/assets.tsx",
-      "source_location": "L8",
+      "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_landing_assets",
@@ -15195,7 +15843,31 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/landing/assets.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_landing_assets",
+      "target": "src_lib_coins_catalog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/landing/assets.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_landing_assets",
+      "target": "src_lib_coins_catalog_getcoinbyslug",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/landing/assets.tsx",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_landing_assets",
@@ -15207,7 +15879,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/landing/assets.tsx",
-      "source_location": "L5",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_landing_assets",
@@ -15219,7 +15891,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/landing/assets.tsx",
-      "source_location": "L6",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_landing_assets",
@@ -15231,7 +15903,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/landing/assets.tsx",
-      "source_location": "L6",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_landing_assets",
@@ -15248,6 +15920,30 @@
       "_origin": "ast",
       "source": "src_components_landing_landing_page",
       "target": "src_components_landing_assets",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/landing/assets.tsx",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_landing_assets_assetcard",
+      "target": "src_components_landing_assets_assethref",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/landing/assets.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_landing_assets_assethref",
+      "target": "src_lib_coins_catalog_getcoinbyslug",
       "confidence_score": 1.0
     },
     {
@@ -15498,6 +16194,18 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page",
+      "target": "src_components_landing_footer",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -15506,6 +16214,18 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_landing_landing_page",
+      "target": "src_components_landing_footer_landingfooter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page",
       "target": "src_components_landing_footer_landingfooter",
       "confidence_score": 1.0
     },
@@ -15887,18 +16607,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "references",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/landing/mobile-section.tsx",
-      "source_location": "L45",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_components_landing_mobile_section_phonemock",
-      "target": "src_lib_landing_constants_assets"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/landing/nav.tsx",
@@ -16014,6 +16722,30 @@
       "_origin": "ast",
       "source": "src_components_landing_nav",
       "target": "src_lib_landing_constants_nav_links",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page",
+      "target": "src_components_landing_nav",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page",
+      "target": "src_components_landing_nav_landingnav",
       "confidence_score": 1.0
     },
     {
@@ -16475,7 +17207,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/app-sidebar.tsx",
-      "source_location": "L52",
+      "source_location": "L59",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_layout_app_sidebar",
@@ -16486,7 +17218,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/app-sidebar.tsx",
-      "source_location": "L30",
+      "source_location": "L31",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_layout_app_sidebar",
@@ -16498,7 +17230,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/app-sidebar.tsx",
-      "source_location": "L14",
+      "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_layout_app_sidebar",
@@ -16510,7 +17242,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/app-sidebar.tsx",
-      "source_location": "L14",
+      "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_layout_app_sidebar",
@@ -16522,7 +17254,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/app-sidebar.tsx",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_layout_app_sidebar",
@@ -16534,7 +17266,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/app-sidebar.tsx",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_layout_app_sidebar",
@@ -16546,7 +17278,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/app-sidebar.tsx",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_layout_app_sidebar",
@@ -16558,7 +17290,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/app-sidebar.tsx",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_layout_app_sidebar",
@@ -16570,7 +17302,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/app-sidebar.tsx",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_layout_app_sidebar",
@@ -16582,7 +17314,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/app-sidebar.tsx",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_layout_app_sidebar",
@@ -16594,7 +17326,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/app-sidebar.tsx",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_layout_app_sidebar",
@@ -16606,7 +17338,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/app-sidebar.tsx",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_layout_app_sidebar",
@@ -16618,7 +17350,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/app-sidebar.tsx",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_layout_app_sidebar",
@@ -16630,7 +17362,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/app-sidebar.tsx",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_layout_app_sidebar",
@@ -16642,7 +17374,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/app-sidebar.tsx",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_layout_app_sidebar",
@@ -16654,7 +17386,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/app-sidebar.tsx",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_layout_app_sidebar",
@@ -16666,7 +17398,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/app-sidebar.tsx",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_layout_app_sidebar",
@@ -16890,8 +17622,20 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_buy_sell_page",
+      "target": "src_components_layout_header",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "src/components/trading/trade-terminal.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_trading_trade_terminal",
@@ -16914,8 +17658,20 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_buy_sell_page",
+      "target": "src_components_layout_header_header",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "src/components/trading/trade-terminal.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_trading_trade_terminal",
@@ -18199,6 +18955,785 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "src/components/price/buy-widget.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_buy_widget",
+      "target": "src_components_price_buy_widget_buywidget",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/buy-widget.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_buy_widget",
+      "target": "src_components_price_buy_widget_buywidgetprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/buy-widget.tsx",
+      "source_location": "L132",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_buy_widget",
+      "target": "src_components_price_buy_widget_coindot",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/buy-widget.tsx",
+      "source_location": "L143",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_buy_widget",
+      "target": "src_components_price_buy_widget_field",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/buy-widget.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_buy_widget",
+      "target": "src_components_ui_button",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/buy-widget.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_buy_widget",
+      "target": "src_components_ui_button_button",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/buy-widget.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_buy_widget",
+      "target": "src_components_ui_input",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/buy-widget.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_buy_widget",
+      "target": "src_components_ui_input_input",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/buy-widget.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_buy_widget",
+      "target": "src_lib_coins_catalog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/buy-widget.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_buy_widget",
+      "target": "src_lib_coins_catalog_coininfo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/buy-widget.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_buy_widget",
+      "target": "src_lib_utils",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/buy-widget.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_buy_widget",
+      "target": "src_lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/buy-widget.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_buy_widget",
+      "target": "src_lib_utils_formatmarketprice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/buy-widget.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_buy_widget",
+      "target": "src_lib_utils_formatprice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page",
+      "target": "src_components_price_buy_widget",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/buy-widget.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_buy_widget_buywidgetprops",
+      "target": "src_lib_coins_catalog_coininfo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/price/buy-widget.tsx",
+      "source_location": "L42",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_buy_widget_buywidget",
+      "target": "src_lib_utils_cn"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/price/buy-widget.tsx",
+      "source_location": "L97",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_buy_widget_buywidget",
+      "target": "src_lib_utils_formatmarketprice"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/price/buy-widget.tsx",
+      "source_location": "L70",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_buy_widget_buywidget",
+      "target": "src_lib_utils_formatprice"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page",
+      "target": "src_components_price_buy_widget_buywidget",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L47",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page",
+      "target": "src_components_price_coin_price_page_coinpricepage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L43",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page",
+      "target": "src_components_price_coin_price_page_coinpricepageprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page",
+      "target": "src_components_price_coin_price_page_range_options",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L38",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page",
+      "target": "src_components_price_coin_price_page_rangeid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L419",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page",
+      "target": "src_components_price_coin_price_page_stat",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L41",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page",
+      "target": "src_components_price_coin_price_page_tabid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page",
+      "target": "src_components_price_coin_price_page_tabs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page",
+      "target": "src_components_price_price_area_chart",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page",
+      "target": "src_components_price_price_area_chart_priceareachart",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page",
+      "target": "src_components_ui_button",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page",
+      "target": "src_components_ui_button_button",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page",
+      "target": "src_components_ui_skeleton",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page",
+      "target": "src_components_ui_skeleton_skeleton",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page",
+      "target": "src_hooks_use_ticker",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page",
+      "target": "src_hooks_use_ticker_useticker",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page",
+      "target": "src_lib_coins_catalog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page",
+      "target": "src_lib_coins_catalog_coininfo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page",
+      "target": "src_lib_coins_catalog_coinpricepath",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page",
+      "target": "src_lib_coins_catalog_getallcoins",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page",
+      "target": "src_lib_utils",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page",
+      "target": "src_lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page",
+      "target": "src_lib_utils_formatcompactusd",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page",
+      "target": "src_lib_utils_formatmarketprice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page",
+      "target": "src_lib_utils_formatpercent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page",
+      "target": "src_lib_utils_formatprice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page",
+      "target": "src_types_exchange",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page",
+      "target": "src_types_exchange_ohlcv",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L52",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page_coinpricepage",
+      "target": "src_components_price_coin_price_page_range_options"
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L44",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page_coinpricepageprops",
+      "target": "src_lib_coins_catalog_coininfo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L50",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page_coinpricepage",
+      "target": "src_hooks_use_ticker_useticker"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L383",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page_coinpricepage",
+      "target": "src_lib_coins_catalog_coinpricepath"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L92",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page_coinpricepage",
+      "target": "src_lib_coins_catalog_getallcoins"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L159",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page_coinpricepage",
+      "target": "src_lib_utils_cn"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L329",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page_coinpricepage",
+      "target": "src_lib_utils_formatcompactusd"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L154",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page_coinpricepage",
+      "target": "src_lib_utils_formatmarketprice"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L164",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page_coinpricepage",
+      "target": "src_lib_utils_formatpercent"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L337",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page_coinpricepage",
+      "target": "src_lib_utils_formatprice"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/coin-price-page.tsx",
+      "source_location": "L434",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_coin_price_page_stat",
+      "target": "src_lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/price-area-chart.tsx",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_price_area_chart",
+      "target": "src_components_price_price_area_chart_priceareachart",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/price-area-chart.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_price_area_chart",
+      "target": "src_components_price_price_area_chart_priceareachartprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/price-area-chart.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_price_area_chart",
+      "target": "src_lib_utils",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/price-area-chart.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_price_area_chart",
+      "target": "src_lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/price-area-chart.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_price_area_chart",
+      "target": "src_types_exchange",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/price-area-chart.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_price_area_chart",
+      "target": "src_types_exchange_ohlcv",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/price/price-area-chart.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_price_area_chart_priceareachartprops",
+      "target": "src_types_exchange_ohlcv",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/price/price-area-chart.tsx",
+      "source_location": "L136",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_price_price_area_chart_priceareachart",
+      "target": "src_lib_utils_cn"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "src/components/providers.tsx",
       "source_location": "L10",
       "weight": 1.0,
@@ -18924,6 +20459,373 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L476",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_buy_sell_page",
+      "target": "src_components_trading_buy_sell_page_amountfield",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_buy_sell_page",
+      "target": "src_components_trading_buy_sell_page_assets",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_buy_sell_page",
+      "target": "src_components_trading_buy_sell_page_buysellpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_buy_sell_page",
+      "target": "src_components_trading_buy_sell_page_side",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L531",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_buy_sell_page",
+      "target": "src_components_trading_buy_sell_page_trimamount",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_buy_sell_page",
+      "target": "src_components_ui_button",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_buy_sell_page",
+      "target": "src_components_ui_button_button",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_buy_sell_page",
+      "target": "src_components_ui_dialog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_buy_sell_page",
+      "target": "src_components_ui_dialog_dialog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_buy_sell_page",
+      "target": "src_components_ui_dialog_dialogcontent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_buy_sell_page",
+      "target": "src_components_ui_dialog_dialogdescription",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_buy_sell_page",
+      "target": "src_components_ui_dialog_dialogfooter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_buy_sell_page",
+      "target": "src_components_ui_dialog_dialogheader",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_buy_sell_page",
+      "target": "src_components_ui_dialog_dialogtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_buy_sell_page",
+      "target": "src_components_ui_input",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_buy_sell_page",
+      "target": "src_components_ui_input_input",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_buy_sell_page",
+      "target": "src_hooks_use_ticker",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_buy_sell_page",
+      "target": "src_hooks_use_ticker_useticker",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_buy_sell_page",
+      "target": "src_lib_notify_index",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_buy_sell_page",
+      "target": "src_lib_notify_index_notify",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_buy_sell_page",
+      "target": "src_lib_utils",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_buy_sell_page",
+      "target": "src_lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_buy_sell_page",
+      "target": "src_lib_utils_formatprice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_buy_sell_page",
+      "target": "src_lib_utils_tobinancesymbol",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_buy_sell_page",
+      "target": "src_types_exchange",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_buy_sell_page",
+      "target": "src_types_exchange_balance",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L332",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_buy_sell_page_buysellpage",
+      "target": "src_components_trading_buy_sell_page_trimamount",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L50",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_buy_sell_page_buysellpage",
+      "target": "src_hooks_use_ticker_useticker"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L222",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_buy_sell_page_buysellpage",
+      "target": "src_lib_utils_cn"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L240",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_buy_sell_page_buysellpage",
+      "target": "src_lib_utils_formatprice"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/trading/buy-sell-page.tsx",
+      "source_location": "L179",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_buy_sell_page_buysellpage",
+      "target": "src_lib_utils_tobinancesymbol"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "src/components/trading/market-overview.tsx",
       "source_location": "L11",
       "weight": 1.0,
@@ -19221,7 +21123,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/trading/trade-terminal.tsx",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_trading_trade_terminal",
@@ -19234,7 +21136,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/trading/open-orders-panel.tsx",
-      "source_location": "L103",
+      "source_location": "L104",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_trading_open_orders_panel_openorderspanel",
@@ -19246,7 +21148,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/trading/open-orders-panel.tsx",
-      "source_location": "L112",
+      "source_location": "L113",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_trading_open_orders_panel_openorderspanel",
@@ -19257,7 +21159,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/trading/trade-terminal.tsx",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_trading_trade_terminal",
@@ -19398,7 +21300,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/trading/trade-terminal.tsx",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_trading_trade_terminal",
@@ -19446,7 +21348,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/trading/trade-terminal.tsx",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_trading_trade_terminal",
@@ -19458,7 +21360,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/components/trading/order-book-panel.tsx",
-      "source_location": "L123",
+      "source_location": "L127",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_trading_order_book_panel_orderbookrow",
@@ -19502,7 +21404,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/trading/order-form.tsx",
-      "source_location": "L356",
+      "source_location": "L378",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_trading_order_form",
@@ -19850,7 +21752,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/trading/trade-terminal.tsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_trading_trade_terminal",
@@ -19875,7 +21777,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/trading/order-form.tsx",
-      "source_location": "L288",
+      "source_location": "L209",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_trading_order_form_orderform",
@@ -19887,7 +21789,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/trading/order-form.tsx",
-      "source_location": "L220",
+      "source_location": "L236",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_trading_order_form_orderform",
@@ -19910,7 +21812,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/trading/trade-terminal.tsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_trading_trade_terminal",
@@ -19921,7 +21823,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/trading/ticker-bar.tsx",
-      "source_location": "L45",
+      "source_location": "L70",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_trading_ticker_bar",
@@ -19932,7 +21834,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/trading/ticker-bar.tsx",
-      "source_location": "L12",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_trading_ticker_bar",
@@ -19943,7 +21845,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/trading/ticker-bar.tsx",
-      "source_location": "L7",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_trading_ticker_bar",
@@ -19955,7 +21857,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/trading/ticker-bar.tsx",
-      "source_location": "L5",
+      "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_trading_ticker_bar",
@@ -19967,7 +21869,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/trading/ticker-bar.tsx",
-      "source_location": "L5",
+      "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_trading_ticker_bar",
@@ -20027,7 +21929,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/trading/trade-terminal.tsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_trading_trade_terminal",
@@ -20039,7 +21941,7 @@
       "context": "field",
       "confidence": "EXTRACTED",
       "source_file": "src/components/trading/ticker-bar.tsx",
-      "source_location": "L9",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_trading_ticker_bar_tickerbarprops",
@@ -20052,7 +21954,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/trading/ticker-bar.tsx",
-      "source_location": "L27",
+      "source_location": "L25",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_trading_ticker_bar_tickerbar",
@@ -20064,7 +21966,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/trading/ticker-bar.tsx",
-      "source_location": "L32",
+      "source_location": "L42",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_trading_ticker_bar_tickerbar",
@@ -20076,7 +21978,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/trading/ticker-bar.tsx",
-      "source_location": "L24",
+      "source_location": "L34",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_trading_ticker_bar_tickerbar",
@@ -20087,7 +21989,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/trading/trade-terminal.tsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_trading_trade_terminal",
@@ -20098,7 +22000,40 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/trading/trade-terminal.tsx",
-      "source_location": "L21",
+      "source_location": "L118",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_trade_terminal",
+      "target": "src_components_trading_trade_terminal_panelheader",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/trading/trade-terminal.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_trade_terminal",
+      "target": "src_components_trading_trade_terminal_timeframe",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/trading/trade-terminal.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_trade_terminal",
+      "target": "src_components_trading_trade_terminal_timeframes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/trading/trade-terminal.tsx",
+      "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_trading_trade_terminal",
@@ -20109,7 +22044,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/trading/trade-terminal.tsx",
-      "source_location": "L17",
+      "source_location": "L20",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_trading_trade_terminal",
@@ -20121,7 +22056,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/trading/trade-terminal.tsx",
-      "source_location": "L10",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_trading_trade_terminal",
@@ -20133,71 +22068,11 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/trading/trade-terminal.tsx",
-      "source_location": "L10",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_trading_trade_terminal",
       "target": "src_components_trading_trading_chart_tradingchart",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/trading/trade-terminal.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_components_trading_trade_terminal",
-      "target": "src_components_ui_card",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/trading/trade-terminal.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_components_trading_trade_terminal",
-      "target": "src_components_ui_card_card",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/trading/trade-terminal.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_components_trading_trade_terminal",
-      "target": "src_components_ui_card_cardcontent",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/trading/trade-terminal.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_components_trading_trade_terminal",
-      "target": "src_components_ui_card_cardheader",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/trading/trade-terminal.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_components_trading_trade_terminal",
-      "target": "src_components_ui_card_cardtitle",
       "confidence_score": 1.0
     },
     {
@@ -20269,6 +22144,18 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_trading_trade_terminal",
+      "target": "src_lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/trading/trade-terminal.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_trade_terminal",
       "target": "src_lib_utils_frombinancesymbol",
       "confidence_score": 1.0
     },
@@ -20302,7 +22189,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/trading/trade-terminal.tsx",
-      "source_location": "L24",
+      "source_location": "L27",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_trading_trade_terminal_tradeterminal",
@@ -20314,7 +22201,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/trading/trade-terminal.tsx",
-      "source_location": "L23",
+      "source_location": "L26",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_trading_trade_terminal_tradeterminal",
@@ -20326,7 +22213,19 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/trading/trade-terminal.tsx",
-      "source_location": "L22",
+      "source_location": "L78",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_trade_terminal_tradeterminal",
+      "target": "src_lib_utils_cn"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/trading/trade-terminal.tsx",
+      "source_location": "L25",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_trading_trade_terminal_tradeterminal",
@@ -20336,7 +22235,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/trading/trading-chart.tsx",
-      "source_location": "L22",
+      "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_trading_trading_chart",
@@ -20363,7 +22262,7 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_trading_trading_chart",
-      "target": "src_components_ui_skeleton",
+      "target": "src_lib_utils",
       "confidence_score": 1.0
     },
     {
@@ -20375,7 +22274,7 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_trading_trading_chart",
-      "target": "src_components_ui_skeleton_skeleton",
+      "target": "src_lib_utils_cn",
       "confidence_score": 1.0
     },
     {
@@ -20413,6 +22312,18 @@
       "source": "src_components_trading_trading_chart_tradingchartprops",
       "target": "src_types_exchange_ohlcv",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/trading/trading-chart.tsx",
+      "source_location": "L134",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_trading_trading_chart_tradingchart",
+      "target": "src_lib_utils_cn"
     },
     {
       "relation": "contains",
@@ -24623,6 +26534,72 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "src/lib/coins/catalog.ts",
+      "source_location": "L153",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_coins_catalog",
+      "target": "src_lib_coins_catalog_byslug",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/coins/catalog.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_coins_catalog",
+      "target": "src_lib_coins_catalog_coininfo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/coins/catalog.ts",
+      "source_location": "L171",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_coins_catalog",
+      "target": "src_lib_coins_catalog_coinpricepath",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/coins/catalog.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_coins_catalog",
+      "target": "src_lib_coins_catalog_coins",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/coins/catalog.ts",
+      "source_location": "L163",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_coins_catalog",
+      "target": "src_lib_coins_catalog_getallcoins",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/coins/catalog.ts",
+      "source_location": "L167",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_coins_catalog",
+      "target": "src_lib_coins_catalog_getcoinbyslug",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "src/lib/db/index.ts",
       "source_location": "L10",
       "weight": 1.0,
@@ -27314,7 +29291,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/proxy.ts",
-      "source_location": "L59",
+      "source_location": "L69",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_proxy",
@@ -27336,7 +29313,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/proxy.ts",
-      "source_location": "L14",
+      "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_proxy",
@@ -27347,7 +29324,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/proxy.ts",
-      "source_location": "L21",
+      "source_location": "L37",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_proxy",
@@ -27355,15 +29332,49 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/proxy.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_proxy",
+      "target": "src_proxy_publicbrowseprefixes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/proxy.ts",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_proxy",
+      "target": "src_proxy_shouldbounceauthedfrompublic",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/proxy.ts",
-      "source_location": "L38",
+      "source_location": "L54",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_proxy_proxy",
       "target": "src_proxy_ispublicpath",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/proxy.ts",
+      "source_location": "L62",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_proxy_proxy",
+      "target": "src_proxy_shouldbounceauthedfrompublic",
       "confidence_score": 1.0
     },
     {
@@ -28292,5 +30303,5 @@
       "source_file": ".cursor/skills/drizzle/SKILL.md"
     }
   ],
-  "built_at_commit": "1911a98fc920aac2e595a7e127771110e3595cbb"
+  "built_at_commit": "49e5cd6dc15d222c24ed43ea93cc85dfd059ba90"
 }

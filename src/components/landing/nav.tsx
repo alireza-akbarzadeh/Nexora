@@ -11,11 +11,11 @@ import { NAV_LINKS } from "@/lib/landing/constants";
 import { NexoraLogo } from "./shared/nexora-logo";
 
 const NAV_ANCHORS: Record<(typeof NAV_LINKS)[number], string> = {
-  Markets: "#markets",
-  Trade: "#demo",
-  Derivatives: "#trade",
-  Institutional: "#institutional",
-  Learn: "#learn",
+  Markets: "/#markets",
+  Trade: "/#demo",
+  Derivatives: "/#trade",
+  Institutional: "/#institutional",
+  Learn: "/#learn",
 };
 
 export function LandingNav() {
