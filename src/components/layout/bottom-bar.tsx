@@ -36,8 +36,9 @@ export function BottomBar({
     return (
         <footer
             className={cn(
-                "flex h-12 shrink-0 items-center gap-3 border-t border-border rounded-b-2xl",
-                "bg-card/80 px-3 text-xs text-muted-foreground backdrop-blur-md",
+                "sticky bottom-0 z-30 flex h-14 shrink-0 items-center gap-2 border-t",
+                "border-b border-border bg-card/60 px-4 backdrop-blur-md",
+                "supports-backdrop-filter:bg-card/40",
                 className,
             )}
         >

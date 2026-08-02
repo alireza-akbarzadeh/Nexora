@@ -8,7 +8,6 @@ import {ThemeToggle} from "@/components/theme-toggle";
 import {useWsConnection} from "@/hooks/use-ticker";
 import {cn} from "@/lib/utils";
 import React from "react";
-import {ConnectionBadge} from "@/components/connection-badge";
 
 interface HeaderProps {
     title?: string;
@@ -49,7 +48,6 @@ export function Header({title, subtitle, children, className}: HeaderProps) {
             </div>
 
             <div className="flex items-center gap-1.5 sm:gap-2">
-                <ConnectionBadge connected={connected} className="hidden sm:inline-flex"/>
                 <UserMenu/>
                 <ThemeToggle/>
                 <NotificationBell/>
