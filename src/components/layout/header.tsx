@@ -1,24 +1,30 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { SidebarTrigger } from "@/components/ui/sidebar";
+import { NotificationBell } from "@/components/notify/notification-bell";
 import { UserMenu } from "@/components/layout/user-menu";
 import { useWsConnection } from "@/hooks/use-ticker";
+import { cn } from "@/lib/utils";
 
 interface HeaderProps {
   title?: string;
   subtitle?: string;
   children?: React.ReactNode;
+  className?: string;
 }
 
-export function Header({ title, subtitle, children }: HeaderProps) {
+export function Header({ title, subtitle, children, className }: HeaderProps) {
   const connected = useWsConnection();
 
   return (
-    <header className="flex h-14 shrink-0 items-center gap-2 border-b border-border bg-card/60 px-4 backdrop-blur-md">
+    <header
+      className={cn(
+        "flex h-14 shrink-0 items-center gap-2 border-b border-border bg-card/60 px-4 backdrop-blur-md",
+        className,
+      )}
+    >
       <SidebarTrigger className="-ml-1" />
       <Separator orientation="vertical" className="mr-1 h-4" />
 
@@ -38,17 +44,23 @@ export function Header({ title, subtitle, children }: HeaderProps) {
         {children}
       </div>
 
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-1.5 sm:gap-2">
         <Badge
           variant={connected ? "default" : "secondary"}
           className="hidden sm:inline-flex"
         >
           <span
-            className={`mr-1.5 size-1.5 rounded-full ${connected ? "animate-pulse bg-primary-foreground" : "bg-muted-foreground"}`}
+            className={cn(
+              "mr-1.5 size-1.5 rounded-full",
+              connected
+                ? "animate-pulse bg-primary-foreground"
+                : "bg-muted-foreground",
+            )}
           />
           {connected ? "Live" : "Reconnecting"}
         </Badge>
 
+        <NotificationBell />
         <UserMenu variant="header" />
       </div>
     </header>

@@ -107,6 +107,8 @@ export const notify = Object.assign(
     },
     dismiss: (id: string) => useNotifyStore.getState().dismiss(id),
     dismissAll: () => useNotifyStore.getState().dismissAll(),
+    markAllRead: () => useNotifyStore.getState().markAllRead(),
+    clearHistory: () => useNotifyStore.getState().clearHistory(),
     setSoundEnabled: (enabled: boolean) =>
       useNotifyStore.getState().setSoundEnabled(enabled),
   },
