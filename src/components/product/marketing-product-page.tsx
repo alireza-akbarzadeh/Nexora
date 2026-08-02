@@ -1,5 +1,3 @@
-"use client"
-
 import { LandingFooter } from "@/components/landing/footer"
 import { LandingNav } from "@/components/landing/nav"
 import { MarketingProductShell } from "@/components/product/product-hub"

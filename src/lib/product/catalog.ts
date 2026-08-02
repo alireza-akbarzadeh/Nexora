@@ -94,10 +94,10 @@ export const DEMO_PAGE: ProductPageContent = {
     {
       title: "Paper spot",
       description: "Simulated fills against live market prices.",
-      href: "/#demo",
+      href: "/demo",
       icon: Sparkles,
       badge: "New",
-      cta: "Try on landing",
+      cta: "Open demo desk",
     },
     {
       title: "Live terminal",
@@ -107,7 +107,7 @@ export const DEMO_PAGE: ProductPageContent = {
       cta: "Open terminal",
     },
   ],
-  primaryCta: { label: "Open buy & sell", href: "/buy" },
+  primaryCta: { label: "Open demo desk", href: "/demo" },
 }
 
 export const BOTS_PAGE: ProductPageContent = {

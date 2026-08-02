@@ -255,8 +255,8 @@
     "semantic_hash": ""
   },
   "src/components/landing/trade-demo.tsx": {
-    "mtime": 1785657376.8376906,
-    "ast_hash": "4de2dbbd5fe53e8d79a7322491c32c2f",
+    "mtime": 1785663974.0893142,
+    "ast_hash": "f076272c4ac999f83a683960e4d2ff80",
     "semantic_hash": ""
   },
   "src/components/landing/trust-bar.tsx": {
@@ -280,7 +280,7 @@
     "semantic_hash": ""
   },
   "src/components/layout/user-menu.tsx": {
-    "mtime": 1785663333.9815302,
+    "mtime": 1785663861.6648805,
     "ast_hash": "0b8302f8eb74487873f9654e399dec1d",
     "semantic_hash": ""
   },
@@ -785,8 +785,8 @@
     "semantic_hash": ""
   },
   "src/app/(dashboard)/demo/page.tsx": {
-    "mtime": 1785663297.1996882,
-    "ast_hash": "2a8d85f7b881e789c007b7e947f23f15",
+    "mtime": 1785663976.3324962,
+    "ast_hash": "7439188c750b0f2b5012bff5cc8b0b07",
     "semantic_hash": ""
   },
   "src/app/(dashboard)/developers/page.tsx": {
@@ -840,13 +840,13 @@
     "semantic_hash": ""
   },
   "src/components/product/dashboard-product-page.tsx": {
-    "mtime": 1785663292.0128694,
-    "ast_hash": "5ed5c17ea42ba62df327044dc02302dd",
+    "mtime": 1785663977.163159,
+    "ast_hash": "ef21499eec9bdaf0f4d52fd2affa229d",
     "semantic_hash": ""
   },
   "src/components/product/marketing-product-page.tsx": {
-    "mtime": 1785663292.5735257,
-    "ast_hash": "748d7dd36d523afff7d680eec386e097",
+    "mtime": 1785663977.163159,
+    "ast_hash": "1bdb0bda35dc2183cd411016197400eb",
     "semantic_hash": ""
   },
   "src/components/product/product-hub.tsx": {
@@ -855,8 +855,18 @@
     "semantic_hash": ""
   },
   "src/lib/product/catalog.ts": {
-    "mtime": 1785663277.5896134,
-    "ast_hash": "21f3d116658abfe59f2592281d38ae27",
+    "mtime": 1785663976.540838,
+    "ast_hash": "d269c86f8b0fa5430a73cfb4ba21aa0e",
+    "semantic_hash": ""
+  },
+  "src/components/trading/demo-trading-page.tsx": {
+    "mtime": 1785663974.2317288,
+    "ast_hash": "5de4abb9a78091a2ecb85cfe66d69eb0",
+    "semantic_hash": ""
+  },
+  "src/components/trading/paper-trade-simulator.tsx": {
+    "mtime": 1785663970.5500295,
+    "ast_hash": "79af944a7c6cd3de0d97b6e3e4a8f4c0",
     "semantic_hash": ""
   }
 }

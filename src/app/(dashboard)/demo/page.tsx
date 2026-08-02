@@ -1,6 +1,5 @@
-import { DashboardProductPage } from "@/components/product/dashboard-product-page"
-import { DEMO_PAGE } from "@/lib/product/catalog"
+import { DemoTradingPage } from "@/components/trading/demo-trading-page"
 
 export default function DemoRoutePage() {
-  return <DashboardProductPage content={DEMO_PAGE} />
+  return <DemoTradingPage />
 }
