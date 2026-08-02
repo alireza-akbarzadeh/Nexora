@@ -215,8 +215,8 @@
     "semantic_hash": ""
   },
   "src/components/landing/nav.tsx": {
-    "mtime": 1785662544.2373607,
-    "ast_hash": "d088aee2ac01957874d8f223bdcda455",
+    "mtime": 1785663334.0280745,
+    "ast_hash": "b6eef95a369408ea92b9adbf06dbf18f",
     "semantic_hash": ""
   },
   "src/components/landing/pricing.tsx": {
@@ -265,8 +265,8 @@
     "semantic_hash": ""
   },
   "src/components/layout/app-sidebar.tsx": {
-    "mtime": 1785660780.2016778,
-    "ast_hash": "e26be53bf9db44e6323993b23a6c5665",
+    "mtime": 1785663324.3869073,
+    "ast_hash": "c7702e3ba7c6efc6b2663388b1e5ee0d",
     "semantic_hash": ""
   },
   "src/components/layout/dashboard-shell.tsx": {
@@ -280,7 +280,7 @@
     "semantic_hash": ""
   },
   "src/components/layout/user-menu.tsx": {
-    "mtime": 1785657977.8578718,
+    "mtime": 1785663333.9815302,
     "ast_hash": "0b8302f8eb74487873f9654e399dec1d",
     "semantic_hash": ""
   },
@@ -515,8 +515,8 @@
     "semantic_hash": ""
   },
   "src/proxy.ts": {
-    "mtime": 1785660780.1963744,
-    "ast_hash": "6e5a4a7f24623e77cb4c5510ddc54bd1",
+    "mtime": 1785663320.889354,
+    "ast_hash": "d5d73ff3145a439292dd1e8346180f8b",
     "semantic_hash": ""
   },
   "src/stores/trading-store.ts": {
@@ -762,6 +762,101 @@
   "src/components/notify/notification-bell.tsx": {
     "mtime": 1785661029.6141846,
     "ast_hash": "661f9b1d5d0e5f5de255a8ab794f6e07",
+    "semantic_hash": ""
+  },
+  "src/lib/landing/nav-menu.ts": {
+    "mtime": 1785663316.6420739,
+    "ast_hash": "3a94b13aab1d2ca75f76efdf212a289c",
+    "semantic_hash": ""
+  },
+  "src/app/(dashboard)/bots/page.tsx": {
+    "mtime": 1785663297.797093,
+    "ast_hash": "a293a836ab719e024a557d8aaee0d8d2",
+    "semantic_hash": ""
+  },
+  "src/app/(dashboard)/convert/page.tsx": {
+    "mtime": 1785663296.2397888,
+    "ast_hash": "2a68d6c5075685dcd20abd6476e63d97",
+    "semantic_hash": ""
+  },
+  "src/app/(dashboard)/copy-trading/page.tsx": {
+    "mtime": 1785663298.2156608,
+    "ast_hash": "6507c8328949dafd0774e8a857ca4cc6",
+    "semantic_hash": ""
+  },
+  "src/app/(dashboard)/demo/page.tsx": {
+    "mtime": 1785663297.1996882,
+    "ast_hash": "2a8d85f7b881e789c007b7e947f23f15",
+    "semantic_hash": ""
+  },
+  "src/app/(dashboard)/developers/page.tsx": {
+    "mtime": 1785663299.8766792,
+    "ast_hash": "defcbe1fd6f6165672ecbcdf7a0d9202",
+    "semantic_hash": ""
+  },
+  "src/app/(dashboard)/earn/page.tsx": {
+    "mtime": 1785663299.4636705,
+    "ast_hash": "ebe8dc369424778eae4f111c052788f5",
+    "semantic_hash": ""
+  },
+  "src/app/(dashboard)/futures/page.tsx": {
+    "mtime": 1785663298.6444306,
+    "ast_hash": "6b49b7b515eff19627f58e2a69267e0b",
+    "semantic_hash": ""
+  },
+  "src/app/(dashboard)/margin/page.tsx": {
+    "mtime": 1785663296.666712,
+    "ast_hash": "57a802062308c4f6c4dd3d9935d088ce",
+    "semantic_hash": ""
+  },
+  "src/app/(marketing)/academy/page.tsx": {
+    "mtime": 1785663301.1859322,
+    "ast_hash": "dab27c8239c8a16947553b12afc492ce",
+    "semantic_hash": ""
+  },
+  "src/app/(marketing)/community/page.tsx": {
+    "mtime": 1785663303.4818976,
+    "ast_hash": "7a60270fad7014adc807c27ec6bd39a4",
+    "semantic_hash": ""
+  },
+  "src/app/(marketing)/institutional/page.tsx": {
+    "mtime": 1785663302.0158067,
+    "ast_hash": "a0249362a0bcaef28ed2d02a1a23b21f",
+    "semantic_hash": ""
+  },
+  "src/app/(marketing)/research/page.tsx": {
+    "mtime": 1785663301.9462273,
+    "ast_hash": "d7a8e6c232df7fb25101cb81214362b5",
+    "semantic_hash": ""
+  },
+  "src/app/(marketing)/security/page.tsx": {
+    "mtime": 1785663302.6987536,
+    "ast_hash": "8b6e5c1a65615f5228cbec99caed9b6e",
+    "semantic_hash": ""
+  },
+  "src/components/product/convert-page.tsx": {
+    "mtime": 1785663291.0779152,
+    "ast_hash": "ee67163c49644cb0275e7a31bec01bb3",
+    "semantic_hash": ""
+  },
+  "src/components/product/dashboard-product-page.tsx": {
+    "mtime": 1785663292.0128694,
+    "ast_hash": "5ed5c17ea42ba62df327044dc02302dd",
+    "semantic_hash": ""
+  },
+  "src/components/product/marketing-product-page.tsx": {
+    "mtime": 1785663292.5735257,
+    "ast_hash": "748d7dd36d523afff7d680eec386e097",
+    "semantic_hash": ""
+  },
+  "src/components/product/product-hub.tsx": {
+    "mtime": 1785663277.5896134,
+    "ast_hash": "6a544d31a180b2cb0d039f168e617845",
+    "semantic_hash": ""
+  },
+  "src/lib/product/catalog.ts": {
+    "mtime": 1785663277.5896134,
+    "ast_hash": "21f3d116658abfe59f2592281d38ae27",
     "semantic_hash": ""
   }
 }

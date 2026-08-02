@@ -5,8 +5,11 @@ import { usePathname } from "next/navigation";
 import {
   ArrowLeftRight,
   BarChart3,
+  Bot,
+  Landmark,
   LayoutDashboard,
   LineChart,
+  Repeat,
   Settings,
   TrendingUp,
   Wallet,
@@ -37,10 +40,22 @@ const mainNav = [
     match: (path: string) => path.startsWith("/buy"),
   },
   {
+    href: "/convert",
+    label: "Convert",
+    icon: Repeat,
+    match: (path: string) => path.startsWith("/convert"),
+  },
+  {
     href: "/trade/BTCUSDT",
     label: "Trade",
     icon: LineChart,
-    match: (path: string) => path.startsWith("/trade"),
+    match: (path: string) => path.startsWith("/trade") || path.startsWith("/margin"),
+  },
+  {
+    href: "/futures",
+    label: "Futures",
+    icon: Landmark,
+    match: (path: string) => path.startsWith("/futures"),
   },
   {
     href: "/markets",
@@ -53,6 +68,12 @@ const mainNav = [
     label: "Portfolio",
     icon: Wallet,
     match: (path: string) => path.startsWith("/portfolio"),
+  },
+  {
+    href: "/earn",
+    label: "Earn",
+    icon: TrendingUp,
+    match: (path: string) => path.startsWith("/earn"),
   },
 ];
 
@@ -112,21 +133,32 @@ export function AppSidebar() {
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton
+                  isActive={pathname.startsWith("/bots")}
+                  tooltip="Trading bots"
+                  render={<Link href="/bots" />}
+                >
+                  <Bot />
+                  <span>Bots</span>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton
+                  isActive={pathname.startsWith("/demo")}
+                  tooltip="Demo trading"
+                  render={<Link href="/demo" />}
+                >
+                  <TrendingUp />
+                  <span>Demo</span>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton
                   isActive={pathname.startsWith("/settings")}
                   tooltip="Settings"
                   render={<Link href="/settings" />}
                 >
                   <Settings />
                   <span>Settings</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton
-                  tooltip="Markets overview"
-                  render={<Link href="/markets" />}
-                >
-                  <TrendingUp />
-                  <span>Watchlist</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
             </SidebarMenu>

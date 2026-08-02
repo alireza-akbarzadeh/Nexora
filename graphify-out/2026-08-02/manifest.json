@@ -215,8 +215,8 @@
     "semantic_hash": ""
   },
   "src/components/landing/nav.tsx": {
-    "mtime": 1785662342.284961,
-    "ast_hash": "1c7f0020f8601c0ee66abcbe2b0dae41",
+    "mtime": 1785662884.6763272,
+    "ast_hash": "b6d5f76e8cefeb4f952f790b6f4f891e",
     "semantic_hash": ""
   },
   "src/components/landing/pricing.tsx": {
@@ -762,6 +762,11 @@
   "src/components/notify/notification-bell.tsx": {
     "mtime": 1785661029.6141846,
     "ast_hash": "661f9b1d5d0e5f5de255a8ab794f6e07",
+    "semantic_hash": ""
+  },
+  "src/lib/landing/nav-menu.ts": {
+    "mtime": 1785662875.7448008,
+    "ast_hash": "776d3906001ccafa59c5e5a5e8097395",
     "semantic_hash": ""
   }
 }

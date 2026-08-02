@@ -316,13 +316,6 @@ export function LandingNav() {
               <div className="h-9 w-24 animate-pulse rounded-xl bg-white/5" />
             ) : isAuthenticated ? (
               <>
-                <Link
-                  href="/dashboard"
-                  className="hidden items-center gap-1.5 rounded-xl px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground sm:inline-flex"
-                >
-                  <LayoutDashboard className="size-4" />
-                  Dashboard
-                </Link>
                 <NotificationBell />
                 <UserMenu variant="header" />
               </>

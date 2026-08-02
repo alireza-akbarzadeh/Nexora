@@ -102,21 +102,21 @@ export const TRADE_SECTION: MegaNavSection = {
           badge: "New",
         },
         {
-          href: "/portfolio",
+          href: "/margin",
           title: "Margin",
-          description: "Increase exposure with portfolio leverage tools",
+          description: "Increase your profits with leverage",
           icon: TrendingUp,
         },
         {
-          href: "/#markets",
+          href: "/convert",
           title: "Convert",
-          description: "Swap assets instantly at competitive rates",
+          description: "The easiest way to trade at all sizes",
           icon: Repeat,
         },
         {
-          href: "/#demo",
+          href: "/demo",
           title: "Demo Trading",
-          description: "Practice with paper funds and zero risk",
+          description: "Use virtual funds with zero risk",
           icon: Sparkles,
         },
       ],
@@ -131,22 +131,22 @@ export const TRADE_SECTION: MegaNavSection = {
           icon: Zap,
         },
         {
-          href: "/settings",
+          href: "/bots",
           title: "Trading Bots",
           description: "Automate strategies — easy, fast, reliable",
           icon: Bot,
           badge: "Beta",
         },
         {
-          href: "/#features",
+          href: "/copy-trading",
           title: "Copy Trading",
-          description: "Follow top-ranked strategies instantly",
+          description: "Follow the most popular traders",
           icon: Copy,
         },
         {
-          href: "/settings",
+          href: "/developers",
           title: "APIs",
-          description: "REST and WebSocket access with one key",
+          description: "Unlimited opportunities with one key",
           icon: Code2,
         },
       ],
@@ -161,19 +161,19 @@ export const FUTURES_SECTION: MegaNavSection = {
     {
       items: [
         {
-          href: "/#trade",
+          href: "/futures",
           title: "USDⓈ-M Futures",
           description: "Contracts settled in USDT and USDC",
           icon: Landmark,
         },
         {
-          href: "/#trade",
+          href: "/futures",
           title: "COIN-M Futures",
           description: "Contracts settled in cryptocurrency",
           icon: PieChart,
         },
         {
-          href: "/#trade",
+          href: "/futures",
           title: "Options",
           description: "Limited downside with affordable entry",
           icon: HandCoins,
@@ -191,27 +191,27 @@ export const EARN_SECTION: MegaNavSection = {
     {
       items: [
         {
-          href: "/#learn",
+          href: "/earn",
           title: "Overview",
           description: "One-stop portal for all Earn products",
           icon: Wallet,
         },
         {
-          href: "/#learn",
+          href: "/earn",
           title: "Simple Earn",
-          description: "Passive income on 300+ assets with flexible terms",
+          description: "Earn passive income on 300+ crypto assets",
           icon: Repeat,
         },
         {
-          href: "/#learn",
+          href: "/earn",
           title: "Advanced Earn",
-          description: "Maximize returns with structured yield products",
+          description: "Maximize returns with advanced yield products",
           icon: TrendingUp,
         },
         {
-          href: "/#institutional",
+          href: "/earn",
           title: "Loans",
-          description: "Quick loans with competitive rates",
+          description: "Quick and easy loans with competitive rates",
           icon: HandCoins,
         },
       ],
@@ -227,25 +227,25 @@ export const MORE_SECTION: MegaNavSection = {
     {
       items: [
         {
-          href: "/#institutional",
+          href: "/institutional",
           title: "VIP & Institutional",
-          description: "Trusted platform for funds, firms, and treasuries",
+          description: "Trusted platform for VIPs and institutions",
           icon: Building2,
         },
         {
-          href: "/#learn",
+          href: "/academy",
           title: "Academy",
           description: "Free crypto and trading education",
           icon: GraduationCap,
         },
         {
-          href: "/#learn",
+          href: "/research",
           title: "Research",
           description: "Macro, protocols, and on-chain coverage",
           icon: Newspaper,
         },
         {
-          href: "/#security",
+          href: "/security",
           title: "Security",
           description: "Cold storage, passkeys, and fraud defense",
           icon: ShieldCheck,
@@ -273,7 +273,7 @@ export const MORE_SECTION: MegaNavSection = {
           icon: LayoutDashboard,
         },
         {
-          href: "/#features",
+          href: "/community",
           title: "Community",
           description: "Signals, copy trading, and shared playbooks",
           icon: Users,

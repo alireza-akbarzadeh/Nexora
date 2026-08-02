@@ -12,7 +12,14 @@ const exactPublicRoutes = new Set([
 ]);
 
 /** Public paths that stay accessible while authenticated (no dashboard bounce). */
-const publicBrowsePrefixes = ["/price"] as const;
+const publicBrowsePrefixes = [
+  "/price",
+  "/academy",
+  "/research",
+  "/institutional",
+  "/security",
+  "/community",
+] as const;
 
 function isPublicPath(pathname: string) {
   if (exactPublicRoutes.has(pathname)) return true;
