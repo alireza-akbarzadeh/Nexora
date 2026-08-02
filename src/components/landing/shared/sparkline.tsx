@@ -15,7 +15,7 @@ export function Sparkline({ points, up }: SparklineProps) {
       return `${i === 0 ? "M" : "L"}${x.toFixed(1)},${y.toFixed(1)}`;
     })
     .join(" ");
-  const color = up ? "oklch(0.78 0.19 160)" : "oklch(0.65 0.24 25)";
+  const color = up ? "var(--profit)" : "var(--loss)";
   const gradientId = `sg-${up ? "up" : "down"}`;
 
   return (

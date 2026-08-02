@@ -26,7 +26,7 @@ export function TickerBar({ symbol, ticker }: TickerBarProps) {
         <p
           className={cn(
             "text-sm",
-            isPositive ? "text-buy" : "text-sell",
+            isPositive ? "text-profit" : "text-loss",
           )}
         >
           {ticker ? formatPercent(ticker.percentage) : "--"}

@@ -5,11 +5,11 @@ import { SECURITY_ITEMS, SECURITY_ORBIT_ICONS } from "@/lib/landing/constants";
 export function SecuritySection() {
   return (
     <section className="relative overflow-hidden py-32">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[oklch(0.18_0.03_265/0.5)] to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[color-mix(in_srgb,var(--card-elevated)_50%,transparent)] to-transparent" />
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="grid items-center gap-16 lg:grid-cols-2">
           <div>
-            <div className="font-mono text-xs tracking-widest text-[oklch(0.78_0.19_160)] uppercase">
+            <div className="font-mono text-xs tracking-widest text-profit uppercase">
               Security
             </div>
             <h2 className="mt-2 font-display text-4xl font-bold tracking-tight md:text-5xl">
@@ -36,7 +36,7 @@ export function SecuritySection() {
           </div>
 
           <div className="relative mx-auto aspect-square max-w-md">
-            <div className="animate-pulse-glow absolute inset-0 rounded-full bg-gradient-to-br from-[oklch(0.72_0.19_250/0.2)] via-transparent to-[oklch(0.78_0.19_160/0.2)] blur-2xl" />
+            <div className="animate-pulse-glow absolute inset-0 rounded-full bg-gradient-to-br from-[color-mix(in_srgb,var(--violet)_20%,transparent)] via-transparent to-[color-mix(in_srgb,var(--profit)_20%,transparent)] blur-2xl" />
             <div
               className="animate-pulse-glow absolute inset-8 rounded-full border border-white/10"
               style={{ animationDelay: "0.5s" }}
@@ -61,7 +61,7 @@ export function SecuritySection() {
                     animationDelay: `${i * 0.4}s`,
                   }}
                 >
-                  <Icon className="h-5 w-5 text-[oklch(0.85_0.15_210)]" />
+                  <Icon className="h-5 w-5 text-violet" />
                 </div>
               );
             })}
@@ -72,8 +72,8 @@ export function SecuritySection() {
           {SECURITY_ITEMS.map((it) => (
             <div key={it.title} className="glass rounded-2xl p-5 transition hover:border-white/20">
               <div className="mb-2 flex items-center gap-3">
-                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[oklch(0.78_0.19_160/0.15)]">
-                  <it.icon className="h-4.5 w-4.5 text-[oklch(0.78_0.19_160)]" />
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[color-mix(in_srgb,var(--profit)_15%,transparent)]">
+                  <it.icon className="h-4.5 w-4.5 text-profit" />
                 </div>
                 <h3 className="font-semibold">{it.title}</h3>
               </div>

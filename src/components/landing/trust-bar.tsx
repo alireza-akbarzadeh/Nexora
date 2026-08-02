@@ -8,7 +8,7 @@ export function TrustBar() {
           {TRUST_STATS.map((s) => (
             <div
               key={s.l}
-              className="bg-card p-6 text-center transition-colors hover:bg-[oklch(0.20_0.014_265)]"
+              className="bg-card p-6 text-center transition-colors hover:bg-card-elevated"
             >
               <div className="font-display gradient-text text-2xl font-bold tabular-nums md:text-3xl">
                 {s.v}

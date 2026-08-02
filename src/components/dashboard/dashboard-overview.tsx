@@ -61,7 +61,7 @@ export function DashboardOverview() {
           value={connected ? "Connected" : "Offline"}
           description="Binance WebSocket stream"
           icon={Radio}
-          accent={connected ? "text-buy" : "text-muted-foreground"}
+          accent={connected ? "text-profit" : "text-muted-foreground"}
         />
         <StatCard
           title="Featured Pairs"

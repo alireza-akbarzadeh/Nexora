@@ -9,7 +9,7 @@ export function FinalCtaSection() {
           <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
           <div className="grid-bg absolute inset-0 opacity-30 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
           <div className="relative">
-            <Flame className="mx-auto h-8 w-8 text-[oklch(0.85_0.15_80)]" />
+            <Flame className="mx-auto h-8 w-8 text-lime" />
             <h2 className="mt-6 font-display text-4xl font-bold tracking-tight md:text-6xl">
               Ready to trade like a <span className="gradient-text">professional?</span>
             </h2>

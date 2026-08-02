@@ -26,5 +26,20 @@ export const registerSchema = z.object({
     .max(128, "Password must be 128 characters or less"),
 });
 
+export const twoFactorCodeSchema = z.object({
+  code: z
+    .string()
+    .trim()
+    .min(6, "Enter a 6-digit code")
+    .max(10, "Code is too long"),
+  trustDevice: z.boolean().optional(),
+});
+
+export const enableTwoFactorSchema = z.object({
+  password: z.string().min(1, "Password is required"),
+});
+
 export type LoginFormValues = z.infer<typeof loginSchema>;
 export type RegisterFormValues = z.infer<typeof registerSchema>;
+export type TwoFactorCodeFormValues = z.infer<typeof twoFactorCodeSchema>;
+export type EnableTwoFactorFormValues = z.infer<typeof enableTwoFactorSchema>;

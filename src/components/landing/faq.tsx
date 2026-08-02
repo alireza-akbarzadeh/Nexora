@@ -12,7 +12,7 @@ export function FaqSection() {
     <section className="py-32">
       <div className="mx-auto max-w-3xl px-6">
         <div className="mb-16 text-center">
-          <div className="font-mono text-xs tracking-widest text-[oklch(0.72_0.19_250)] uppercase">
+          <div className="font-mono text-xs tracking-widest text-violet uppercase">
             FAQ
           </div>
           <h2 className="mt-2 font-display text-4xl font-bold tracking-tight md:text-5xl">

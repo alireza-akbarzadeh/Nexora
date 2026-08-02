@@ -69,10 +69,10 @@ export const ASSETS: Asset[] = [
 
 export const INITIAL_MARKETS: Market[] = [
   { sym: "BTC", name: "Bitcoin", price: 68420.5, color: "oklch(0.78 0.16 60)" },
-  { sym: "ETH", name: "Ethereum", price: 3542.18, color: "oklch(0.72 0.19 250)" },
-  { sym: "SOL", name: "Solana", price: 182.44, color: "oklch(0.68 0.22 300)" },
-  { sym: "AVAX", name: "Avalanche", price: 41.27, color: "oklch(0.65 0.24 25)" },
-  { sym: "LINK", name: "Chainlink", price: 18.62, color: "oklch(0.85 0.15 210)" },
+  { sym: "ETH", name: "Ethereum", price: 3542.18, color: "var(--violet)" },
+  { sym: "SOL", name: "Solana", price: 182.44, color: "var(--violet)" },
+  { sym: "AVAX", name: "Avalanche", price: 41.27, color: "var(--loss)" },
+  { sym: "LINK", name: "Chainlink", price: 18.62, color: "var(--violet)" },
 ];
 
 export const FEATURES: Feature[] = [

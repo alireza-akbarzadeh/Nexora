@@ -84,7 +84,7 @@ function OrderBookRow({
         className="absolute inset-y-0 right-0 opacity-20"
         style={{
           width,
-          backgroundColor: side === "buy" ? "#0ecb81" : "#f6465d",
+          backgroundColor: side === "buy" ? "var(--buy)" : "var(--sell)",
         }}
       />
       <span className={side === "buy" ? "text-buy" : "text-sell"}>

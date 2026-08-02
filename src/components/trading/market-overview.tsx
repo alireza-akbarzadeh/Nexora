@@ -51,7 +51,7 @@ function MarketCard({ symbol }: { symbol: string }) {
           <div
             className={cn(
               "flex size-8 items-center justify-center rounded-lg",
-              isPositive ? "bg-buy/10 text-buy" : "bg-sell/10 text-sell",
+              isPositive ? "bg-profit/10 text-profit" : "bg-loss/10 text-loss",
             )}
           >
             {isPositive ? (
@@ -76,7 +76,7 @@ function MarketCard({ symbol }: { symbol: string }) {
               <p
                 className={cn(
                   "mt-1 text-sm font-medium tabular-nums",
-                  isPositive ? "text-buy" : "text-sell",
+                  isPositive ? "text-profit" : "text-loss",
                 )}
               >
                 {formatPercent(ticker?.percentage ?? 0)}

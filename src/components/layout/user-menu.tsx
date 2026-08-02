@@ -181,12 +181,9 @@ export function UserMenu({ variant = "header", className }: UserMenuProps) {
           <DropdownMenuLabel className="text-[10px] uppercase tracking-wider">
             Security
           </DropdownMenuLabel>
-          <DropdownMenuItem disabled>
+          <DropdownMenuItem onClick={() => router.push("/settings#security")}>
             <ShieldCheck className="size-4" />
             Two-factor auth
-            <Badge variant="outline" className="ml-auto text-[10px]">
-              Soon
-            </Badge>
           </DropdownMenuItem>
           <DropdownMenuItem disabled>
             <User className="size-4" />

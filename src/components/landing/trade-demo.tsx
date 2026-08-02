@@ -225,7 +225,7 @@ export function TradeDemoSection() {
                   </div>
                   <div
                     className="mt-1 font-display text-3xl font-semibold tabular-nums transition-colors"
-                    style={{ color: tickUp ? "var(--emerald-glow)" : "oklch(0.65 0.24 25)" }}
+                    style={{ color: tickUp ? "var(--emerald-glow)" : "var(--loss)" }}
                   >
                     {fmtUSD(market.price)}
                   </div>
@@ -247,9 +247,8 @@ export function TradeDemoSection() {
                 style={
                   side === "buy"
                     ? {
-                        background:
-                          "linear-gradient(135deg, oklch(0.78 0.19 160 / 0.9), oklch(0.85 0.15 210 / 0.9))",
-                        color: "oklch(0.14 0.01 265)",
+                        background: "var(--buy)",
+                        color: "var(--primary-foreground)",
                       }
                     : undefined
                 }
@@ -263,9 +262,8 @@ export function TradeDemoSection() {
                 style={
                   side === "sell"
                     ? {
-                        background:
-                          "linear-gradient(135deg, oklch(0.65 0.24 25 / 0.9), oklch(0.68 0.22 300 / 0.9))",
-                        color: "oklch(0.98 0.005 260)",
+                        background: "var(--sell)",
+                        color: "var(--foreground)",
                       }
                     : undefined
                 }
@@ -312,7 +310,7 @@ export function TradeDemoSection() {
               type="button"
               onClick={execute}
               className="glow-primary w-full rounded-xl py-3.5 text-sm font-medium transition hover:opacity-90"
-              style={{ background: "var(--gradient-primary)", color: "oklch(0.14 0.01 265)" }}
+              style={{ background: "var(--gradient-primary)", color: "var(--background)" }}
             >
               {side === "buy" ? `Buy ${market.sym}` : `Sell ${market.sym}`} · {fmtUSD(amountUsd)}
             </button>
@@ -323,10 +321,10 @@ export function TradeDemoSection() {
                 style={{
                   background:
                     flash.kind === "ok"
-                      ? "oklch(0.78 0.19 160 / 0.12)"
-                      : "oklch(0.65 0.24 25 / 0.12)",
+                      ? "color-mix(in srgb, var(--profit) 12%, transparent)"
+                      : "color-mix(in srgb, var(--loss) 12%, transparent)",
                   color:
-                    flash.kind === "ok" ? "var(--emerald-glow)" : "oklch(0.75 0.22 25)",
+                    flash.kind === "ok" ? "var(--emerald-glow)" : "var(--loss)",
                 }}
               >
                 {flash.msg}
@@ -341,7 +339,7 @@ export function TradeDemoSection() {
                 label="Total P&L"
                 value={`${totalPnL >= 0 ? "+" : ""}${fmtUSD(totalPnL)}`}
                 sub={`${totalPnL >= 0 ? "+" : ""}${totalPnLPct.toFixed(2)}%`}
-                accent={totalPnL >= 0 ? "var(--emerald-glow)" : "oklch(0.7 0.24 25)"}
+                accent={totalPnL >= 0 ? "var(--emerald-glow)" : "var(--loss)"}
               />
               <StatCard label="Cash available" value={fmtUSD(cash)} accent="var(--cyan-glow)" />
             </div>
@@ -431,7 +429,7 @@ export function TradeDemoSection() {
                           </div>
                           <div
                             className="col-span-3 inline-flex items-center justify-end gap-1 text-right text-sm tabular-nums"
-                            style={{ color: up ? "var(--emerald-glow)" : "oklch(0.7 0.24 25)" }}
+                            style={{ color: up ? "var(--emerald-glow)" : "var(--loss)" }}
                           >
                             {up ? (
                               <TrendingUp className="h-3.5 w-3.5" />

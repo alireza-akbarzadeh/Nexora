@@ -183,7 +183,7 @@ export function OrderForm({ symbol }: OrderFormProps) {
           className={cn(
             "mt-auto w-full",
             orderSide === "buy"
-              ? "bg-buy text-background hover:bg-buy/90"
+              ? "bg-buy text-primary-foreground hover:bg-buy/90"
               : "bg-sell text-white hover:bg-sell/90",
           )}
         >
@@ -228,9 +228,10 @@ export function OrderForm({ symbol }: OrderFormProps) {
             </Button>
             <Button
               onClick={() => placeOrderMutation.mutate()}
-              disabled={placeOrderMutation.isPending}
+              loading={placeOrderMutation.isPending}
+              loadingText="Submitting"
             >
-              {placeOrderMutation.isPending ? "Submitting..." : "Confirm Order"}
+              Confirm Order
             </Button>
           </DialogFooter>
         </DialogContent>

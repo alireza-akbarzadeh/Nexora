@@ -34,7 +34,7 @@ function AssetCard({ asset }: { asset: Asset }) {
             ${asset.price < 10 ? asset.price.toFixed(3) : asset.price.toLocaleString()}
           </div>
           <div
-            className={`text-xs ${asset.ch > 0 ? "text-[oklch(0.78_0.19_160)]" : "text-[oklch(0.7_0.22_25)]"}`}
+            className={`text-xs ${asset.ch > 0 ? "text-profit" : "text-loss"}`}
           >
             {asset.ch > 0 ? "+" : ""}
             {asset.ch.toFixed(2)}%
@@ -56,7 +56,7 @@ export function AssetsSection() {
       <div className="mx-auto mb-10 max-w-7xl px-6">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <div className="font-mono text-xs tracking-widest text-[oklch(0.72_0.19_250)] uppercase">
+            <div className="font-mono text-xs tracking-widest text-violet uppercase">
               Markets
             </div>
             <h2 className="mt-2 font-display text-4xl font-bold tracking-tight md:text-5xl">

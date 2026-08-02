@@ -8,7 +8,7 @@ export function LearningSection() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-12 flex flex-wrap items-end justify-between gap-4">
           <div>
-            <div className="font-mono text-xs tracking-widest text-[oklch(0.72_0.19_250)] uppercase">
+            <div className="font-mono text-xs tracking-widest text-violet uppercase">
               Learn
             </div>
             <h2 className="mt-2 font-display text-4xl font-bold tracking-tight md:text-5xl">
@@ -30,16 +30,16 @@ export function LearningSection() {
               className="group card-elevated rounded-2xl p-6 transition-all hover:-translate-y-1"
             >
               <div className="mb-4 flex items-center justify-between">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[oklch(0.72_0.19_250/0.2)] to-[oklch(0.68_0.22_300/0.15)]">
-                  <it.icon className="h-5 w-5 text-[oklch(0.85_0.15_210)]" />
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[color-mix(in_srgb,var(--violet)_20%,transparent)] to-[color-mix(in_srgb,var(--violet)_15%,transparent)]">
+                  <it.icon className="h-5 w-5 text-violet" />
                 </div>
-                <span className="rounded-md bg-[oklch(0.78_0.19_160/0.1)] px-2 py-1 font-mono text-[10px] tracking-widest text-[oklch(0.78_0.19_160)] uppercase">
+                <span className="rounded-md bg-[color-mix(in_srgb,var(--profit)_10%,transparent)] px-2 py-1 font-mono text-[10px] tracking-widest text-profit uppercase">
                   {it.tag}
                 </span>
               </div>
               <h3 className="font-semibold">{it.title}</h3>
               <p className="mt-1.5 text-sm text-muted-foreground">{it.desc}</p>
-              <div className="mt-4 flex items-center gap-1 text-xs text-[oklch(0.85_0.15_210)] opacity-0 transition group-hover:opacity-100">
+              <div className="mt-4 flex items-center gap-1 text-xs text-violet opacity-0 transition group-hover:opacity-100">
                 Explore <ArrowRight className="h-3 w-3" />
               </div>
             </a>
@@ -47,10 +47,10 @@ export function LearningSection() {
         </div>
 
         <div className="card-elevated relative mt-8 overflow-hidden rounded-3xl p-8 md:p-12">
-          <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.72_0.19_250/0.15)] via-transparent to-[oklch(0.68_0.22_300/0.15)]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[color-mix(in_srgb,var(--violet)_15%,transparent)] via-transparent to-[color-mix(in_srgb,var(--violet)_15%,transparent)]" />
           <div className="relative grid items-center gap-6 md:grid-cols-[1fr_auto]">
             <div>
-              <div className="flex items-center gap-2 font-mono text-xs tracking-widest text-[oklch(0.85_0.15_80)] uppercase">
+              <div className="flex items-center gap-2 font-mono text-xs tracking-widest text-lime uppercase">
                 <Gift className="h-4 w-4" /> Referral rewards
               </div>
               <h3 className="mt-2 font-display text-2xl font-bold md:text-3xl">

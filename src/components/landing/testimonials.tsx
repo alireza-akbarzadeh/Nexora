@@ -7,7 +7,7 @@ export function TestimonialsSection() {
     <section className="py-32">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mx-auto mb-16 max-w-2xl text-center">
-          <div className="font-mono text-xs tracking-widest text-[oklch(0.72_0.19_250)] uppercase">
+          <div className="font-mono text-xs tracking-widest text-violet uppercase">
             Trusted
           </div>
           <h2 className="mt-2 font-display text-4xl font-bold tracking-tight md:text-5xl">
@@ -21,7 +21,7 @@ export function TestimonialsSection() {
                 {Array.from({ length: 5 }).map((_, s) => (
                   <Star
                     key={s}
-                    className="h-4 w-4 fill-[oklch(0.85_0.15_80)] text-[oklch(0.85_0.15_80)]"
+                    className="h-4 w-4 fill-lime text-lime"
                   />
                 ))}
               </div>

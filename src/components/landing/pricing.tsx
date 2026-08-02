@@ -8,7 +8,7 @@ export function PricingSection() {
     <section id="institutional" className="py-32">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mx-auto mb-16 max-w-2xl text-center">
-          <div className="font-mono text-xs tracking-widest text-[oklch(0.72_0.19_250)] uppercase">
+          <div className="font-mono text-xs tracking-widest text-violet uppercase">
             Pricing
           </div>
           <h2 className="mt-2 font-display text-4xl font-bold tracking-tight md:text-5xl">
@@ -47,7 +47,7 @@ export function PricingSection() {
               <ul className="mt-8 space-y-3">
                 {t.features.map((f) => (
                   <li key={f} className="flex items-start gap-2.5 text-sm">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-[oklch(0.78_0.19_160)]" />
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-profit" />
                     <span className="text-foreground/80">{f}</span>
                   </li>
                 ))}

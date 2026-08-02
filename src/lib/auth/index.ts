@@ -1,6 +1,7 @@
 import { dash } from "@better-auth/infra";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
+import { twoFactor } from "better-auth/plugins";
 
 import { db } from "@/lib/db";
 import { getEnv } from "@/lib/env";
@@ -12,6 +13,7 @@ function normalizeBaseUrl(url: string) {
 }
 
 export const auth = betterAuth({
+  appName: "Nexora",
   database: drizzleAdapter(db, {
     provider: "pg",
   }),
@@ -28,6 +30,17 @@ export const auth = betterAuth({
   plugins: [
     dash({
       apiKey: process.env.BETTER_AUTH_API_KEY,
+    }),
+    twoFactor({
+      issuer: "Nexora",
+      totpOptions: {
+        digits: 6,
+        period: 30,
+      },
+      backupCodeOptions: {
+        amount: 10,
+        length: 10,
+      },
     }),
   ],
 });

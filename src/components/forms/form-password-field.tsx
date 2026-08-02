@@ -16,6 +16,8 @@ import {
   FieldLabel,
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
+import { authInputClassName, authLabelClassName } from "@/components/auth/auth-field-styles";
+import { cn } from "@/lib/utils";
 
 interface FormPasswordFieldProps<T extends FieldValues> {
   control: Control<T>;
@@ -23,6 +25,7 @@ interface FormPasswordFieldProps<T extends FieldValues> {
   label: string;
   placeholder?: string;
   autoComplete?: string;
+  variant?: "default" | "auth";
 }
 
 export function FormPasswordField<T extends FieldValues>({
@@ -31,6 +34,7 @@ export function FormPasswordField<T extends FieldValues>({
   label,
   placeholder,
   autoComplete,
+  variant = "default",
 }: FormPasswordFieldProps<T>) {
   const [visible, setVisible] = useState(false);
 
@@ -40,7 +44,12 @@ export function FormPasswordField<T extends FieldValues>({
       control={control}
       render={({ field, fieldState }) => (
         <Field data-invalid={fieldState.invalid}>
-          <FieldLabel htmlFor={field.name}>{label}</FieldLabel>
+          <FieldLabel
+            htmlFor={field.name}
+            className={variant === "auth" ? authLabelClassName : undefined}
+          >
+            {label}
+          </FieldLabel>
           <div className="relative">
             <Input
               {...field}
@@ -49,13 +58,19 @@ export function FormPasswordField<T extends FieldValues>({
               placeholder={placeholder}
               autoComplete={autoComplete}
               aria-invalid={fieldState.invalid}
-              className="pr-10"
+              className={cn(
+                "pr-11",
+                variant === "auth" && authInputClassName,
+              )}
             />
             <Button
               type="button"
               variant="ghost"
               size="icon-sm"
-              className="absolute top-1/2 right-1 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+              className={cn(
+                "absolute top-1/2 right-1.5 -translate-y-1/2 text-muted-foreground hover:text-foreground",
+                variant === "auth" && "hover:bg-white/10",
+              )}
               onClick={() => setVisible((current) => !current)}
               aria-label={visible ? "Hide password" : "Show password"}
             >

@@ -1,10 +1,12 @@
 "use client";
 
+import { ShieldCheck } from "lucide-react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 
+import { TwoFactorSetup } from "@/components/auth/two-factor-setup";
 import { FormPasswordField } from "@/components/forms/form-password-field";
 import { FormTextField } from "@/components/forms/form-text-field";
 import { Header } from "@/components/layout/header";
@@ -114,6 +116,18 @@ export default function SettingsPage() {
       />
 
       <main className="grid flex-1 gap-6 p-6 xl:grid-cols-2">
+        <Card id="security" className="xl:col-span-2">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <ShieldCheck className="h-5 w-5 text-primary" />
+              Security & two-factor authentication
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <TwoFactorSetup />
+          </CardContent>
+        </Card>
+
         <Card>
           <CardHeader>
             <CardTitle>Connect Exchange</CardTitle>
@@ -172,8 +186,12 @@ export default function SettingsPage() {
               {message ? <p className="text-xs text-buy">{message}</p> : null}
               {error ? <p className="text-xs text-destructive">{error}</p> : null}
 
-              <Button type="submit" disabled={connectMutation.isPending}>
-                {connectMutation.isPending ? "Connecting..." : "Save Connection"}
+              <Button
+                type="submit"
+                loading={connectMutation.isPending}
+                loadingText="Connecting"
+              >
+                Save Connection
               </Button>
             </form>
           </CardContent>
