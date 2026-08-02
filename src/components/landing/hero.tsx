@@ -9,9 +9,9 @@ export function HeroSection() {
     <section className="relative overflow-hidden pt-40 pb-24">
       <div className="grid-bg absolute inset-0 opacity-40 [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_70%)]" />
       <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
-      <div className="animate-pulse-glow absolute top-40 left-10 h-72 w-72 rounded-full bg-[color-mix(in_srgb,var(--violet)_15%,transparent)] blur-3xl" />
+      <div className="animate-pulse-glow absolute top-40 left-10 h-72 w-72 rounded-full bg-[color-mix(in_srgb,var(--lime)_12%,transparent)] blur-3xl" />
       <div
-        className="animate-pulse-glow absolute right-10 bottom-20 h-96 w-96 rounded-full bg-[color-mix(in_srgb,var(--violet)_12%,transparent)] blur-3xl"
+        className="animate-pulse-glow absolute right-10 bottom-20 h-96 w-96 rounded-full bg-[color-mix(in_srgb,var(--violet)_14%,transparent)] blur-3xl"
         style={{ animationDelay: "1.5s" }}
       />
 

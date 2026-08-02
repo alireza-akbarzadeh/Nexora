@@ -24,9 +24,9 @@ export function AuthShell({
     <div className="relative min-h-screen overflow-hidden bg-background">
       <div className="grid-bg absolute inset-0 opacity-30 [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
       <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
-      <div className="animate-pulse-glow absolute -top-24 -left-24 h-96 w-96 rounded-full bg-[color-mix(in_srgb,var(--violet)_15%,transparent)] blur-3xl" />
+      <div className="animate-pulse-glow absolute -top-24 -left-24 h-96 w-96 rounded-full bg-[color-mix(in_srgb,var(--lime)_12%,transparent)] blur-3xl" />
       <div
-        className="animate-pulse-glow absolute right-0 bottom-0 h-[28rem] w-[28rem] rounded-full bg-[color-mix(in_srgb,var(--violet)_12%,transparent)] blur-3xl"
+        className="animate-pulse-glow absolute right-0 bottom-0 h-[28rem] w-[28rem] rounded-full bg-[color-mix(in_srgb,var(--violet)_14%,transparent)] blur-3xl"
         style={{ animationDelay: "1.2s" }}
       />
 
