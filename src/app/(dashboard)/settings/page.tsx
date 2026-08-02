@@ -1,15 +1,15 @@
 "use client";
 
-import { ShieldCheck } from "lucide-react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 
-import { TwoFactorSetup } from "@/components/auth/two-factor-setup";
 import { FormPasswordField } from "@/components/forms/form-password-field";
 import { FormTextField } from "@/components/forms/form-text-field";
 import { Header } from "@/components/layout/header";
+import { AccountSettings } from "@/components/settings/account-settings";
+import { SecuritySettings } from "@/components/settings/security-settings";
 import {
   exchangeConnectionSchema,
   type ExchangeConnectionFormValues,
@@ -112,21 +112,12 @@ export default function SettingsPage() {
     <>
       <Header
         title="Settings"
-        subtitle="Manage encrypted exchange API connections"
+        subtitle="Account security and encrypted exchange connections"
       />
 
       <main className="grid flex-1 gap-6 p-6 xl:grid-cols-2">
-        <Card id="security" className="xl:col-span-2">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <ShieldCheck className="h-5 w-5 text-primary" />
-              Security & two-factor authentication
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <TwoFactorSetup />
-          </CardContent>
-        </Card>
+        <AccountSettings />
+        <SecuritySettings />
 
         <Card>
           <CardHeader>
@@ -135,7 +126,9 @@ export default function SettingsPage() {
           <CardContent>
             <form
               className="space-y-4"
-              onSubmit={form.handleSubmit((values) => connectMutation.mutate(values))}
+              onSubmit={form.handleSubmit((values) =>
+                connectMutation.mutate(values),
+              )}
             >
               <FieldGroup>
                 <Controller
@@ -207,7 +200,7 @@ export default function SettingsPage() {
                 No exchange connections yet.
               </p>
             ) : (
-              connectionsQuery.data?.connections.map((connection) => (
+              connectionsQuery.data?.connections.map((connection: ExchangeConnectionSummary) => (
                 <div
                   key={connection.id}
                   className="flex items-center justify-between rounded-lg border border-border p-4"

@@ -7,9 +7,7 @@ export const authClient = createAuthClient({
   baseURL: process.env.NEXT_PUBLIC_APP_URL,
   plugins: [
     twoFactorClient({
-      onTwoFactorRedirect() {
-        window.location.href = "/login?step=2fa";
-      },
+      twoFactorPage: "/two-factor",
     }),
   ],
 });

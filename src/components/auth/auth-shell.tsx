@@ -11,6 +11,7 @@ type AuthShellProps = {
   children: React.ReactNode;
   title: string;
   subtitle: string;
+  eyebrow?: string;
   backHref?: string;
 };
 
@@ -18,6 +19,7 @@ export function AuthShell({
   children,
   title,
   subtitle,
+  eyebrow = "Secure access",
   backHref = "/",
 }: AuthShellProps) {
   return (
@@ -42,7 +44,7 @@ export function AuthShell({
           <div className="mt-12 max-w-md">
             <div className="glass mb-6 inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs text-muted-foreground">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-profit" />
-              Institutional-grade security
+              {eyebrow}
             </div>
             <h1 className="font-display text-4xl leading-tight font-bold tracking-tight xl:text-5xl">
               Secure access to your{" "}
@@ -90,11 +92,13 @@ export function AuthShell({
             </Link>
           </div>
 
-          <div className="card-elevated relative overflow-hidden rounded-3xl border border-white/[0.08] p-6 shadow-[var(--shadow-elevated)] sm:p-8">
-            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[color-mix(in_srgb,var(--violet)_50%,transparent)] to-transparent" />
-            <div className="mb-6">
+          <div className="animate-rise space-y-6">
+            <div className="space-y-2">
+              <p className="text-xs font-medium tracking-[0.18em] text-primary uppercase lg:hidden">
+                {eyebrow}
+              </p>
               <h2 className="font-display text-2xl font-bold tracking-tight">{title}</h2>
-              <p className="mt-1.5 text-sm text-muted-foreground">{subtitle}</p>
+              <p className="text-sm text-muted-foreground">{subtitle}</p>
             </div>
             {children}
           </div>

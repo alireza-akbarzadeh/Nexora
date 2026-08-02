@@ -12,7 +12,7 @@ export const user = pgTable("user", {
   email: text("email").notNull().unique(),
   emailVerified: boolean("emailVerified").notNull().default(false),
   image: text("image"),
-  twoFactorEnabled: boolean("twoFactorEnabled").notNull().default(false),
+  twoFactorEnabled: boolean("twoFactorEnabled").default(false),
   createdAt: timestamp("createdAt").notNull().defaultNow(),
   updatedAt: timestamp("updatedAt").notNull().defaultNow(),
 });
@@ -64,8 +64,8 @@ export const twoFactor = pgTable("twoFactor", {
     .references(() => user.id, { onDelete: "cascade" }),
   secret: text("secret").notNull(),
   backupCodes: text("backupCodes").notNull(),
-  verified: boolean("verified").notNull().default(false),
-  failedVerificationCount: integer("failedVerificationCount").notNull().default(0),
+  verified: boolean("verified").default(true),
+  failedVerificationCount: integer("failedVerificationCount").default(0),
   lockedUntil: timestamp("lockedUntil"),
 });
 

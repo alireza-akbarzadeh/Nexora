@@ -68,7 +68,7 @@ export function FormPasswordField<T extends FieldValues>({
               variant="ghost"
               size="icon-sm"
               className={cn(
-                "absolute top-1/2 right-1.5 -translate-y-1/2 text-muted-foreground hover:text-foreground",
+                "absolute top-1/2 right-1.5 z-10 -translate-y-1/2 text-muted-foreground hover:text-foreground",
                 variant === "auth" && "hover:bg-white/10",
               )}
               onClick={() => setVisible((current) => !current)}
