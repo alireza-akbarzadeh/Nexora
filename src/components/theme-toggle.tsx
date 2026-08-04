@@ -2,7 +2,8 @@
 
 import {useEffect, useState} from "react";
 import {Monitor, Moon, Sun} from "lucide-react";
-import {useTheme} from "next-themes";
+
+import {useTheme} from "@/hooks/use-theme";
 
 import {Button} from "@/components/ui/button";
 import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger,} from "@/components/ui/dropdown-menu";

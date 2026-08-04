@@ -31,6 +31,40 @@ Only go straight to Read/Grep/Glob when graphify already oriented you and you're
 | Notify | `src/lib/notify` — `notify()` / `notify.order()` toasts + sounds |
 | Env | `src/lib/env.ts` (Zod) |
 
+## Code structure (STRICT)
+
+**Hard limit: no file over 150 lines.** If a file crosses it, that is a signal to extract — not to keep going. Applies to every `.ts`/`.tsx` file.
+
+Split along these seams, in this order:
+
+| Extract | To | Rule |
+|---------|-----|------|
+| Pure functions, no React | `src/lib/<domain>/` | Must be unit-testable with no DOM |
+| Stateful logic, effects, refs | `src/hooks/use-*.ts` | One hook per file, named after the file |
+| Types & interfaces | `types.ts` beside the feature, or `src/types/` if shared | Never re-declare a shape that already exists |
+| Static data, config, magic numbers | `constants.ts` beside the feature | No inline literals in JSX |
+| A distinct piece of UI | its own component file | One exported component per file; local sub-components are fine if the file stays under 150 |
+
+Additional rules:
+- A component that grew past ~80 lines of JSX is almost always two components.
+- Feature folders over flat files: `hero/index.tsx` + `hero/chart-panel.tsx` + `hero/use-hero-scroll.ts`, not one `hero.tsx`.
+- Reusable UI primitives belong in `src/components/ui/**`, not in a feature folder.
+- Name the thing after what it is (`use-count-up.ts`), never `utils.ts`/`helpers.ts` dumping grounds.
+- Every non-obvious constant gets a one-line comment explaining the unit or the why.
+
+## Motion & hydration (STRICT)
+
+- Motion lives in `src/components/ui/motion/**`; timing tokens in `src/lib/motion/easing.ts`. Reuse them — do not hand-roll durations or beziers.
+- **Never branch the rendered tree on a client-only value** (`prefers-reduced-motion`, `matchMedia`, `window`, `localStorage`). The server and the first client render must produce identical markup, or React throws a hydration mismatch. Branch on *values* (a transform range, a duration), never on element type.
+- Reduced motion is handled globally by `<MotionConfig reducedMotion="user">` in `providers.tsx` plus the `@media (prefers-reduced-motion)` block in `globals.css`. Individual components should not re-implement it.
+- Client-only preferences must come from an effect-resolved hook that starts `false` (`use-prefers-reduced-motion.ts`, `use-fine-pointer.ts`) — never read `matchMedia` during render.
+- No `Math.random()` or `Date.now()` in render. Seed it (see `src/lib/landing/hero-chart.ts`).
+- Animate `transform`/`opacity`/`filter` only — never `width`/`height`/`top`/`left`.
+
+## Theming
+
+Hand-rolled, no `next-themes`. `src/lib/theme/**` (pure) → `ThemeProvider` (context) → `useTheme()` hook from `@/hooks/use-theme`. The no-flash script is inlined in `src/app/layout.tsx` — a server component, because rendering `<script>` from a client component triggers a React 19 warning that buries real errors.
+
 ## Conventions
 
 - Path alias `@/` → `src/`
