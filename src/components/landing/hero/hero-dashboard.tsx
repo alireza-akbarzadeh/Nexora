@@ -90,7 +90,7 @@ function WindowChrome() {
       </div>
 
       <div className="hidden items-center gap-2 text-xs text-muted-foreground md:flex">
-        <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-profit" />
+        <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-profit" aria-hidden />
         Live · 12ms
       </div>
     </div>

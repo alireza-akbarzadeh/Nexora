@@ -45,12 +45,13 @@ function OrderBookRow({
 
   return (
     <div className="relative flex justify-between px-2 py-0.5">
+      {/* Scales rather than animating width, so it stays off the layout path */}
       <motion.div
         aria-hidden
-        className="absolute inset-y-0 right-0"
-        style={{ background: `color-mix(in srgb, ${tint} 12%, transparent)` }}
-        initial={{ width: 0 }}
-        animate={{ width }}
+        className="absolute inset-y-0 right-0 origin-right"
+        style={{ width, background: `color-mix(in srgb, ${tint} 12%, transparent)` }}
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: 1 }}
         transition={{ duration: 0.8, delay: BEAT.orderBook, ease: EASE_OUT }}
       />
       <span className={`relative ${side === "buy" ? "text-buy" : "text-sell"}`}>

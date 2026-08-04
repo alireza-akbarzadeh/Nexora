@@ -28,7 +28,7 @@ export function HeroCopy() {
         className="glass mb-8 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs text-muted-foreground"
         {...rise(BEAT.badge)}
       >
-        <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-profit" />
+        <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-profit" aria-hidden />
         Nexora v4 — AI copilot for spot &amp; derivatives is live
         <ArrowRight className="h-3.5 w-3.5" aria-hidden />
       </motion.div>
