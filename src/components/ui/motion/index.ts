@@ -9,7 +9,6 @@
 export { CountUp } from "./count-up";
 export { Magnetic } from "./magnetic";
 export { ParallaxLayer } from "./parallax-layer";
-export { Reveal } from "./reveal";
 export { Spotlight } from "./spotlight";
 export { Stagger, StaggerItem } from "./stagger";
 export { Depth, TiltCard } from "./tilt-card";

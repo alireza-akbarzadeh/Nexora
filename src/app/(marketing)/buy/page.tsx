@@ -3,11 +3,13 @@ import type { Metadata } from "next";
 import { LandingFooter } from "@/components/landing/footer";
 import { LandingNav } from "@/components/landing/nav";
 import { BuySellPage } from "@/components/trading/buy-sell-page";
+import { buildMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
-  title: "Buy & Sell Crypto | Nexora",
+export const metadata: Metadata = buildMetadata({
+  title: "Buy & Sell Crypto",
   description: "Buy and sell digital assets with simple market orders.",
-};
+  path: "/buy",
+});
 
 /**
  * Public buy/sell page.

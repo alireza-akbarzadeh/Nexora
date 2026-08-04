@@ -23,9 +23,11 @@ type SpotlightProps = {
 /**
  * A radial glow that trails the pointer with spring lag.
  *
- * Both gates (`useFinePointer`, `usePrefersReducedMotion`) start `false` on the
- * server and on the first client render, so this consistently renders nothing
- * during hydration and mounts on the following pass.
+ * Always renders the same `<motion.div>` — `active` gates opacity, not the
+ * element itself. Branching the element on `useFinePointer`/
+ * `usePrefersReducedMotion` would vary by client (a touch-only device and a
+ * mouse device resolve `active` differently), which is exactly the kind of
+ * tree-branch-on-client-value CLAUDE.md's motion rules forbid.
  */
 export function Spotlight({
   className,
@@ -56,13 +58,11 @@ export function Spotlight({
     return () => window.removeEventListener("pointermove", onMove);
   }, [active, x, y]);
 
-  if (!active) return null;
-
   return (
     <motion.div
       aria-hidden
       className={cn("pointer-events-none fixed inset-0 z-30", className)}
-      style={{ background }}
+      style={{ background, opacity: active ? 1 : 0 }}
     />
   );
 }
