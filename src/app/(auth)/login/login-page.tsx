@@ -68,11 +68,7 @@ export default function LoginPage() {
   }
 
   return (
-    <AuthShell
-      eyebrow="Welcome back"
-      title="Sign in to Nexora"
-      subtitle="Access your dashboard, watchlists, and connected exchanges."
-    >
+
       <AuthPanel>
         <SocialAuthButtons callbackURL={callbackUrl} className="mb-5" />
 
@@ -124,6 +120,5 @@ export default function LoginPage() {
           />
         </div>
       </AuthPanel>
-    </AuthShell>
   );
 }

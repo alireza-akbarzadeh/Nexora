@@ -30,6 +30,8 @@ Only go straight to Read/Grep/Glob when graphify already oriented you and you're
 | Client state | `src/stores` (Zustand) |
 | Notify | `src/lib/notify` — `notify()` / `notify.order()` toasts + sounds |
 | Env | `src/lib/env.ts` (Zod) |
+| Realtime | `src/lib/websocket` — backs "public market data over WebSockets" from the intro |
+| SEO | `src/lib/seo` — metadata, JSON-LD, sitemap/robots |
 
 ## Code structure (STRICT)
 
@@ -89,6 +91,7 @@ pnpm dev            # start dev server
 pnpm build           # production build
 pnpm lint            # eslint
 pnpm db:generate     # generate SQL from schema changes
+pnpm db:migrate      # apply generated SQL migrations
 pnpm db:push         # push schema to Neon (mutates real DB — confirm before running)
 pnpm db:studio       # Drizzle Studio
 ```
