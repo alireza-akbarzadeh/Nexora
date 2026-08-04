@@ -8,15 +8,8 @@ import {
   type Theme,
 } from "./constants";
 
-/** The OS preference. Assumes dark off-browser so SSR matches our default. */
-export function systemTheme(): ResolvedTheme {
-  if (typeof window === "undefined") return "dark";
-  return window.matchMedia(COLOR_SCHEME_QUERY).matches ? "dark" : "light";
-}
-
-export function resolveTheme(theme: Theme): ResolvedTheme {
-  return theme === "system" ? systemTheme() : theme;
-}
+/* Resolution of `system` lives in ThemeProvider, which subscribes to the
+   colour-scheme media query through useMediaQuery. */
 
 /** Reads the stored preference, falling back to the default. */
 export function readStoredTheme(): Theme {

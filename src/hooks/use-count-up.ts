@@ -28,10 +28,13 @@ function easeOut(t: number): number {
 /**
  * Counts a formatted metric up to its value once scrolled into view.
  *
- * Renders the final value during SSR and first hydration — the count only
- * begins after the element intersects, which is necessarily post-mount. That
- * ordering keeps the markup identical on both sides, and means unparseable
- * strings and reduced-motion users simply never animate.
+ * `display` is rendered during SSR and hydration; the count only starts after
+ * the element intersects, which is necessarily post-mount. Unparseable strings
+ * and reduced-motion users therefore never animate at all.
+ *
+ * The animated number lives in state but is only ever written from inside a
+ * rAF callback — never synchronously in the effect body, which would cascade
+ * renders.
  */
 export function useCountUp(
   display: string,
@@ -41,14 +44,12 @@ export function useCountUp(
   const reduced = usePrefersReducedMotion();
   const inView = useInView(ref, { once: true, amount: 0.5 });
 
-  const [text, setText] = useState(display);
+  const [animated, setAnimated] = useState<number | null>(null);
+  const metric = parseMetric(display);
 
   useEffect(() => {
-    const metric = parseMetric(display);
-    if (!inView || reduced || !metric) {
-      setText(display);
-      return;
-    }
+    const target = parseMetric(display);
+    if (!inView || reduced || !target) return;
 
     const startedAt = performance.now();
     const delayMs = delay * 1000;
@@ -57,15 +58,9 @@ export function useCountUp(
 
     const tick = (now: number) => {
       const elapsed = now - startedAt - delayMs;
+      const progress = elapsed < 0 ? 0 : Math.min(elapsed / durationMs, 1);
 
-      if (elapsed < 0) {
-        setText(formatMetric(metric, 0));
-        frame = requestAnimationFrame(tick);
-        return;
-      }
-
-      const progress = Math.min(elapsed / durationMs, 1);
-      setText(formatMetric(metric, metric.value * easeOut(progress)));
+      setAnimated(target.value * easeOut(progress));
 
       if (progress < 1) frame = requestAnimationFrame(tick);
     };
@@ -73,6 +68,9 @@ export function useCountUp(
     frame = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(frame);
   }, [inView, reduced, display, duration, delay]);
+
+  const text =
+    animated === null || !metric ? display : formatMetric(metric, animated);
 
   return { ref, text };
 }

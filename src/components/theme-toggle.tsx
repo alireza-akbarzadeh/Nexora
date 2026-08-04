@@ -1,6 +1,5 @@
 "use client";
 
-import {useEffect, useState} from "react";
 import {Monitor, Moon, Sun} from "lucide-react";
 
 import {useTheme} from "@/hooks/use-theme";
@@ -16,17 +15,9 @@ const OPTIONS = [
 ] as const;
 
 export function ThemeToggle() {
+    // useTheme reads through useSyncExternalStore, which renders the default
+    // during hydration and corrects afterwards — no mounted guard needed.
     const {theme, setTheme} = useTheme();
-    const [mounted, setMounted] = useState(false);
-
-    // Avoid hydration mismatch: theme isn't known until mounted on the client.
-    useEffect(() => {
-        setMounted(true);
-    }, []);
-
-    if (!mounted) {
-        return <div className="size-9 rounded-lg border bg-background"/>;
-    }
 
     const active = OPTIONS.find((o) => o.value === theme) ?? OPTIONS[2];
     const ActiveIcon = active.icon;
