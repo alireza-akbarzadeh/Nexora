@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 
 import { Providers } from "@/components/providers";
 import { THEME_INIT_SCRIPT } from "@/lib/theme/apply";
@@ -31,13 +32,15 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} dark h-full`}
     >
-      <head>
-        {/* Applies the stored theme before first paint, so there is no flash.
-            Inline in the server layout — rendering a <script> from a client
-            component is what triggers React 19's script warning. */}
-        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
-      </head>
       <body className="min-h-full bg-background text-foreground antialiased">
+        {/* Applies the stored theme before hydration, so there is no flash.
+            Uses next/script rather than a raw <script>: React 19 warns on any
+            script element rendered from a component, since it would not
+            execute on a client navigation. next/script injects it outside the
+            React tree, which is what beforeInteractive is for. */}
+        <Script id="theme-init" strategy="beforeInteractive">
+          {THEME_INIT_SCRIPT}
+        </Script>
         <Providers>{children}</Providers>
       </body>
     </html>

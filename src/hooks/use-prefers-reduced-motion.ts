@@ -1,32 +1,19 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useMediaQuery } from "./use-media-query";
 
 const QUERY = "(prefers-reduced-motion: reduce)";
 
 /**
- * SSR-safe replacement for motion's `useReducedMotion`.
+ * Whether the user asked the OS to reduce motion.
  *
- * Always returns `false` on the server AND on the first client render, then
- * resolves the real preference in an effect. That ordering matters: motion's
- * own hook reads `matchMedia` during render, so a user with reduce-motion
- * enabled gets `false` on the server and `true` on the client — and any tree
- * that branches on it hydrates into a mismatch.
+ * Assumes `false` on the server so the markup matches the default animated
+ * render, then corrects after hydration.
  *
  * Use this for *values* (transform ranges, durations). Never branch the shape
- * of the tree on it — render the same elements either way.
+ * of the tree on it — render the same elements either way, and let
+ * `<MotionConfig reducedMotion="user">` strip the animation.
  */
 export function usePrefersReducedMotion(): boolean {
-  const [reduced, setReduced] = useState(false);
-
-  useEffect(() => {
-    const query = window.matchMedia(QUERY);
-    setReduced(query.matches);
-
-    const onChange = (e: MediaQueryListEvent) => setReduced(e.matches);
-    query.addEventListener("change", onChange);
-    return () => query.removeEventListener("change", onChange);
-  }, []);
-
-  return reduced;
+  return useMediaQuery(QUERY);
 }

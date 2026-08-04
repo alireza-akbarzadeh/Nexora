@@ -1,19 +1,16 @@
 "use client";
 
-import { createContext, useCallback, useEffect, useMemo, useState } from "react";
+import { createContext, useCallback, useEffect, useMemo, useSyncExternalStore } from "react";
 
+import { useMediaQuery } from "@/hooks/use-media-query";
+import { applyTheme } from "@/lib/theme/apply";
+import { COLOR_SCHEME_QUERY, type ResolvedTheme, type Theme } from "@/lib/theme/constants";
 import {
-  applyTheme,
-  readStoredTheme,
-  resolveTheme,
-  writeStoredTheme,
-} from "@/lib/theme/apply";
-import {
-  COLOR_SCHEME_QUERY,
-  DEFAULT_THEME,
-  type ResolvedTheme,
-  type Theme,
-} from "@/lib/theme/constants";
+  getThemeServerSnapshot,
+  getThemeSnapshot,
+  setStoredTheme,
+  subscribeToTheme,
+} from "@/lib/theme/store";
 
 export type ThemeContextValue = {
   /** The user's preference, which may be `system`. */
@@ -30,53 +27,36 @@ export const ThemeContext = createContext<ThemeContextValue | null>(null);
 /**
  * Theme state, applied to `<html>`.
  *
- * Deliberately hand-rolled rather than using next-themes, which injects a
- * script from inside a client component — React 19 warns about that on every
- * render and the warning buries real errors. The no-flash script lives in the
- * server layout instead, where an inline script is legitimate.
+ * Hand-rolled rather than next-themes, which injects a script from inside a
+ * client component — React 19 warns about that on every render and the warning
+ * buries real errors. The no-flash script lives in the server layout instead.
  *
- * Both `theme` and `resolvedTheme` start at the defaults so the first client
- * render matches the server HTML; the stored value is read in an effect.
+ * Preference and OS colour scheme are both read through external stores, so
+ * the server and hydration render the defaults and React corrects afterwards.
+ * Nothing here calls setState from an effect.
  */
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>(DEFAULT_THEME);
-  const [resolvedTheme, setResolvedTheme] = useState<ResolvedTheme>(
-    resolveTheme(DEFAULT_THEME),
+  const theme = useSyncExternalStore(
+    subscribeToTheme,
+    getThemeSnapshot,
+    getThemeServerSnapshot,
   );
 
-  // Adopt the persisted preference after mount.
-  useEffect(() => {
-    const stored = readStoredTheme();
-    setThemeState(stored);
-    setResolvedTheme(resolveTheme(stored));
-  }, []);
+  // Server assumes dark, matching DEFAULT_THEME, so hydration is consistent.
+  const prefersDark = useMediaQuery(COLOR_SCHEME_QUERY, true);
+  const resolvedTheme: ResolvedTheme =
+    theme === "system" ? (prefersDark ? "dark" : "light") : theme;
 
-  // Keep the document in sync with whatever is currently resolved.
+  // Writing to the DOM is exactly what effects are for.
   useEffect(() => {
     applyTheme(resolvedTheme);
   }, [resolvedTheme]);
 
-  // Follow the OS while the preference is `system`.
-  useEffect(() => {
-    if (theme !== "system") return;
-
-    const query = window.matchMedia(COLOR_SCHEME_QUERY);
-    const onChange = (e: MediaQueryListEvent) =>
-      setResolvedTheme(e.matches ? "dark" : "light");
-
-    query.addEventListener("change", onChange);
-    return () => query.removeEventListener("change", onChange);
-  }, [theme]);
-
-  const setTheme = useCallback((next: Theme) => {
-    setThemeState(next);
-    setResolvedTheme(resolveTheme(next));
-    writeStoredTheme(next);
-  }, []);
+  const setTheme = useCallback((next: Theme) => setStoredTheme(next), []);
 
   const toggleTheme = useCallback(() => {
-    setTheme(resolvedTheme === "dark" ? "light" : "dark");
-  }, [resolvedTheme, setTheme]);
+    setStoredTheme(resolvedTheme === "dark" ? "light" : "dark");
+  }, [resolvedTheme]);
 
   const value = useMemo(
     () => ({ theme, resolvedTheme, setTheme, toggleTheme }),

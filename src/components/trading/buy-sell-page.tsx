@@ -5,7 +5,6 @@ import { useMemo, useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { ArrowDownUp, ChevronDown } from "lucide-react";
 
-import { Header } from "@/components/layout/header";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -168,8 +167,6 @@ export function BuySellPage() {
 
   return (
     <>
-      <Header title="Buy & Sell" subtitle="Simple market orders" />
-
       <div className="border-b border-border bg-card/40 px-4">
         <nav className="flex gap-6 text-sm">
           <span className="border-b-2 border-primary py-3 font-medium text-foreground">
