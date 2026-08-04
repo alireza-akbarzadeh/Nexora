@@ -3,6 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 
 import { Providers } from "@/components/providers";
+import { buildMetadata } from "@/lib/seo/metadata";
+import { organizationJsonLd } from "@/lib/seo/organization-jsonld";
+import { SITE_NAME, siteUrl } from "@/lib/seo/site";
 import { THEME_INIT_SCRIPT } from "@/lib/theme/apply";
 import "./globals.css";
 
@@ -16,9 +19,18 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const DEFAULT_TITLE = `${SITE_NAME} — Trade the Future of Finance`;
+
 export const metadata: Metadata = {
-  title: "Nexora | Crypto Trading Platform",
-  description: "Real-time crypto trading powered by exchange APIs",
+  metadataBase: new URL(siteUrl()),
+  ...buildMetadata({ title: DEFAULT_TITLE, path: "/" }),
+  // Overrides buildMetadata's plain-string title: every page's own title
+  // (also a plain string) fills "%s" here automatically via Next's metadata
+  // title-template resolution — pages don't need to know the site name.
+  title: {
+    default: DEFAULT_TITLE,
+    template: `%s · ${SITE_NAME}`,
+  },
 };
 
 export default function RootLayout({
@@ -40,6 +52,16 @@ export default function RootLayout({
             React tree, which is what beforeInteractive is for. */}
         <Script id="theme-init" strategy="beforeInteractive">
           {THEME_INIT_SCRIPT}
+        </Script>
+        {/* Organization structured data. next/script (not a raw <script>) for
+            the same reason as theme-init — React 19 warns on any inline
+            script element rendered by a component, JSON-LD included. */}
+        <Script
+          id="organization-jsonld"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+        >
+          {JSON.stringify(organizationJsonLd())}
         </Script>
         <Providers>{children}</Providers>
       </body>

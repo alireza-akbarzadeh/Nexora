@@ -20,7 +20,7 @@ function ProductCardLink({ card }: { card: ProductCard }) {
         </span>
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center gap-1.5">
-            <h3 className="text-sm font-semibold tracking-tight">{card.title}</h3>
+            <h2 className="text-sm font-semibold tracking-tight">{card.title}</h2>
             {card.badge ? (
               <Badge className="h-4 rounded px-1.5 text-[10px] font-semibold">
                 {card.badge}
@@ -56,9 +56,9 @@ export function ProductHubContent({
         <p className="font-mono text-[11px] tracking-widest text-primary uppercase">
           {content.eyebrow}
         </p>
-        <h2 className="mt-2 max-w-2xl text-2xl font-semibold tracking-tight md:text-3xl">
+        <h1 className="mt-2 max-w-2xl text-2xl font-semibold tracking-tight md:text-3xl">
           {content.title}
-        </h2>
+        </h1>
         <p className="mt-2 max-w-2xl text-sm text-muted-foreground md:text-base">
           {content.subtitle}
         </p>
