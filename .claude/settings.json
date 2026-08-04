@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm dev)",
+      "Bash(pnpm build)",
+      "Bash(pnpm lint)",
+      "Bash(pnpm install)",
+      "Bash(pnpm db:generate)",
+      "Bash(pnpm db:check)",
+      "Bash(pnpm db:studio)",
+      "Bash(pnpm graphify:*)",
+      "Bash(git status)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git show*)",
+      "Bash(graphify query*)",
+      "Bash(graphify path*)",
+      "Bash(graphify explain*)",
+      "Bash(graphify update*)"
+    ],
+    "ask": [
+      "Bash(pnpm db:push)",
+      "Bash(pnpm db:migrate)",
+      "Bash(git push*)",
+      "Bash(git reset*)"
+    ]
+  }
+}
