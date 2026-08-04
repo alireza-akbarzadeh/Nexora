@@ -64,6 +64,12 @@ pnpm db:studio       # Drizzle Studio
 - `graphify` — knowledge graph query/update tools
 - `21st` — 21st.dev component MCP; needs `API_KEY_21ST` set in your shell environment
 
+## CI (`.github/workflows/`)
+
+- `claude-code-review.yml` — auto-reviews every non-draft PR for production-readiness (security, auth, money/order correctness, data scoping) via `anthropics/claude-code-action`
+- `claude.yml` — responds to `@claude` mentions in PR/issue comments (ask it to explain, fix, or implement something)
+- Both need the `ANTHROPIC_API_KEY` repo secret — set up via `/install-github-app` in a Claude Code terminal, or manually per [code.claude.com/docs/en/github-actions](https://code.claude.com/docs/en/github-actions)
+
 ## Never do without asking
 
 - `pnpm db:push` / `pnpm db:migrate` against the real Neon database, or any other destructive DB operation

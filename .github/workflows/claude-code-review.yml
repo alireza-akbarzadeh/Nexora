@@ -1,0 +1,52 @@
+name: Claude Code Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, ready_for_review]
+
+concurrency:
+  group: claude-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    if: github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            Review this pull request for production-readiness as a senior engineer on the
+            Nexora crypto trading platform team. Follow the conventions in CLAUDE.md. Focus on:
+
+            - Security: exchange API keys must stay behind src/lib/exchange/encryption.ts
+              (ENCRYPTION_KEY), secrets only via getEnv() — never process.env directly in
+              feature code, never log secrets or full API keys
+            - Auth: private API routes must call requireSession() before touching
+              account/exchange data; return its response when unauthenticated
+            - Input validation: API routes validate with Zod safeParse and use jsonError()
+              from @/lib/api/auth-guard on failure
+            - Money and order correctness: precision/rounding on prices and quantities, race
+              conditions on order placement or cancellation, unhandled exchange API errors
+            - Data scoping: Drizzle queries scoped to the authenticated user, no unbounded
+              or cross-tenant queries
+            - Real-time correctness: WebSocket reconnect/cleanup, unsubscribed listeners,
+              stale closures in hooks
+            - Logic errors, edge cases, and regressions introduced by this diff
+
+            Do not comment on formatting, import order, or anything ESLint already enforces.
+            Post inline comments on the specific lines with issues. End with a short summary
+            grouped by severity (Critical / Important / Nit). If there are no issues, say so
+            briefly and do not invent nitpicks.
+          claude_args: |
+            --max-turns 30
