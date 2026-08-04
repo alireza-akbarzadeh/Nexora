@@ -298,3 +298,23 @@
     opacity: 1;
   }
 }
+
+/* Motion components are handled by <MotionConfig reducedMotion="user">.
+   This covers the CSS-only animations, which it cannot reach. */
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise,
+  .animate-float,
+  .animate-ticker,
+  .animate-pulse-glow {
+    animation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
