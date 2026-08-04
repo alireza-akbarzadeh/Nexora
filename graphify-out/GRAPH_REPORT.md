@@ -1,254 +1,254 @@
-# Graph Report - Nexora  (2026-08-02)
+# Graph Report - .  (2026-08-04)
 
 ## Corpus Check
-- 174 files · ~49,628 words
+- 119 files · ~48,643 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 889 nodes · 2054 edges · 43 communities (38 shown, 5 thin omitted)
-- Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 5 edges (avg confidence: 0.81)
+- 936 nodes · 2089 edges · 48 communities (38 shown, 10 thin omitted)
+- Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
-## Graph Freshness
-- Built from commit: `b6ce2efb`
-- Run `git rev-parse HEAD` and compare to check if the graph is stale.
-- Run `graphify update .` after code changes (no API cost).
-
 ## Community Hubs (Navigation)
-- service.ts
-- markets-overview.tsx
-- login-page.tsx
-- dependencies
-- scripts
-- sidebar.tsx
-- compilerOptions
-- product/catalog.ts
-- CCXT Exchange Layer
-- order-form.tsx
-- cn
-- components.json
-- landing-page.tsx
-- constants.ts
-- paper-trade-simulator.tsx
-- footer.tsx
-- dashboard-shell.tsx
-- two-factor-setup.tsx
-- notify/index.ts
-- security-settings.tsx
-- mobile-section.tsx
-- (marketing)/page.tsx
-- Skills CLI
-- graphify
-- SignalingManager
-- eslint.config.mjs
-- next.config.ts
-- postcss.config.mjs
-- Nexora Notify
-- utils.ts
-- nav.tsx
-- user-menu.tsx
-- settings/page.tsx
-- assets.tsx
-- trade-terminal.tsx
-- signaling-manager.ts
-- formatPrice
-- spinner.tsx
-- dashboard-overview.tsx
-- types/exchange.ts
+- Auth Pages
+- API Routes
+- Marketing Pricing Pages
+- Root Layout & Notify
+- Runtime Dependencies
+- Dev Dependencies
+- Form & Sidebar UI
+- Two-Factor & Avatar UI
+- TypeScript Config
+- Buy/Sell Trading UI
+- CLAUDE.md Skills & Conventions
+- Landing Nav UI
+- Trade & Portfolio Pages
+- Dashboard Feature Pages
+- User Menu & Theme
+- shadcn Components Config
+- Landing Marketing Sections
+- Demo Trading UI
+- Marketing Content Pages
+- WebSocket Signaling
+- Live Market Data Hooks
+- Landing Security Section
+- DB & Auth Conventions
+- API Route Conventions
+- Trading Chart Components
+- Dashboard Shell Layout
+- Convert Product Page
+- Dashboard Overview & Markets
+- graphify Commands (CLAUDE.md)
+- Landing Asset Cards
+- Landing Mobile Section
+- Marketing Home Page
+- MCP Server Config
+- Notify Toast Convention
+- graphify Output Files
+- Security Marketing Page
+- Zustand Client State
+- Landing Learning Section
+- Badge UI Component
+- ESLint Config
+- Next.js Config
+- React Hook Form Dep
+- PostCSS Config
+- Encryption at Rest
+- Server-Only CCXT
 
 ## God Nodes (most connected - your core abstractions)
-1. `cn()` - 189 edges
-2. `Button()` - 28 edges
-3. `formatPrice()` - 27 edges
-4. `scripts` - 16 edges
-5. `jsonError()` - 16 edges
-6. `isSupportedExchange()` - 16 edges
+1. `cn()` - 194 edges
+2. `Nexora` - 41 edges
+3. `Button()` - 29 edges
+4. `formatPrice()` - 27 edges
+5. `compilerOptions` - 16 edges
+6. `scripts` - 16 edges
 7. `SignalingManager` - 16 edges
-8. `compilerOptions` - 16 edges
-9. `requireSession()` - 13 edges
-10. `authClient` - 13 edges
+8. `authClient` - 13 edges
+9. `jsonError()` - 12 edges
+10. `isSupportedExchange()` - 12 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `AES-256-GCM At Rest` --semantically_similar_to--> `AES API Key Encryption`  [INFERRED] [semantically similar]
-  README.md → .cursor/skills/exchange-ccxt/SKILL.md
-- `Binance Public WebSockets` --conceptually_related_to--> `CCXT Exchange Layer`  [INFERRED]
-  README.md → .cursor/skills/exchange-ccxt/SKILL.md
-- `useSidebar()` --references--> `react`  [EXTRACTED]
-  src/components/ui/sidebar.tsx → package.json
-- `Nexora` --references--> `Neon Postgres`  [EXTRACTED]
-  README.md → .cursor/skills/drizzle/SKILL.md
-- `Server-Only CCXT` --rationale_for--> `CCXT Exchange Layer`  [EXTRACTED]
-  README.md → .cursor/skills/exchange-ccxt/SKILL.md
+- `Nexora` --references--> `typescript`  [EXTRACTED]
+  CLAUDE.md → package.json
+- `src/app/api/auth/[...all]/route.ts` --references--> `better-auth`  [EXTRACTED]
+  CLAUDE.md → package.json
+- `src/lib/db/schema.ts` --references--> `better-auth`  [EXTRACTED]
+  CLAUDE.md → package.json
+- `Nexora` --references--> `better-auth`  [EXTRACTED]
+  CLAUDE.md → package.json
+- `Nexora` --references--> `drizzle-orm`  [EXTRACTED]
+  CLAUDE.md → package.json
 
 ## Import Cycles
 - None detected.
 
 ## Hyperedges (group relationships)
-- **Nexora Auth Stack** — _cursor_skills_better_auth_skill_better_auth, _cursor_skills_better_auth_skill_drizzle_adapter, _cursor_skills_better_auth_skill_require_session, _cursor_skills_better_auth_skill_proxy_route_guard, _cursor_skills_better_auth_skill_auth_tables [EXTRACTED 1.00]
-- **Exchange Credential Security Flow** — _cursor_skills_exchange_ccxt_skill_aes_encryption, _cursor_skills_exchange_ccxt_skill_encryption_key, _cursor_skills_drizzle_skill_exchange_connections, _cursor_skills_exchange_ccxt_skill_validate_credentials, _cursor_skills_better_auth_skill_require_session [INFERRED 0.85]
-- **Nexora Data Layer** — _cursor_skills_drizzle_skill_drizzle_orm, _cursor_skills_drizzle_skill_neon_postgres, _cursor_skills_drizzle_skill_schema_ts, _cursor_skills_drizzle_skill_migration_workflow [EXTRACTED 1.00]
+- **Thin API Route Handler Pattern** — claude_md_conventions_api_routes, claude_md_requiresession, claude_md_jsonerror, claude_md_zod, claude_md_routes_layout [EXTRACTED 1.00]
+- **DB Schema & Migration Workflow** — claude_md_db_schema, claude_md_db_index, claude_md_neon_postgres, claude_md_pnpm_db_generate, claude_md_drizzle_dir [EXTRACTED 1.00]
+- **Graphify Codebase Exploration Workflow** — claude_md_graphify, claude_md_graphify_out, claude_md_graph_json, claude_md_graphify_query, claude_md_graphify_path, claude_md_graphify_explain, claude_md_graphify_update [EXTRACTED 1.00]
 
-## Communities (43 total, 5 thin omitted)
+## Communities (48 total, 10 thin omitted)
 
-### Community 0 - "service.ts"
-Cohesion: 0.06
+### Community 0 - "Auth Pages"
+Cohesion: 0.05
+Nodes (73): DevAuthEmail, extractUrl(), ForgotPasswordPage(), LoginPage(), authInputClassName, AuthError(), AuthFooterLink(), AuthPanel() (+65 more)
+
+### Community 1 - "API Routes"
+Cohesion: 0.05
 Nodes (67): { GET, POST }, GET(), GET(), connectionSchema, GET(), PATCH(), POST(), GET() (+59 more)
 
-### Community 1 - "markets-overview.tsx"
-Cohesion: 0.07
-Nodes (46): generateMetadata(), generateStaticParams(), PageProps, PriceSlugPage(), baseOf(), Category, ChangeBadge(), HighlightCard() (+38 more)
+### Community 2 - "Marketing Pricing Pages"
+Cohesion: 0.06
+Nodes (51): generateMetadata(), generateStaticParams(), PageProps, PriceSlugPage(), LandingFooter(), SOCIAL_ICONS, NexoraLogo(), NexoraLogoProps (+43 more)
 
-### Community 2 - "login-page.tsx"
-Cohesion: 0.14
-Nodes (20): DevAuthEmail, extractUrl(), ForgotPasswordPage(), TwoFactorPage(), AuthError(), AuthFooterLink(), AuthPanel(), AuthPanelProps (+12 more)
+### Community 3 - "Root Layout & Notify"
+Cohesion: 0.08
+Nodes (32): geistMono, geistSans, metadata, NetworkStatusToast(), formatRelativeTime(), HistoryRow(), NotificationBell(), variantMeta (+24 more)
 
-### Community 3 - "dependencies"
-Cohesion: 0.04
-Nodes (47): @base-ui/react, better-auth, @better-auth/infra, ccxt, class-variance-authority, clsx, drizzle-orm, @hookform/resolvers (+39 more)
+### Community 4 - "Runtime Dependencies"
+Cohesion: 0.05
+Nodes (41): @base-ui/react, @better-auth/infra, ccxt, class-variance-authority, clsx, @hookform/resolvers, jose, lightweight-charts (+33 more)
 
-### Community 4 - "scripts"
+### Community 5 - "Dev Dependencies"
 Cohesion: 0.05
 Nodes (38): drizzle-kit, eslint, eslint-config-next, devDependencies, drizzle-kit, eslint, eslint-config-next, tailwindcss (+30 more)
 
-### Community 5 - "sidebar.tsx"
-Cohesion: 0.10
-Nodes (29): mainNav, Sidebar(), SidebarContent(), SidebarContext, SidebarContextProps, SidebarFooter(), SidebarGroup(), SidebarGroupAction() (+21 more)
+### Community 6 - "Form & Sidebar UI"
+Cohesion: 0.09
+Nodes (31): FormFieldProps, mainNav, Input(), Sidebar(), SidebarContent(), SidebarContext, SidebarContextProps, SidebarFooter() (+23 more)
 
-### Community 6 - "compilerOptions"
+### Community 7 - "Two-Factor & Avatar UI"
+Cohesion: 0.10
+Nodes (30): TwoFactorPage(), Avatar(), AvatarBadge(), AvatarFallback(), AvatarGroup(), AvatarGroupCount(), AvatarImage(), Breadcrumb() (+22 more)
+
+### Community 8 - "TypeScript Config"
 Cohesion: 0.07
 Nodes (28): dom, dom.iterable, esnext, **/*.mts, .next/dev/types/**/*.ts, next-env.d.ts, .next/types/**/*.ts, node_modules (+20 more)
 
-### Community 8 - "product/catalog.ts"
-Cohesion: 0.06
-Nodes (32): metadata, metadata, metadata, metadata, metadata, LandingNav(), ASSETS, ConvertPage() (+24 more)
-
-### Community 9 - "CCXT Exchange Layer"
-Cohesion: 0.10
-Nodes (26): Auth Tables, Better Auth, drizzleAdapter, Email/Password Sessions, Auth Env via getEnv, Proxy Route Guard, requireSession, Drizzle ORM (+18 more)
-
-### Community 10 - "order-form.tsx"
-Cohesion: 0.14
-Nodes (14): ASSETS, BuySellPage(), Side, trimAmount(), OrderFormProps, SIZE_PERCENTS, Dialog(), DialogContent() (+6 more)
-
-### Community 11 - "cn"
-Cohesion: 0.12
-Nodes (28): Avatar(), AvatarBadge(), AvatarFallback(), AvatarGroup(), AvatarGroupCount(), AvatarImage(), Breadcrumb(), BreadcrumbEllipsis() (+20 more)
-
-### Community 12 - "components.json"
-Cohesion: 0.09
-Nodes (21): aliases, components, hooks, lib, ui, utils, iconLibrary, menuAccent (+13 more)
-
-### Community 13 - "landing-page.tsx"
+### Community 9 - "Buy/Sell Trading UI"
 Cohesion: 0.11
-Nodes (14): FaqSection(), FeaturesSection(), FinalCtaSection(), HeroSection(), LearningSection(), PricingSection(), TestimonialsSection(), TrustBar() (+6 more)
+Nodes (18): ASSETS, BuySellPage(), Side, trimAmount(), OrderFormProps, SIZE_PERCENTS, Dialog(), DialogContent() (+10 more)
 
-### Community 14 - "constants.ts"
-Cohesion: 0.22
-Nodes (13): SecuritySection(), NAV_LINKS, SECURITY_ITEMS, SECURITY_ORBIT_ICONS, Asset, FaqItem, Feature, LearningItem (+5 more)
+### Community 10 - "CLAUDE.md Skills & Conventions"
+Cohesion: 0.07
+Nodes (28): banner-design skill, better-auth skill, brand skill, CCXT, Path alias convention (@/ -> src/), Prefer existing UI primitives convention, design skill, design-system skill (+20 more)
 
-### Community 15 - "paper-trade-simulator.tsx"
-Cohesion: 0.15
-Nodes (13): StatCard(), StatCardProps, useReveal(), TradeDemoSection(), DemoTradingPage(), PaperTradeSimulator(), PaperTradeSimulatorProps, Position (+5 more)
-
-### Community 16 - "footer.tsx"
-Cohesion: 0.33
-Nodes (5): LandingFooter(), SOCIAL_ICONS, NexoraLogo(), NexoraLogoProps, FOOTER_GROUPS
-
-### Community 17 - "dashboard-shell.tsx"
-Cohesion: 0.20
-Nodes (8): react, react, AppSidebar(), DashboardShell(), SidebarInset(), SidebarMenuSkeleton(), SidebarProvider(), useIsMobile()
-
-### Community 18 - "two-factor-setup.tsx"
-Cohesion: 0.25
-Nodes (6): OtpInput(), OtpInputProps, SetupStep, FormPasswordField(), EnableTwoFactorFormValues, enableTwoFactorSchema
-
-### Community 19 - "notify/index.ts"
-Cohesion: 0.09
-Nodes (28): geistMono, geistSans, metadata, NetworkStatusToast(), NotificationBell(), NotifyProvider(), NotifyToaster(), NotifyToastItem() (+20 more)
-
-### Community 20 - "security-settings.tsx"
-Cohesion: 0.13
-Nodes (19): formatDate(), SecuritySettings(), SessionRow, truncateUa(), ChangePasswordFormValues, changePasswordSchema, ForgotPasswordFormValues, forgotPasswordSchema (+11 more)
-
-### Community 21 - "mobile-section.tsx"
-Cohesion: 0.33
-Nodes (4): MobileSection(), PhoneMockProps, ASSETS, MOBILE_FEATURES
-
-### Community 23 - "Skills CLI"
-Cohesion: 0.67
-Nodes (3): Skill Quality Verification, Skills CLI, skills.sh Leaderboard
-
-### Community 25 - "SignalingManager"
-Cohesion: 0.22
-Nodes (4): OrderBookPanelProps, toBinanceSymbol(), SignalingManager, OrderBook
-
-### Community 32 - "Nexora Notify"
-Cohesion: 0.29
-Nodes (6): Layout, Nexora Notify, Options, Rules, Usage (client only), When implementing features
-
-### Community 33 - "utils.ts"
-Cohesion: 0.17
-Nodes (16): authInputClassName, authLabelClassName, FormPasswordFieldProps, FormFieldProps, Field(), FieldContent(), FieldDescription(), FieldError() (+8 more)
-
-### Community 34 - "nav.tsx"
+### Community 11 - "Landing Nav UI"
 Cohesion: 0.10
 Nodes (21): hotCoins(), MegaFlyout(), Sheet(), SheetContent(), SheetDescription(), SheetFooter(), SheetHeader(), SheetOverlay() (+13 more)
 
-### Community 35 - "user-menu.tsx"
+### Community 12 - "Trade & Portfolio Pages"
+Cohesion: 0.11
+Nodes (19): PortfolioPage(), TradePageProps, OpenOrdersPanel(), OrderBookPanel(), OrderBookPanelProps, OrderBookRow(), OrderForm(), TickerBar() (+11 more)
+
+### Community 13 - "Dashboard Feature Pages"
+Cohesion: 0.14
+Nodes (10): DashboardProductPage(), BOTS_PAGE, COPY_TRADING_PAGE, DASHBOARD_PRODUCT_PAGES, DEMO_PAGE, DEVELOPERS_PAGE, EARN_PAGE, FUTURES_PAGE (+2 more)
+
+### Community 14 - "User Menu & Theme"
+Cohesion: 0.13
+Nodes (18): UserAvatar(), UserMenuProps, OPTIONS, ThemeToggle(), DropdownMenu(), DropdownMenuCheckboxItem(), DropdownMenuContent(), DropdownMenuGroup() (+10 more)
+
+### Community 15 - "shadcn Components Config"
+Cohesion: 0.09
+Nodes (21): aliases, components, hooks, lib, ui, utils, iconLibrary, menuAccent (+13 more)
+
+### Community 16 - "Landing Marketing Sections"
+Cohesion: 0.13
+Nodes (12): FaqSection(), FeaturesSection(), FinalCtaSection(), HeroSection(), PricingSection(), TestimonialsSection(), TrustBar(), FAQS (+4 more)
+
+### Community 17 - "Demo Trading UI"
+Cohesion: 0.14
+Nodes (12): StatCard(), StatCardProps, useReveal(), TradeDemoSection(), DemoTradingPage(), PaperTradeSimulator(), PaperTradeSimulatorProps, Position (+4 more)
+
+### Community 18 - "Marketing Content Pages"
 Cohesion: 0.12
-Nodes (20): UserAvatar(), UserMenu(), UserMenuProps, formatRelativeTime(), HistoryRow(), variantMeta, DropdownMenu(), DropdownMenuCheckboxItem() (+12 more)
+Nodes (11): metadata, metadata, metadata, metadata, LandingNav(), MarketingProductPage(), MarketingProductShell(), ACADEMY_PAGE (+3 more)
 
-### Community 37 - "settings/page.tsx"
-Cohesion: 0.26
-Nodes (11): AccountSettings(), NotificationSettings(), Card(), CardAction(), CardContent(), CardHeader(), CardTitle(), Switch() (+3 more)
+### Community 19 - "WebSocket Signaling"
+Cohesion: 0.23
+Nodes (4): toBinanceSymbol(), SignalingManager, OrderBook, Ticker
 
-### Community 38 - "assets.tsx"
+### Community 20 - "Live Market Data Hooks"
+Cohesion: 0.19
+Nodes (12): AuthLiveMarkets(), formatMarketPrice(), MARKETS, useOrderBook(), useTicker(), useWsConnection(), BinanceDepthMessage, BinanceTickerMessage (+4 more)
+
+### Community 21 - "Landing Security Section"
+Cohesion: 0.22
+Nodes (13): SecuritySection(), NAV_LINKS, SECURITY_ITEMS, SECURITY_ORBIT_ICONS, Asset, FaqItem, Feature, LearningItem (+5 more)
+
+### Community 22 - "DB & Auth Conventions"
+Cohesion: 0.14
+Nodes (15): better-auth, src/app/api/auth/[...all]/route.ts, DB schema/migration convention, src/lib/db/index.ts, DB area (src/lib/db), src/lib/db/schema.ts, drizzle/ (generated SQL migrations), Neon Postgres (+7 more)
+
+### Community 23 - "API Route Conventions"
+Cohesion: 0.15
+Nodes (14): src/lib/api/auth-guard.ts, Auth area (src/lib/auth, src/proxy.ts, src/lib/api/auth-guard.ts), Thin API route handlers convention, Private exchange routes require session convention, Exchange API keys only via ENCRYPTION_KEY storage convention, Server secrets via getEnv() convention, ENCRYPTION_KEY, src/lib/exchange/encryption.ts (+6 more)
+
+### Community 24 - "Trading Chart Components"
+Cohesion: 0.20
+Nodes (10): PriceAreaChart(), PriceAreaChartProps, OpenOrdersPanelProps, TradingChart(), TradingChartProps, notify, Balance, ExchangeOrder (+2 more)
+
+### Community 25 - "Dashboard Shell Layout"
+Cohesion: 0.20
+Nodes (8): react, react, AppSidebar(), DashboardShell(), SidebarInset(), SidebarMenuSkeleton(), SidebarProvider(), useIsMobile()
+
+### Community 26 - "Convert Product Page"
+Cohesion: 0.20
+Nodes (7): ASSETS, ConvertPage(), Field(), ProductHubContent(), CONVERT_PAGE, ProductCard, ProductPageContent
+
+### Community 27 - "Dashboard Overview & Markets"
+Cohesion: 0.21
+Nodes (6): ConnectionBadge(), ConnectionBadgeProps, DashboardOverview(), Header(), HeaderProps, UserMenu()
+
+### Community 28 - "graphify Commands (CLAUDE.md)"
+Cohesion: 0.22
+Nodes (9): 21st MCP server, API_KEY_21ST, graphify, graphify explain command, graphify MCP server, graphify path command, graphify query command, graphify update command (+1 more)
+
+### Community 29 - "Landing Asset Cards"
 Cohesion: 0.38
 Nodes (5): AssetCard(), assetHref(), AssetsSection(), Sparkline(), SparklineProps
 
-### Community 41 - "trade-terminal.tsx"
-Cohesion: 0.21
-Nodes (10): TradePageProps, OrderForm(), Timeframe, TIMEFRAMES, TradeTerminal(), TradeTerminalProps, useOrderBook(), useTicker() (+2 more)
+### Community 30 - "Landing Mobile Section"
+Cohesion: 0.33
+Nodes (4): MobileSection(), PhoneMockProps, ASSETS, MOBILE_FEATURES
 
-### Community 42 - "signaling-manager.ts"
-Cohesion: 0.16
-Nodes (11): AuthLiveMarkets(), formatMarketPrice(), MARKETS, TickerBar(), TickerBarProps, BinanceDepthMessage, BinanceTickerMessage, StreamCallback (+3 more)
+### Community 32 - "MCP Server Config"
+Cohesion: 0.50
+Nodes (3): 21st, graphify, ${userHome}/.local/bin/graphify-mcp
 
-### Community 43 - "formatPrice"
-Cohesion: 0.25
-Nodes (9): PortfolioPage(), OpenOrdersPanel(), OrderBookPanel(), OrderBookRow(), formatPrice(), OrderSide, OrderType, TradingState (+1 more)
+### Community 33 - "Notify Toast Convention"
+Cohesion: 0.67
+Nodes (4): Client feedback via notify() convention, notify() / notify.order(), Notify (src/lib/notify), notify skill
 
-### Community 45 - "spinner.tsx"
-Cohesion: 0.29
-Nodes (5): LoginPage(), LoadingIndicator(), sizeMap, Spinner(), SpinnerProps
+### Community 34 - "graphify Output Files"
+Cohesion: 0.50
+Nodes (4): graphify-out/graph.json, graphify-out/GRAPH_REPORT.md, graphify-out/, graphify-out/wiki/index.md
 
-### Community 46 - "dashboard-overview.tsx"
-Cohesion: 0.18
-Nodes (11): DashboardOverview(), StatCard(), Header(), HeaderProps, Badge(), badgeVariants, CardDescription(), CardFooter() (+3 more)
-
-### Community 47 - "types/exchange.ts"
-Cohesion: 0.24
-Nodes (8): PriceAreaChart(), PriceAreaChartProps, OpenOrdersPanelProps, TradingChart(), TradingChartProps, ExchangeOrder, MarketInfo, OHLCV
+### Community 36 - "Zustand Client State"
+Cohesion: 0.67
+Nodes (3): Client state (src/stores), zustand, zustand
 
 ## Knowledge Gaps
-- **212 isolated node(s):** `${userHome}/.local/bin/graphify-mcp`, `$schema`, `style`, `rsc`, `tsx` (+207 more)
+- **239 isolated node(s):** `${userHome}/.local/bin/graphify-mcp`, `$schema`, `style`, `rsc`, `tsx` (+234 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **10 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `cn()` connect `cn` to `markets-overview.tsx`, `login-page.tsx`, `sidebar.tsx`, `product/catalog.ts`, `order-form.tsx`, `paper-trade-simulator.tsx`, `dashboard-shell.tsx`, `two-factor-setup.tsx`, `notify/index.ts`, `utils.ts`, `nav.tsx`, `user-menu.tsx`, `settings/page.tsx`, `trade-terminal.tsx`, `signaling-manager.ts`, `formatPrice`, `spinner.tsx`, `dashboard-overview.tsx`, `types/exchange.ts`?**
-  _High betweenness centrality (0.378) - this node is a cross-community bridge._
-- **Why does `dependencies` connect `dependencies` to `dashboard-shell.tsx`, `scripts`?**
-  _High betweenness centrality (0.158) - this node is a cross-community bridge._
-- **Why does `react` connect `dashboard-shell.tsx` to `dependencies`, `sidebar.tsx`?**
-  _High betweenness centrality (0.155) - this node is a cross-community bridge._
+- **Why does `cn()` connect `Two-Factor & Avatar UI` to `Auth Pages`, `Marketing Pricing Pages`, `Root Layout & Notify`, `Badge UI Component`, `Form & Sidebar UI`, `Buy/Sell Trading UI`, `Landing Nav UI`, `Trade & Portfolio Pages`, `User Menu & Theme`, `Demo Trading UI`, `Marketing Content Pages`, `Live Market Data Hooks`, `Trading Chart Components`, `Dashboard Shell Layout`, `Convert Product Page`, `Dashboard Overview & Markets`?**
+  _High betweenness centrality (0.455) - this node is a cross-community bridge._
+- **Why does `dependencies` connect `Runtime Dependencies` to `Zustand Client State`, `Dev Dependencies`, `React Hook Form Dep`, `DB & Auth Conventions`, `Dashboard Shell Layout`?**
+  _High betweenness centrality (0.274) - this node is a cross-community bridge._
+- **Why does `react` connect `Dashboard Shell Layout` to `Runtime Dependencies`, `Form & Sidebar UI`?**
+  _High betweenness centrality (0.260) - this node is a cross-community bridge._
 - **What connects `${userHome}/.local/bin/graphify-mcp`, `$schema`, `style` to the rest of the system?**
-  _212 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `service.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.05590386624869383 - nodes in this community are weakly interconnected._
-- **Should `markets-overview.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.06594071385359952 - nodes in this community are weakly interconnected._
-- **Should `login-page.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.13513513513513514 - nodes in this community are weakly interconnected._
+  _239 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `Auth Pages` be split into smaller, more focused modules?**
+  _Cohesion score 0.051544791181493556 - nodes in this community are weakly interconnected._
+- **Should `API Routes` be split into smaller, more focused modules?**
+  _Cohesion score 0.051201671891327065 - nodes in this community are weakly interconnected._
+- **Should `Marketing Pricing Pages` be split into smaller, more focused modules?**
+  _Cohesion score 0.05673076923076923 - nodes in this community are weakly interconnected._
