@@ -15,7 +15,7 @@ Crypto trading app: **Next.js 16** (App Router) + **React 19** + **TypeScript**,
 | Auth | `src/lib/auth`, `src/proxy.ts`, `src/lib/api/auth-guard.ts` |
 | DB | `src/lib/db` |
 | Exchange | `src/lib/exchange`, `src/app/api/exchange`, `src/app/api/market` |
-| UI | `src/components/{ui,trading,landing,layout,dashboard,forms,notify}` |
+| UI | `src/components/{ui,trading,landing,layout,dashboard,forms,notify,markets,price,product,settings,auth}` |
 | Client state | `src/stores` (Zustand) |
 | Notify | `src/lib/notify` — `notify()` / `notify.order()` toasts + sounds |
 | Env | `src/lib/env.ts` (Zod) |
