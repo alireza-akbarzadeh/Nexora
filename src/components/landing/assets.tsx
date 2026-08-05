@@ -5,6 +5,7 @@ import { useMemo } from "react";
 
 import { getCoinBySlug } from "@/lib/coins/catalog";
 import { ASSETS } from "@/lib/landing/constants";
+import { hashSeed, mulberry32 } from "@/lib/landing/seeded-random";
 import type { Asset } from "@/lib/landing/types";
 
 import { Sparkline } from "./shared/sparkline";
@@ -18,12 +19,15 @@ function assetHref(asset: Asset) {
 
 function AssetCard({ asset }: { asset: Asset }) {
   const spark = useMemo(() => {
-    let v = 50;
-    return Array.from({ length: 24 }, () => {
-      v += (Math.random() - (asset.ch > 0 ? 0.35 : 0.65)) * 6;
-      return v;
-    });
-  }, [asset.ch]);
+    const random = mulberry32(hashSeed(asset.sym));
+    const drift = asset.ch > 0 ? 0.35 : 0.65;
+    const series: number[] = [];
+    for (let i = 0, v = 50; i < 24; i++) {
+      v += (random() - drift) * 6;
+      series.push(v);
+    }
+    return series;
+  }, [asset.ch, asset.sym]);
 
   return (
     <Link

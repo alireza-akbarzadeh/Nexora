@@ -3,6 +3,7 @@
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 
+import { Stagger, StaggerItem } from "@/components/ui/motion";
 import { FAQS } from "@/lib/landing/constants";
 
 export function FaqSection() {
@@ -19,11 +20,11 @@ export function FaqSection() {
             Answers, not asterisks.
           </h2>
         </div>
-        <div className="space-y-3">
+        <Stagger className="space-y-3" stagger={0.05}>
           {FAQS.map((f, i) => {
             const isOpen = open === i;
             return (
-              <div key={f.q} className="card-elevated overflow-hidden rounded-2xl">
+              <StaggerItem key={f.q} className="card-elevated overflow-hidden rounded-2xl">
                 <button
                   type="button"
                   onClick={() => setOpen(isOpen ? null : i)}
@@ -41,10 +42,10 @@ export function FaqSection() {
                     <p className="px-6 pb-6 text-sm leading-relaxed text-muted-foreground">{f.a}</p>
                   </div>
                 </div>
-              </div>
+              </StaggerItem>
             );
           })}
-        </div>
+        </Stagger>
       </div>
     </section>
   );

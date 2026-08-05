@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 
-import { Header } from "@/components/layout/header";
 import { OpenOrdersPanel } from "@/components/trading/open-orders-panel";
 import { OrderBookPanel } from "@/components/trading/order-book-panel";
 import { OrderForm } from "@/components/trading/order-form";
@@ -42,6 +41,7 @@ export function TradeTerminal({ symbolSlug }: TradeTerminalProps) {
       return response.json() as Promise<{ candles: OHLCV[] }>;
     },
     refetchInterval: 60_000,
+    retry: 1,
   });
 
   const chartError =
@@ -53,7 +53,6 @@ export function TradeTerminal({ symbolSlug }: TradeTerminalProps) {
 
   return (
     <>
-      <Header title="Trading Terminal" />
       <TickerBar symbol={symbol} ticker={ticker} />
 
       <main className="grid min-h-0 flex-1 gap-px overflow-auto bg-border p-px xl:grid-cols-[260px_minmax(0,1fr)_300px] xl:grid-rows-[minmax(0,1fr)_240px]">
@@ -65,28 +64,28 @@ export function TradeTerminal({ symbolSlug }: TradeTerminalProps) {
         </section>
 
         <section className="flex min-h-[420px] flex-col bg-card xl:min-h-0">
-          <div className="flex items-center justify-between border-b border-border px-3 py-2">
-            <h2 className="text-[11px] font-medium uppercase tracking-[0.14em] text-muted-foreground">
-              Chart
-            </h2>
-            <div className="flex items-center gap-0.5 rounded-md bg-muted p-0.5">
-              {TIMEFRAMES.map((tf) => (
-                <button
-                  key={tf}
-                  type="button"
-                  onClick={() => setTimeframe(tf)}
-                  className={cn(
-                    "rounded px-2 py-1 text-[11px] font-medium transition-colors",
-                    timeframe === tf
-                      ? "bg-card text-foreground shadow-sm"
-                      : "text-muted-foreground hover:text-foreground",
-                  )}
-                >
-                  {tf}
-                </button>
-              ))}
-            </div>
-          </div>
+          <PanelHeader
+            title="Chart"
+            actions={
+              <div className="flex items-center gap-0.5 rounded-md bg-muted p-0.5">
+                {TIMEFRAMES.map((tf) => (
+                  <button
+                    key={tf}
+                    type="button"
+                    onClick={() => setTimeframe(tf)}
+                    className={cn(
+                      "rounded px-2 py-1 text-[11px] font-medium transition-colors outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50",
+                      timeframe === tf
+                        ? "bg-card text-foreground shadow-sm"
+                        : "text-muted-foreground hover:text-foreground",
+                    )}
+                  >
+                    {tf}
+                  </button>
+                ))}
+              </div>
+            }
+          />
           <div className="min-h-0 flex-1">
             <TradingChart
               symbol={symbol}
@@ -115,12 +114,19 @@ export function TradeTerminal({ symbolSlug }: TradeTerminalProps) {
   );
 }
 
-function PanelHeader({ title }: { title: string }) {
+function PanelHeader({
+  title,
+  actions,
+}: {
+  title: string;
+  actions?: React.ReactNode;
+}) {
   return (
-    <div className="border-b border-border px-3 py-2">
+    <div className="flex items-center justify-between border-b border-border px-3 py-2">
       <h2 className="text-[11px] font-medium uppercase tracking-[0.14em] text-muted-foreground">
         {title}
       </h2>
+      {actions}
     </div>
   );
 }

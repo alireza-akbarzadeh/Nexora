@@ -1,5 +1,7 @@
 import { ArrowUpRight, Shield } from "lucide-react";
+import Link from "next/link";
 
+import { Stagger, StaggerItem } from "@/components/ui/motion";
 import { SECURITY_ITEMS, SECURITY_ORBIT_ICONS } from "@/lib/landing/constants";
 
 export function SecuritySection() {
@@ -20,18 +22,18 @@ export function SecuritySection() {
               treasuries — audited quarterly, insured up to $1B.
             </p>
             <div className="mt-8 flex gap-3">
-              <button
-                type="button"
+              <Link
+                href="/security"
                 className="glass-strong inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-medium transition hover:bg-white/5"
               >
                 Proof of reserves <ArrowUpRight className="h-4 w-4" />
-              </button>
-              <button
-                type="button"
+              </Link>
+              <Link
+                href="/security"
                 className="inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-medium text-muted-foreground transition hover:text-foreground"
               >
                 Security whitepaper
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -68,9 +70,12 @@ export function SecuritySection() {
           </div>
         </div>
 
-        <div className="mt-20 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <Stagger className="mt-20 grid gap-4 md:grid-cols-2 lg:grid-cols-3" stagger={0.05}>
           {SECURITY_ITEMS.map((it) => (
-            <div key={it.title} className="glass rounded-2xl p-5 transition hover:border-white/20">
+            <StaggerItem
+              key={it.title}
+              className="glass rounded-2xl p-5 transition hover:border-white/20"
+            >
               <div className="mb-2 flex items-center gap-3">
                 <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[color-mix(in_srgb,var(--profit)_15%,transparent)]">
                   <it.icon className="h-4.5 w-4.5 text-profit" />
@@ -78,9 +83,9 @@ export function SecuritySection() {
                 <h3 className="font-semibold">{it.title}</h3>
               </div>
               <p className="text-sm text-muted-foreground">{it.desc}</p>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
       </div>
     </section>
   );

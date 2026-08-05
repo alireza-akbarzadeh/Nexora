@@ -45,6 +45,7 @@ export function TradingChart({
         fontFamily:
           'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
         fontSize: 11,
+        attributionLogo: false,
       },
       grid: {
         vertLines: { color: "#1b2129" },

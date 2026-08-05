@@ -1,5 +1,7 @@
 import { ArrowRight, ArrowUpRight, Gift } from "lucide-react";
+import Link from "next/link";
 
+import { Stagger, StaggerItem } from "@/components/ui/motion";
 import { LEARNING_ITEMS } from "@/lib/landing/constants";
 
 export function LearningSection() {
@@ -15,36 +17,37 @@ export function LearningSection() {
               Learn from the best in the industry.
             </h2>
           </div>
-          <a
-            href="#"
+          <Link
+            href="/academy"
             className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
           >
             Visit Learning Centre <ArrowUpRight className="h-4 w-4" />
-          </a>
+          </Link>
         </div>
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <Stagger className="grid gap-4 md:grid-cols-2 lg:grid-cols-3" stagger={0.06}>
           {LEARNING_ITEMS.map((it) => (
-            <a
-              key={it.title}
-              href="#"
-              className="group card-elevated rounded-2xl p-6 transition-all hover:-translate-y-1"
-            >
-              <div className="mb-4 flex items-center justify-between">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[color-mix(in_srgb,var(--violet)_20%,transparent)] to-[color-mix(in_srgb,var(--violet)_15%,transparent)]">
-                  <it.icon className="h-5 w-5 text-violet" />
+            <StaggerItem key={it.title}>
+              <Link
+                href="/academy"
+                className="group card-elevated block rounded-2xl p-6 transition-all hover:-translate-y-1"
+              >
+                <div className="mb-4 flex items-center justify-between">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[color-mix(in_srgb,var(--violet)_20%,transparent)] to-[color-mix(in_srgb,var(--violet)_15%,transparent)]">
+                    <it.icon className="h-5 w-5 text-violet" />
+                  </div>
+                  <span className="rounded-md bg-[color-mix(in_srgb,var(--profit)_10%,transparent)] px-2 py-1 font-mono text-[10px] tracking-widest text-profit uppercase">
+                    {it.tag}
+                  </span>
                 </div>
-                <span className="rounded-md bg-[color-mix(in_srgb,var(--profit)_10%,transparent)] px-2 py-1 font-mono text-[10px] tracking-widest text-profit uppercase">
-                  {it.tag}
-                </span>
-              </div>
-              <h3 className="font-semibold">{it.title}</h3>
-              <p className="mt-1.5 text-sm text-muted-foreground">{it.desc}</p>
-              <div className="mt-4 flex items-center gap-1 text-xs text-violet opacity-0 transition group-hover:opacity-100">
-                Explore <ArrowRight className="h-3 w-3" />
-              </div>
-            </a>
+                <h3 className="font-semibold">{it.title}</h3>
+                <p className="mt-1.5 text-sm text-muted-foreground">{it.desc}</p>
+                <div className="mt-4 flex items-center gap-1 text-xs text-violet opacity-0 transition group-hover:opacity-100">
+                  Explore <ArrowRight className="h-3 w-3" />
+                </div>
+              </Link>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
 
         <div className="card-elevated relative mt-8 overflow-hidden rounded-3xl p-8 md:p-12">
           <div className="absolute inset-0 bg-gradient-to-r from-[color-mix(in_srgb,var(--violet)_15%,transparent)] via-transparent to-[color-mix(in_srgb,var(--violet)_15%,transparent)]" />
@@ -61,12 +64,12 @@ export function LearningSection() {
                 choice.
               </p>
             </div>
-            <button
-              type="button"
+            <Link
+              href="/register"
               className="gradient-primary glow-primary inline-flex items-center gap-2 justify-self-start rounded-xl px-6 py-3.5 font-medium text-primary-foreground md:justify-self-end"
             >
               Get your link <ArrowRight className="h-4 w-4" />
-            </button>
+            </Link>
           </div>
         </div>
       </div>

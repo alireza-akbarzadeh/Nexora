@@ -4,7 +4,11 @@ import { FOOTER_GROUPS } from "@/lib/landing/constants";
 
 import { NexoraLogo } from "./shared/nexora-logo";
 
-const SOCIAL_ICONS = [MessageCircle, Code2, Globe2] as const;
+const SOCIAL_LINKS = [
+  { icon: MessageCircle, label: "Community chat" },
+  { icon: Code2, label: "Developer docs" },
+  { icon: Globe2, label: "Nexora on the web" },
+] as const;
 
 export function LandingFooter() {
   return (
@@ -17,13 +21,14 @@ export function LandingFooter() {
               The digital asset exchange for serious traders and institutions.
             </p>
             <div className="mt-6 flex gap-2">
-              {SOCIAL_ICONS.map((Icon, i) => (
+              {SOCIAL_LINKS.map(({ icon: Icon, label }) => (
                 <a
-                  key={i}
+                  key={label}
                   href="#"
+                  aria-label={label}
                   className="glass flex h-9 w-9 items-center justify-center rounded-lg transition hover:bg-white/5"
                 >
-                  <Icon className="h-4 w-4 text-muted-foreground" />
+                  <Icon className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                 </a>
               ))}
             </div>

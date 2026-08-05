@@ -1,5 +1,6 @@
 import { Star } from "lucide-react";
 
+import { Stagger, StaggerItem, TiltCard } from "@/components/ui/motion";
 import { TESTIMONIALS } from "@/lib/landing/constants";
 
 export function TestimonialsSection() {
@@ -14,35 +15,36 @@ export function TestimonialsSection() {
             By funds, firms, and pros.
           </h2>
         </div>
-        <div className="grid gap-4 md:grid-cols-3">
+        <Stagger className="grid gap-4 md:grid-cols-3" stagger={0.08}>
           {TESTIMONIALS.map((t) => (
-            <figure key={t.name} className="card-elevated flex flex-col rounded-3xl p-8">
-              <div className="mb-4 flex gap-0.5">
-                {Array.from({ length: 5 }).map((_, s) => (
-                  <Star
-                    key={s}
-                    className="h-4 w-4 fill-lime text-lime"
-                  />
-                ))}
-              </div>
-              <blockquote className="flex-1 leading-relaxed text-foreground/90">
-                &ldquo;{t.quote}&rdquo;
-              </blockquote>
-              <figcaption className="mt-6 flex items-center gap-3 border-t border-white/5 pt-6">
-                <div className="gradient-primary flex h-11 w-11 items-center justify-center rounded-full font-semibold text-primary-foreground">
-                  {t.name
-                    .split(" ")
-                    .map((n) => n[0])
-                    .join("")}
-                </div>
-                <div>
-                  <div className="text-sm font-semibold">{t.name}</div>
-                  <div className="text-xs text-muted-foreground">{t.role}</div>
-                </div>
-              </figcaption>
-            </figure>
+            <StaggerItem key={t.name}>
+              <TiltCard max={4} sheen={false} className="card-elevated h-full rounded-3xl">
+                <figure className="flex h-full flex-col p-8">
+                  <div className="mb-4 flex gap-0.5">
+                    {Array.from({ length: 5 }).map((_, s) => (
+                      <Star key={s} className="h-4 w-4 fill-lime text-lime" />
+                    ))}
+                  </div>
+                  <blockquote className="flex-1 leading-relaxed text-foreground/90">
+                    &ldquo;{t.quote}&rdquo;
+                  </blockquote>
+                  <figcaption className="mt-6 flex items-center gap-3 border-t border-white/5 pt-6">
+                    <div className="gradient-primary flex h-11 w-11 items-center justify-center rounded-full font-semibold text-primary-foreground">
+                      {t.name
+                        .split(" ")
+                        .map((n) => n[0])
+                        .join("")}
+                    </div>
+                    <div>
+                      <div className="text-sm font-semibold">{t.name}</div>
+                      <div className="text-xs text-muted-foreground">{t.role}</div>
+                    </div>
+                  </figcaption>
+                </figure>
+              </TiltCard>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
       </div>
     </section>
   );

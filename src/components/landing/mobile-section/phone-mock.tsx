@@ -1,25 +1,22 @@
-"use client";
-
-import { Check, Smartphone } from "lucide-react";
 import { useMemo } from "react";
 
-import { ASSETS, MOBILE_FEATURES } from "@/lib/landing/constants";
+import { ASSETS } from "@/lib/landing/constants";
+import { hashSeed, mulberry32 } from "@/lib/landing/seeded-random";
 
 type PhoneMockProps = {
   variant: "portfolio" | "trade";
 };
 
-function PhoneMock({ variant }: PhoneMockProps) {
-  const candles = useMemo(
-    () =>
-      Array.from({ length: 20 }, (_, i) => ({
-        key: i,
-        up: Math.random() > 0.5,
-        h: 20 + Math.random() * 40,
-        y: 30 + Math.random() * 20,
-      })),
-    [],
-  );
+export function PhoneMock({ variant }: PhoneMockProps) {
+  const candles = useMemo(() => {
+    const random = mulberry32(hashSeed(variant));
+    return Array.from({ length: 20 }, (_, i) => ({
+      key: i,
+      up: random() > 0.5,
+      h: 20 + random() * 40,
+      y: 30 + random() * 20,
+    }));
+  }, [variant]);
 
   return (
     <div className="h-[520px] w-64 rounded-[3rem] border border-white/10 bg-gradient-to-b from-card-elevated to-background p-2 shadow-[0_40px_80px_-20px_oklch(0_0_0/0.8)]">
@@ -123,64 +120,5 @@ function PhoneMock({ variant }: PhoneMockProps) {
         </div>
       </div>
     </div>
-  );
-}
-
-export function MobileSection() {
-  return (
-    <section className="relative overflow-hidden py-32">
-      <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-2">
-        <div className="relative order-2 h-[600px] lg:order-1">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="absolute h-80 w-80 rounded-full bg-[color-mix(in_srgb,var(--violet)_20%,transparent)] blur-3xl" />
-          </div>
-          <div className="animate-float absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-6">
-            <PhoneMock variant="portfolio" />
-          </div>
-          <div
-            className="animate-float absolute top-[45%] left-[62%] -translate-y-1/2 rotate-6"
-            style={{ animationDelay: "1s" }}
-          >
-            <PhoneMock variant="trade" />
-          </div>
-        </div>
-        <div className="order-1 lg:order-2">
-          <div className="font-mono text-xs tracking-widest text-violet uppercase">
-            Nexora Mobile
-          </div>
-          <h2 className="mt-2 font-display text-4xl font-bold tracking-tight md:text-5xl">
-            The exchange in your pocket.
-          </h2>
-          <p className="mt-5 text-lg text-muted-foreground">
-            Full trading power, biometric security, and real-time price alerts on iOS and Android.
-            Rated 4.9 on both stores.
-          </p>
-          <div className="mt-8 space-y-3">
-            {MOBILE_FEATURES.map((t) => (
-              <div key={t} className="flex items-center gap-3">
-                <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[color-mix(in_srgb,var(--profit)_20%,transparent)]">
-                  <Check className="h-3 w-3 text-profit" />
-                </div>
-                <span className="text-sm">{t}</span>
-              </div>
-            ))}
-          </div>
-          <div className="mt-8 flex gap-3">
-            <button
-              type="button"
-              className="glass-strong inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm transition hover:bg-white/5"
-            >
-              <Smartphone className="h-4 w-4" /> Download for iOS
-            </button>
-            <button
-              type="button"
-              className="glass-strong inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm transition hover:bg-white/5"
-            >
-              <Smartphone className="h-4 w-4" /> Get on Android
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
   );
 }

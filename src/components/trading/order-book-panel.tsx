@@ -50,7 +50,6 @@ export function OrderBookPanel({ orderBook }: OrderBookPanelProps) {
       <div className="flex flex-1 flex-col-reverse overflow-y-auto px-1 py-1.5 scrollbar-thin">
         {orderBook.asks
           .slice(0, 12)
-          .reverse()
           .map((level, index) => (
             <OrderBookRow
               key={`ask-${index}`}
@@ -109,7 +108,7 @@ function OrderBookRow({
   return (
     <button
       type="button"
-      className="relative grid w-full grid-cols-3 gap-1 rounded-sm px-2 py-1 font-tabular transition-colors hover:bg-accent/60"
+      className="relative grid w-full grid-cols-3 gap-1 rounded-sm px-2 py-1 font-tabular transition-colors outline-none hover:bg-accent/60 focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
       onClick={() => onPriceClick(price)}
     >
       <div

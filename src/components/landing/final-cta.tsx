@@ -24,12 +24,12 @@ export function FinalCtaSection() {
               >
                 Create free account <ArrowRight className="h-4 w-4" />
               </Link>
-              <button
-                type="button"
+              <Link
+                href="/institutional"
                 className="glass-strong inline-flex items-center gap-2 rounded-xl px-6 py-3.5 font-medium transition hover:bg-white/5"
               >
                 Talk to institutional
-              </button>
+              </Link>
             </div>
           </div>
         </div>
